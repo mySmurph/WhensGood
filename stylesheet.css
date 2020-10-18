@@ -1,0 +1,295 @@
+div.titlecontainer {
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    background-color:#378C7D;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    border: none;
+    position: absolute;
+    vertical-align: top;
+    display: inline-block;
+}
+
+
+div.leftcontainer{
+    margin-right:10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.img{
+    height: 65px;
+    width: 160px; 
+    display: inline-block;
+}
+
+div.primarydiv {
+    width: 1400px;
+    height: 900px;
+    display: inline-block;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    vertical-align: top;
+    border-radius: 10px;
+}
+
+p {
+    font-weight: bold;
+    font-size: larger;
+
+}
+
+.titlelabel{
+    font-weight: bold;
+    font-size: larger;
+    vertical-align: center;
+    position: relative;
+    top:17%;
+}
+
+.input1{
+    color: black;
+    font-size: 14px;
+    height: 18px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+label.label1{
+    font-size: 20px;
+    position: relative;
+
+}
+div.userInput{
+    position: relative;
+    top: 10%;
+    left: 20px;
+}
+
+.textInput{
+    height: 28px;
+    width: 400px;
+    border-radius: 7px;
+    margin-left: 40px;
+    border: none;
+    font-size: 16px;
+}
+
+button.schedule{
+    height: 30px;
+    width: 92%;
+    border-radius: 10px;
+    background-color:#F24B59;
+    color: white;
+    font-size: 16px;
+    text-align: center; 
+    border: none;
+    position: absolute;
+    top: 68%;
+    left: 4%;
+}
+
+.form{
+    background-color: #F2F1DF;
+    width: 1400px;
+    height: 900px;
+    display: inline-block;
+    justify-content: center;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+.text{
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+.calFileUpload{
+    font-size: 16px;
+    margin-left: 40px;
+}
+
+div.userbuttons{
+    position: relative;
+    top: 5%;
+    left: 42%;
+}
+
+button.rsvp{
+
+    justify-content: center;
+    height: 73px;
+    width: 175px;
+    border-radius: 8px;
+    background-color:#91D9BF;
+    padding:20px;
+    margin-top: 20px;
+    border: none;
+    font-weight: bold;
+    font-size: medium;
+}
+button.create{
+    justify-content: center;
+    height: 73px;
+    width: 175px;
+    border-radius: 8px;
+    background-color:#91D9BF;
+    padding: 20px;
+    margin-top: 20px;
+    border: none;
+    font-weight: bold;
+    font-size: medium;
+}
+
+
+
+.RSVPform{
+    background-color: #F2F1DF;
+    width: 1400px;
+    height: 900px;
+    display: inline-block;
+    justify-content: center;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.userInputContainer{
+    justify-content: center;
+    position:absolute;
+    top: 13%;
+    left: 37.5%;
+    background-color: #91D9BF;
+    border-radius: 8px;
+    height:230px;
+    width:330px;
+}
+.center{
+    position:relative;
+    justify-content: center;
+    top: 6%;
+    left:6%;
+}
+
+.textParticipant{
+    font-size: 18px;
+    margin-right: 6px;
+    position: absolute;
+    top: 34%;
+    left: 10%;
+    font-size: 18px;
+}
+
+.textOrganizer{
+    font-size: 18px;
+    margin-left: 10px;
+    position: absolute;
+    top: 34%;
+    left: 53%;
+}
+
+.submit{
+
+    height: 25px;
+    width: 300px;
+    border-radius: 10px;
+    background-color:#F24B59;
+    color: white;
+    font-size: 16px;
+    text-align: center; 
+    border: none;
+}
+
+.input{
+    height: 25px;
+    width: 290px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* the following css code was borrowed from
+https://www.w3schools.com/howto/howto_css_switch.asp  I had to adjust the code for this
+particular project*/
+/* The switch - the box around the slider */
+
+.switch {
+    position: absolute;
+    width: 53px;
+    height: 25px;
+    top: 33%;
+    left: 37%; 
+    text-align: center;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 15px;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F24B59;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #378C7D;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 10px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+ /* end of borrowed code */
+
+  .textEvent{
+    font-size: 20px;
+    margin-left: 2px;
+  }
+  .textCode{
+    font-size: 20px;
+    margin-left: 2px;
+  }
