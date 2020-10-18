@@ -120,32 +120,52 @@ div.userbuttons{
     left: 42%;
 }
 
-button.rsvp{
+.rsvp{
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: black;
 
-    justify-content: center;
-    height: 73px;
+    height: 40px;
     width: 175px;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color:#91D9BF;
     padding:20px;
     margin-top: 20px;
     border: none;
-    font-weight: bold;
-    font-size: medium;
 }
-button.create{
-    justify-content: center;
-    height: 73px;
+
+.button1_text{
+    font-size: larger;
+    text-align: center; 
+    position: absolute;
+    top: 13%;
+    left: 2.5%;
+}
+.create{
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: black;
+
+    height: 40px;
     width: 175px;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color:#91D9BF;
     padding: 20px;
     margin-top: 20px;
     border: none;
-    font-weight: bold;
-    font-size: medium;
 }
 
+.button2_text{
+    font-size: larger;
+    text-align: center; 
+    position: absolute;
+    top: 63%;
+    left: 3%;
+}
 
 
 .RSVPform{
