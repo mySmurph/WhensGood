@@ -324,8 +324,14 @@ div.userbuttons{
     width: 290px;
     border-radius: 10px;
     border: none;
+    visibility: hidden;
 }
-
+.input_code{
+        height: 25px;
+        width: 290px;
+        border-radius: 10px;
+        border: none;
+}
 /* the following css code was borrowed from
 https://www.w3schools.com/howto/howto_css_switch.asp  I had to adjust the code for this
 particular project*/
@@ -401,6 +407,7 @@ particular project*/
   .textEvent{
     font-size: 20px;
     margin-left: 2px;
+    visibility: hidden;
   }
   .textCode{
     font-size: 20px;
