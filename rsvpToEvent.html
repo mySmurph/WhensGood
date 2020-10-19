@@ -1,0 +1,84 @@
+<!--  http://cis444.cs.csusm.edu/newso011/hw1.html  testing again 3-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
+  <title>Sample</title> 
+  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+</head>
+
+<body>
+  <h1></h1>
+    <div class="leftcontainer">
+		  <a href="landing.html"><img src="comment.png" class="img" alt="comment pic"></a>
+      <ul class="list">
+        <li><a class="leftbutton1" href="createEvent.html"><div class="valign1"><p class="create_event_text">Create Event</p></div></a></li>
+        <li><a class="leftbutton2" href="createEvent.html"><p class="edit_event_text">Edit Event</p></a></li>
+        <li><a class="leftbutton3" href="createEvent.html"><p class="rsvp_to_event_text">RSVP to an Event</p></a></li>
+        <li><a class="leftbutton4" href="createEvent.html"><p class="schedule_event_text">Schedule Event</p></a></li>
+      </ul>
+    </div>
+  
+    <div class="primarydiv">
+      <form class="form" action="">
+        <div class="titlecontainer">
+            <div class="sub">
+              <input type="text" class="input1" placeholder="2F08B152DE"></input>
+              <label class="label1">&nbsp;&nbsp;RSVP to Event</label>
+            </div>
+        </div>
+
+        <div class="userInput">
+            <div class="column1">
+              <div class="block_inline">
+                <div class="rsvp_deadline_container">
+                  <label class="text">RSVP Deadline</label></br>
+                  <input class="text_input_left_col" type="text" class="rsvp" placeholder="11/6/2015"></input><br><br>
+                </div>
+                <div class="event_duration_container">
+                  <label class="text">Event Duration</label></br>
+                  <input class="text_input_left_col" type="text" class ="create" placeholder="1 HR 15 MIN"></input><br><br>
+                  
+                </div>
+
+              </div><br>
+              <label class="text">Event Windows</label>
+            </div>
+
+            <div class="column2">
+              <label class="text">Participant's Name</label></br>
+              <input class="text_input_right_col" type="text" class ="create" placeholder="Zapp Brannigan"></input><br><br>
+
+              <label class="text">Participant's Email</label><br>
+              <input class="text_input_right_col" type="email" class ="create" placeholder="example@email.domain"></input><br><br>
+
+              <label class="text">Accept Event Participation</label>
+              <div class="slider2_container">
+                <label class="text_decline">Decline</label>
+                <!-- these next 4 lines of code was borrowed from https://www.w3schools.com/howto/howto_css_switch.asp-->
+                <div class="slider2">
+                <label class="switch">
+                  <input id="slider" type="checkbox"></input>
+                  <span class="slider round"></span>
+                </label>
+                </div>
+                <label class="text_accept">Accept</label>
+              </div>
+              <br><br><br><br>
+
+              <label class="text">Participants's Calendar</label><br>
+              <input class="calFileUpload" type="file" class ="create" value="browse"></input><br><br>
+            </div>
+        </div>
+
+        <button class="rsvp_button">RSVP to Event</button>
+
+      </form>
+    </div>
+  
+
+</body>
+</html>
