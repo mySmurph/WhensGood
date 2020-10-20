@@ -22,39 +22,43 @@
       </ul>
     </div>
   
-    <div class="primarydiv">
-      <form class="form" action="">
+   <div class="primarydiv">
+      <form class="form" name = "CreateForm" action="" onsubmit="return ValidateForm()">
         <div class="titlecontainer">
             <div class="sub">
-              <input type="text" class="input1" placeholder="2F08B152DE"></input>
+              <input type="text" class="input1" placeholder="2F08B152DE" required></input>
               <label class="label1">&nbsp;&nbsp;Create Event</label>
             </div>
         </div>
 
         <div class="userInput">
-            <label class="text">Event Name</label></br>
-            <input class="textInput" type="text" class="rsvp" placeholder="Event Name"></input><br><br>
+            <label class="text" name = "Name">Event Name</label></br>
+            <input class="textInput" type="text" id = "Name" class="rsvp" placeholder="Event Name"required></input><br><br>
 
-            <label class="text">Event Date Range</label></br>
-            <input class="textInput" type="text" class ="create" placeholder="11/11/2015-11/19/2015"></input><br><br>
+            <label class="text">Event Date Start</label></br>
+            <input class="textInput" id = "startDate" type="datetime-local" class ="create" required></input><br><br>
+
+             <label class="text">Event Date End</label></br>
+            <input class="textInput" id = "endDate" type="datetime-local" class ="create"  requried></input><br><br>
 
             <label class="text">RSVP Deadline</label><br>
-            <input class="textInput" type="text" class ="create" placeholder="11/6/2015"></input><br><br>
+            <input class="textInput" id="RSVPDate"type="datetime-local" class ="create" required></input><br><br>
 
-            <label class="text">Event Duration</label><br>
-            <input class="textInput" type="text" class ="create"placeholder="1 HR 15 MIN"></input><br><br>
+            <label class="text">Event Duration(in hours)</label><br>
+            <input class="textInput" id = "duration" type="number" class ="create"placeholder="24"required></input><br><br>
 
             <label class="text">Organizer's Email</label><br>
-            <input class="textInput" type="email" class ="create" placeholder="example@email.domain"></input><br><br>
+            <input class="textInput" type="email" class ="create" placeholder="example@email.domain" required></input><br><br>
 
             <label class="text">Event Password</label><br>
-            <input class="textInput" type="password" class ="create" placeholder="password"></input><br><br>
+            <input class="textInput" type="password" id="pwd" class ="create" placeholder="password" required></input><br><br>
+            <input type="checkbox" onclick="togglePwd()">Show Password<br><br>
 
             <label class="text">Organizer's Calendar</label><br>
-            <input class="calFileUpload" type="file" class ="create" value="browse"></input><br><br>
+            <input class="calFileUpload" type="file" class ="create" value="browse" required></input><br><br>
         </div>
 
-        <button class="schedule">Schedule Event</button>
+        <button class="schedule" type = "submit">Schedule Event</button><br>
 
       </form>
     </div>
