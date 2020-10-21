@@ -18,6 +18,11 @@ div.leftcontainer{
     display: inline-block;
     vertical-align: top;
 }
+nav.leftcontainer{
+    margin-right:10px;
+    display: inline-block;
+    vertical-align: top;
+}
 
 .img{
     height: 65px;
@@ -498,35 +503,62 @@ particular project*/
 .increment_button_container{
     display: block;
     position: absolute;
+}
+.bc1{
     top: 230px;
     left: 410px;
 }
+.bc2{
+    top: 25px;
+    left: 555px;
+}
+
 .up_button{
     display: block;
     height: 20px;
     position: absolute;
-    top: 3px;
 }
 .up_button:hover{
     transform: scale(1.3);
+}
+.ub1{
+    top: 3px;
+}
+.ub2{
+    top: -6px;
 }
 .down_button{
     display: block;
     height: 15px;
     width: 30px;
     position: absolute;
-    left: 2.5px;
-    top: 20px;
+
 }
 .down_button:hover{
     transform: scale(1.3);
 }
-.c1{
+
+.db1{
+    left: 2.5px;
+    top: 20px;
+}
+.db2{
+    left: 2.5px;
+    top: 11px;
+}
+
+.calender{
     position: absolute;
+}
+
+.c1{
     left: 410px;
 }
 
 .c2{
-    position: absolute;
     left: 410px;
+}
+.c3{
+    left: 258px;
+    top: 21px;
 }

@@ -13,7 +13,7 @@
 
 <body>
   <h1></h1>
-    <div class="leftcontainer">
+    <nav class="leftcontainer">
 		  <a href="landing.html"><img src="comment.png" class="img" alt="comment pic"></a>
       <ul class="list">
         <li><a class="leftbutton1" href="createEvent.html"><div class="valign1"><p class="create_event_text">Create Event</p></div></a></li>
@@ -21,7 +21,7 @@
         <li><a class="leftbutton3" href="createEvent.html"><p class="rsvp_to_event_text">RSVP to an Event</p></a></li>
         <li><a class="leftbutton4" href="createEvent.html"><p class="schedule_event_text">Schedule Event</p></a></li>
       </ul>
-    </div>
+    </nav>
   
     <div class="primarydiv">
       <form class="form" action="">
@@ -37,20 +37,20 @@
             <input class="textInput" type="text" class="rsvp" placeholder="Event Name"></input><br><br>
 
             <label class="text">Event Date Range</label></br>
-            <input class="textInput" type="text" class ="create" placeholder="11/11/2015-11/19/2015">
-                <img id="event_date_range_calender" class="c1" src="calender.png" />
+            <input id="event_date_range" class="textInput" type="text" class ="create" placeholder="11/11/2015-11/19/2015">
+                <img id="event_date_range_calender" class="calender c1" src="calender.png" />
             </input><br><br>
 
             <label class="text">RSVP Deadline</label><br>
-            <input class="textInput" type="text" class ="create" placeholder="11/6/2015">
+            <input id="rsvp_deadline" class="textInput" type="text" class ="create" placeholder="11/6/2015">
               <img id="deadline_calender" class="calender c2" src="calender.png" />
             </input><br><br>
 
             <label class="text">Event Duration</label><br>
             <input id="event_duration_input" class="textInput" type="text" class ="create"placeholder="1 HR 15 MIN">
-            <div class="increment_button_container">
-              <img id="up_button" class="up_button" src="upButton.png" />
-              <img id="down_button" class="down_button" src="downButton.png" />
+            <div class="increment_button_container bc1">
+              <img id="up_button" class="up_button ub1" src="upButton.png" />
+              <img id="down_button" class="down_button db1" src="downButton.png" />
             </div>
             </input><br><br>
 

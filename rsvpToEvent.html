@@ -8,11 +8,12 @@
 <!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
   <title>Sample</title> 
   <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <script type="text/javascript" src="rsvp_to_event.js"></script>
 </head>
 
 <body>
   <h1></h1>
-    <div class="leftcontainer">
+    <nav class="leftcontainer">
 		  <a href="landing.html"><img src="comment.png" class="img" alt="comment pic"></a>
       <ul class="list">
         <li><a class="leftbutton1" href="createEvent.html"><div class="valign1"><p class="create_event_text">Create Event</p></div></a></li>
@@ -20,7 +21,7 @@
         <li><a class="leftbutton3" href="createEvent.html"><p class="rsvp_to_event_text">RSVP to an Event</p></a></li>
         <li><a class="leftbutton4" href="createEvent.html"><p class="schedule_event_text">Schedule Event</p></a></li>
       </ul>
-    </div>
+    </nav>
   
     <div class="primarydiv">
       <form class="form" action="">
@@ -36,12 +37,18 @@
               <div class="block_inline">
                 <div class="rsvp_deadline_container">
                   <label class="text">RSVP Deadline</label></br>
-                  <input class="text_input_left_col" type="text" class="rsvp" placeholder="11/6/2015"></input><br><br>
+                  <input id="rsvp_deadline" class="text_input_left_col" type="text" placeholder="11/6/2015">
+                    <img id="deadline_calender" class="calender c3" src="calender.png" />
+                  </input><br><br>
                 </div>
                 <div class="event_duration_container">
                   <label class="text">Event Duration</label></br>
-                  <input class="text_input_left_col" type="text" class ="create" placeholder="1 HR 15 MIN"></input><br><br>
-                  
+                  <input id="event_duration_input" class="text_input_left_col" type="text" placeholder="1 HR 15 MIN">
+                    <span class="increment_button_container bc2">
+                      <img id="up_button" class="up_button ub2" src="upButton.png" />
+                      <img id="down_button" class="down_button db2" src="downButton.png" />
+                    </span>
+                  </input><br><br>
                 </div>
 
               </div><br>
@@ -50,10 +57,10 @@
 
             <div class="column2">
               <label class="text">Participant's Name</label></br>
-              <input class="text_input_right_col" type="text" class ="create" placeholder="Zapp Brannigan"></input><br><br>
+              <input class="text_input_right_col" type="text" placeholder="Zapp Brannigan"></input><br><br>
 
               <label class="text">Participant's Email</label><br>
-              <input class="text_input_right_col" type="email" class ="create" placeholder="example@email.domain"></input><br><br>
+              <input class="text_input_right_col" type="email" placeholder="example@email.domain"></input><br><br>
 
               <label class="text">Accept Event Participation</label>
               <div class="slider2_container">
@@ -70,7 +77,7 @@
               <br><br><br><br>
 
               <label class="text">Participants's Calendar</label><br>
-              <input class="calFileUpload" type="file" class ="create" value="browse"></input><br><br>
+              <input class="calFileUpload" type="file" value="browse"></input><br><br>
             </div>
         </div>
 
@@ -79,6 +86,6 @@
       </form>
     </div>
   
-
+  <script type="text/javascript" src="rsvp_to_event_r.js"></script>
 </body>
 </html>
