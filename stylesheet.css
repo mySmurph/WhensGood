@@ -494,3 +494,30 @@ particular project*/
     top: 350px;
     left: 900px;
 }
+
+.increment_button_container{
+    display: block;
+    position: absolute;
+    top: 230px;
+    left: 410px;
+}
+.up_button{
+    display: block;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+}
+.up_button:hover{
+    transform: scale(1.3);
+}
+.down_button{
+    display: block;
+    height: 15px;
+    width: 30px;
+    position: absolute;
+    left: 2.5px;
+    top: 20px;
+}
+.down_button:hover{
+    transform: scale(1.3);
+}

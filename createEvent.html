@@ -8,6 +8,7 @@
 <!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
   <title>Sample</title> 
   <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <script type="text/javascript" src="create_event.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,12 @@
             <input class="textInput" type="text" class ="create" placeholder="11/6/2015"></input><br><br>
 
             <label class="text">Event Duration</label><br>
-            <input class="textInput" type="text" class ="create"placeholder="1 HR 15 MIN"></input><br><br>
+            <input id="event_duration_input" class="textInput" type="text" class ="create"placeholder="1 HR 15 MIN">
+            <div class="increment_button_container">
+              <img id="up_button" class="up_button" src="upButton.png" />
+              <img id="down_button" class="down_button" src="downButton.png" />
+            </div>
+            </input><br><br>
 
             <label class="text">Organizer's Email</label><br>
             <input class="textInput" type="email" class ="create" placeholder="example@email.domain"></input><br><br>
@@ -50,8 +56,8 @@
             <label class="text">Event Password</label><br>
             <input class="textInput" type="password" class ="create" placeholder="password"></input><br><br>
 
-            <label class="text">Organizer's Calendar</label><br>
-            <input class="calFileUpload" type="file" class ="create" value="browse"></input><br><br>
+            <label class="text cal_button" for="cal_upload">Organizer's Calendar</label><br>
+            <input id="cal_upload" class="calFileUpload" type="file" class ="create" value="browse"></input><br><br>
         </div>
 
         <button class="schedule">Schedule Event</button>
@@ -59,6 +65,6 @@
       </form>
     </div>
   
-
+  <script type="text/javascript" src="create_event_r.js"></script>
 </body>
 </html>
