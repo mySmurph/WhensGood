@@ -521,3 +521,12 @@ particular project*/
 .down_button:hover{
     transform: scale(1.3);
 }
+.c1{
+    position: absolute;
+    left: 410px;
+}
+
+.c2{
+    position: absolute;
+    left: 410px;
+}

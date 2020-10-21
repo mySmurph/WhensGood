@@ -36,3 +36,11 @@ function decrementValueHold(){
     domEventDurationInput.value = `${hour} HR ${min} MIN`;
     setTimeout(decrementValueHold, 90);
 }
+
+function selectDateRange(){
+
+}
+
+function selectDeadline(){
+    
+}

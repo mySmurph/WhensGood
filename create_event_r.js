@@ -5,11 +5,13 @@ let domUpButton = document.getElementById("up_button");
 let domDownButton = document.getElementById("down_button");
 
 let domEventDurationInput = document.getElementById("event_duration_input");
-
-// domUpButton.addEventListener("click", incrementValue, false);
-// domDownButton.addEventListener("click", decrementValue, false);
+let domEventDateRange = document.getElementById("event_date_range_calender");
+let domRSVPDeadline = document.getElementById("deadline_calender");
 
 domUpButton.addEventListener("mousedown", incrementValueHold, false);
 domUpButton.addEventListener("mouseup", stop_setTimeout, false);
 domDownButton.addEventListener("mouseup", stop_setTimeout, false);
 domDownButton.addEventListener("mousedown", decrementValueHold, false);
+
+domEventDateRange.addEventListener("click", selectDateRange, false);
+domRSVPDeadline.addEventListener("click", selectDeadline, false);
