@@ -114,10 +114,6 @@ button.schedule{
     margin-left: 40px;
 }
 
-.calFileUpload{
-    font-size: 16px;
-    margin-left: 40px;
-}
 
 div.userbuttons{
     position: relative;
@@ -561,4 +557,76 @@ particular project*/
 .c3{
     left: 258px;
     top: 21px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.cal_file_upload{
+    font-size: 16px;
+}
+
+.create_event_calender_upload{
+    margin-left: 40px;
+}
+
+.rsvp_to_event_calender_upload{
+    margin-left: 40px;
+}
+
+
+.custom_file_upload {
+    position: absolute;
+    height: 0px;
+    width: 75px;
+    border-radius: 0px 10px 10px 0px;
+
+    background-color: #91D9BF;
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+.create_event_label{
+    top: 455px;
+    left: 257px;
+
+}
+
+.rsvp_to_event_label{
+    top: 240px;
+    left: 257px;
+}
+
+.fixed_input{
+    position: absolute;
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 40px;
+    border: none;
+    font-size: 16px;
+}
+.create_e_file_input_button{
+    top:455px;
+    left: 2px;
+    height: 28px;
+    width: 210px;
+}
+
+.rsvp_to_event_file_input_button{
+    top:240px;
+    left: 2px;
+    height: 28px;
+    width: 210px;
+}
+
+.file_upload_button_text{
+    position: absolute;
+    left:23px;
+    top: 5px;
+    font-size: 18px;
+}
+input[type="text"], input[type="password"], input[type="email"], textarea, select { 
+    outline: none;
 }

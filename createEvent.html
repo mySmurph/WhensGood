@@ -55,13 +55,17 @@
             </input><br><br>
 
             <label class="text">Organizer's Email</label><br>
-            <input class="textInput" type="email" class ="create" placeholder="example@email.domain"></input><br><br>
+            <input class="textInput" type="email" placeholder="example@email.domain"></input><br><br>
 
             <label class="text">Event Password</label><br>
-            <input class="textInput" type="password" class ="create" placeholder="password"></input><br><br>
+            <input class="textInput" type="password" placeholder="password"></input><br><br>
 
-            <label class="text cal_button" for="cal_upload">Organizer's Calendar</label><br>
-            <input id="cal_upload" class="calFileUpload" type="file" class ="create" value="browse"></input><br><br>
+            <label class="text cal_button">Organizer's Calendar</label><br>
+
+            <label class="custom_file_upload create_event_label" for="cal_upload"><span class="file_upload_button_text">Browse</span></label>
+            <input type="text" class="fixed_input create_e_file_input_button" readonly="readonly" placeholder="Choose File..."></input>
+            <input id="cal_upload" class="cal_file_upload create_event_calender_upload" type="file" class ="create" value="browse"></input><br><br>
+            
         </div>
 
         <button class="schedule">Schedule Event</button>
