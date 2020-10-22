@@ -12,85 +12,73 @@
 </head>
 
 <body>
-  <h1></h1>
-    <nav class="leftcontainer">
-		  <a href="landing.html"><img src="comment.png" class="img" alt="comment pic"></a>
-      <ul class="list">
-        <li><a class="leftbutton1" href="createEvent.html"><div class="valign1"><p class="create_event_text">Create Event</p></div></a></li>
-        <li><a class="leftbutton2" href="createEvent.html"><p class="edit_event_text">Edit Event</p></a></li>
-        <li><a class="leftbutton3" href="createEvent.html"><p class="rsvp_to_event_text">RSVP to an Event</p></a></li>
-        <li><a class="leftbutton4" href="createEvent.html"><p class="schedule_event_text">Schedule Event</p></a></li>
-      </ul>
-    </nav>
-  
-    <div class="primarydiv">
-      <form class="form" action="">
-        <div class="titlecontainer">
-            <div class="sub">
-              <input type="text" class="input1" placeholder="2F08B152DE"></input>
-              <label class="label1">&nbsp;&nbsp;RSVP to Event</label>
-            </div>
-        </div>
-
-        <div class="userInput">
-            <div class="column1">
-              <div class="block_inline">
-                <div class="rsvp_deadline_container">
-                  <label class="text">RSVP Deadline</label></br>
-                  <input id="rsvp_deadline" class="text_input_left_col" type="text" placeholder="11/6/2015">
-                    <img id="deadline_calender" class="calender c3" src="calender.png" />
-                  </input><br><br>
+	<nav>
+	    <a href="landing.html"><img src="comment.png" class="img" alt="comment pic"></a>
+		<ul class="list">
+			<li><a class="button" href="createEvent.html">Create Event</a></li>
+			<li><a class="button" href="createEvent.html">Edit Event</a></li>
+			<li><a class="button" href="createEvent.html">RSVP to an Event</a></li>
+			<li><a class="button" href="createEvent.html">Schedule Event</a></li>
+		</ul>
+	</nav>
+    <main>
+        <h1>
+            RSVP to Event!!
+        </h1>
+        <form action="">
+            <!-- <div class="titlecontainer">
+                <div class="sub">
+                <input type="text" class="input1" placeholder="2F08B152DE"></input>
+                <label class="label1">&nbsp;&nbsp;RSVP to Event</label>
                 </div>
-                <div class="event_duration_container">
-                  <label class="text">Event Duration</label></br>
-                  <input id="event_duration_input" class="text_input_left_col" type="text" placeholder="1 HR 15 MIN">
-                    <span class="increment_button_container bc2">
-                      <img id="up_button" class="up_button ub2" src="upButton.png" />
-                      <img id="down_button" class="down_button db2" src="downButton.png" />
-                    </span>
-                  </input><br><br>
+            </div> -->
+
+            <div class="gridContainer">
+                <label>RSVP Deadline</label></br>
+                <input id="rsvp_deadline" class="text_input_left_col" type="date" placeholder="11/6/2015">
+                </input>
+
+
+                <label>Event Duration</label></br>
+
+                <div class="textInput">
+                    <input type="number" class="durration_time" id="hr" min="0" max="12" value="0">HR</input>
+                    <input type="number" class="durration_time" id="min" min="0" max="60" step="15" value="0">MIN</input>
                 </div>
 
-              </div><br>
-              <label class="text">Event Windows</label>
-            </div>
+                <label>Event Windows</label>
 
-            <div class="column2">
-              <label class="text">Participant's Name</label></br>
-              <input class="text_input_right_col" type="text" placeholder="Zapp Brannigan"></input><br><br>
 
-              <label class="text">Participant's Email</label><br>
-              <input class="text_input_right_col" type="email" placeholder="example@email.domain"></input><br><br>
+                <label class="text">Participant's Name</label>
+                <input class="text_input_right_col" type="text" placeholder="Zapp Brannigan"></input>
 
-              <label class="text">Accept Event Participation</label>
-              <div class="slider2_container">
-                <label class="text_decline">Decline</label>
-                <!-- these next 4 lines of code was borrowed from https://www.w3schools.com/howto/howto_css_switch.asp-->
-                <div class="slider2">
-                <label class="switch">
-                  <input id="slider" type="checkbox"></input>
-                  <span class="slider round"></span>
-                </label>
+                <label>Participant's Email</label>
+                <input class="text_input_right_col" type="email" placeholder="example@email.domain"></input>
+
+                <label>Accept Event Participation</label>
+
+                <div class="slider2_container">
+                    <label>Decline</label>
+                    <!-- these next 4 lines of code was borrowed from https://www.w3schools.com/howto/howto_css_switch.asp-->
+                    <div class="slider2">
+                    <label class="switch">
+                        <input id="slider" type="checkbox"></input>
+                        <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <label>Accept</label>
                 </div>
-                <label class="text_accept">Accept</label>
-              </div>
-              <br><br><br><br>
-
-              <label class="text">Participants's Calendar</label><br>
-            <label class="custom_file_upload rsvp_to_event_label" for="cal_upload"><span class="file_upload_button_text">Browse</span></label>
-            <input type="text" class="fixed_input rsvp_to_event_file_input_button" readonly="readonly" placeholder="Choose File..."></input>
-            <input id="cal_upload" class="cal_file_upload rsvp_to_event_calender_upload" type="file" class ="create" value="browse"></input><br><br>
 
 
+                <label>Participants's Calendar</label><br>
+                <label class="custom_file_upload rsvp_to_event_label" for="cal_upload"><span class="file_upload_button_text">Browse</span></label>
+                <input type="text" class="fixed_input rsvp_to_event_file_input_button" readonly="readonly" placeholder="Choose File..."></input>
+                <input id="cal_upload" class="cal_file_upload rsvp_to_event_calender_upload" type="file" class ="create" value="browse"></input>
 
+                <button class="rsvp_button">RSVP to Event</button>
             </div>
-        </div>
-
-        <button class="rsvp_button">RSVP to Event</button>
-
-      </form>
-    </div>
-  
+        </form>
+  </main>
   <script type="text/javascript" src="rsvp_to_event_r.js"></script>
 </body>
 </html>

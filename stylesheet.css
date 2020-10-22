@@ -1,61 +1,18 @@
-div.titlecontainer {
-    height: 40px;
-    width: 100%;
-    border-radius: 10px;
-    background-color:#378C7D;
-    color: white;
-    font-size: 16px;
-    text-align: left;
-    border: none;
-    position: absolute;
-    vertical-align: top;
-    display: inline-block;
-}
-
-
-div.leftcontainer{
-    margin-right:10px;
-    display: inline-block;
-    vertical-align: top;
-}
-nav.leftcontainer{
-    margin-right:10px;
-    display: inline-block;
-    vertical-align: top;
-}
-
 .img{
     height: 65px;
     width: 160px; 
     display: inline-block;
 }
 
-div.primarydiv {
-    width: 1400px;
-    height: 900px;
-    display: inline-block;
-    justify-content: center;
-    margin: 0 auto;
-    position: relative;
-    vertical-align: top;
-    border-radius: 10px;
-}
-
-p {
-    font-weight: bold;
-    font-size: larger;
-
-}
-
-.titlelabel{
+/* .titlelabel{
     font-weight: bold;
     font-size: larger;
     vertical-align: center;
     position: relative;
     top:17%;
-}
+} */
 
-.input1{
+/* .input1{
     color: black;
     font-size: 14px;
     height: 18px;
@@ -73,7 +30,7 @@ div.userInput{
     position: relative;
     top: 10%;
     left: 20px;
-}
+} */
 
 .textInput{
 	/* height: 28px; */
@@ -106,28 +63,11 @@ button.schedule{
     left: 4%;
 }
 
-.form{
-    background-color: #F2F1DF;
-    width: 1400px;
-    height: 900px;
-    display: inline-block;
-    justify-content: center;
-    margin: 0 auto;
-    display: inline-block;
-    position: relative;
-    vertical-align: top;
-}
-.text{
-    font-size: 20px;
-    margin-left: 40px;
-}
-
-
-div.userbuttons{
+/* div.userbuttons{
     position: relative;
     top: 5%;
     left: 42%;
-}
+} */
 
 .rsvp{
     -webkit-appearance: button;
@@ -145,13 +85,6 @@ div.userbuttons{
     border: none;
 }
 
-.button1_text{
-    font-size: larger;
-    text-align: center; 
-    position: absolute;
-    top: 13%;
-    left: 2.5%;
-}
 .create{
     -webkit-appearance: button;
     -moz-appearance: button;
@@ -168,78 +101,6 @@ div.userbuttons{
     border: none;
 }
 
-.button2_text{
-    font-size: larger;
-    text-align: center; 
-    position: absolute;
-    top: 63%;
-    left: 3%;
-}
-
-.leftbutton1{
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-
-    color: black;
-    height: 26px;
-    width: 80px;
-    border-radius: 17px;
-    background-color:#91D9BF;
-    border: none;
-    position: absolute;
-    top: 10%;
-    left: 1%;
-}
-.leftbutton2{
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-
-    color: black;
-    height: 26px;
-    width: 78px;
-    border-radius: 17px;
-    background-color:#91D9BF;
-    border: none;
-    position: absolute;
-    top: 13.2%;
-    left: 1%;
-}
-.leftbutton3{
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-
-    color: black;
-    height: 26px;
-    width: 110px;
-    border-radius: 17px;
-    background-color:#91D9BF;
-    border: none;
-    position: absolute;
-    top:16.4%;
-    left: 1%;
-}
-.leftbutton4{
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-    color: black;
-    height: 26px;
-    width: 100px;
-    border-radius: 17px;
-    background-color:#91D9BF;
-    border: none;
-    text-align: center;
-    position: absolute;
-    top: 19.6%;
-    left: 1%;
-}
 .create_event_text{
     position: relative;
     top: -6px;
@@ -266,39 +127,13 @@ div.userbuttons{
     left: 9px;
     font-size: 12px;
 }
-.list{
-    list-style-type: none;
+
+.textEvent{
+    font-size: 20px;
+    margin-left: 2px;
+    visibility: hidden;
 }
-
-.RSVPform{
-    background-color: #F2F1DF;
-    width: 1400px;
-    height: 900px;
-    display: inline-block;
-    justify-content: center;
-    margin: 0 auto;
-    display: inline-block;
-    position: relative;
-    vertical-align: top;
-}
-
-.userInputContainer{
-    /* display: grid;
-    grid-template-rows: 1fr;
-    justify-items: center; */
-    /* position: relative;
-    top:10px; */
-    /* background-color: #91D9BF;
-    border-radius: 10px;
-    height:230px;
-    width:330px;
-    padding:10px;  */
-}
-
-
-
-
-.input{
+ .input{
     height: 25px;
     width: 290px;
     border-radius: 10px;
@@ -445,44 +280,6 @@ particular project*/
 
 /* END rsvpView css */
 
-
-  .textEvent{
-    font-size: 20px;
-    margin-left: 2px;
-    visibility: hidden;
-  }
-  .textCode{
-    font-size: 20px;
-    margin-left: 2px;
-  }
-  .column1{
-      position: absolute;
-      top: -40px;
-  }
-  .column2{
-      position: absolute;
-      top: -40px;
-      left: 60%;
-  }
-  .block_inline{
-      display: inline-flex;
-  }
-  .text_input_left_col{
-    height: 25px;
-    width: 250px;
-    border-radius: 7px;
-    margin-left: 40px;
-    border: none;
-    font-size: 16px;
-}
-.text_input_right_col{
-    height: 25px;
-    width: 400px;
-    border-radius: 7px;
-    margin-left: 40px;
-    border: none;
-    font-size: 16px;
-}
 .switch2 {
     position: absolute;
     width: 53px;
@@ -499,21 +296,21 @@ particular project*/
     height: 0;
     border-radius: 15px;
   }
-  .text_accept{
+  /* .text_accept{
     font-size: 18px;
     margin-left: 10px;
     position: absolute;
     top: 34%;
     left: -65px;
-  }
-  .text_decline{
+  } */
+  /* .text_decline{
     font-size: 18px;
     margin-right: 6px;
     position: absolute;
     top: 34%;
     left: 80px;
     font-size: 18px;
-  }
+  } */
   .slider2_container{
       position: absolute;
       top: 170px;
@@ -537,69 +334,6 @@ particular project*/
     left: 900px;
 }
 
-.increment_button_container{
-    display: block;
-    position: relative;
-}
-.bc1{
-    /* top: 230px;
-    left: 410px; */
-}
-.bc2{
-    /* top: 25px;
-    left: 555px; */
-}
-
-.up_button{
-    display: block;
-    height: 20px;
-    position: absolute;
-}
-.up_button:hover{
-    transform: scale(1.3);
-}
-.ub1{
-    top: 3px;
-}
-.ub2{
-    top: -6px;
-}
-.down_button{
-    display: block;
-    height: 15px;
-    width: 30px;
-    position: absolute;
-
-}
-.down_button:hover{
-    transform: scale(1.3);
-}
-
-.db1{
-    left: 2.5px;
-    top: 20px;
-}
-.db2{
-    left: 2.5px;
-    top: 11px;
-}
-
-.calender{
-    position: absolute;
-}
-
-.c1{
-    left: 410px;
-}
-
-.c2{
-    left: 410px;
-}
-.c3{
-    left: 258px;
-    top: 21px;
-}
-
 input[type="file"] {
     display: none;
 }
@@ -615,6 +349,7 @@ input[type="file"] {
 .rsvp_to_event_calender_upload{
     margin-left: 40px;
 }
+
 .custom_file_upload {
     position: absolute;
     height: 0px;
@@ -696,13 +431,10 @@ body{
 }
 nav{
     padding:10pt;
-    /* display: inline-block; */
-    /* vertical-align: top; */
     width: 150pt;
     float: left;
 }
 h1{
-    /* height: 40px; */
     width: inherit;
     padding: 5pt;
     border-radius: 10px;
@@ -711,10 +443,6 @@ h1{
     font-size: 16px;
     text-align: left;
     position: sticky;
-    /* border: none;
-    position: absolute;
-    vertical-align: top; */
-    /* display: inline-block; */
 }
 
 
@@ -731,10 +459,8 @@ main {
     background-color: #F2F1DF;
     min-height: calc(100vh - 20px);
     border-radius: 10px;
-    /* text-align: center; */
 }
 .content{
-    /* display: inline-block; */
     margin:0 auto;
     width:inherit;
 }
