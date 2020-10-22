@@ -590,7 +590,7 @@ input[type="file"] {
 
     background-color: #91D9BF;
     display: inline-block;
-    padding-top: 10px;
+    padding-top: 6px;
     padding-left: 30px;
     padding-bottom: 20px;
     cursor: pointer;
@@ -611,7 +611,7 @@ input[type="file"] {
 } */
 .create_event_label{
     top: 490px;
-    left: 490px;
+    left: 516px;
 
 }
 
@@ -630,22 +630,22 @@ input[type="file"] {
 .create_e_file_input_button{
     top:490px;
     left: 240px;
-    height: 28px;
-    width: 210px;
+    height: 23px;
+    width: 231px;
 }
 
 .rsvp_to_event_file_input_button{
     top:240px;
     left: 2px;
-    height: 28px;
+    height: 23px;
     width: 210px;
 }
 
 .file_upload_button_text{
     position: absolute;
     left:23px;
-    top: 2px;
-    font-size: 18px;
+    top: 4px;
+    font-size: 16px;
 }
 
 
@@ -756,4 +756,13 @@ ul li{
 }
 label{
 	font-size: 14pt;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(calender.png) no-repeat;
+    width: 18px;
+    height: 17px;
+    border-width: thin;
 }
