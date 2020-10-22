@@ -85,7 +85,8 @@ div.userInput{
 	background-color: white;
 }
 .durration_time{
-	padding-left: 15pt;
+    padding-left: 15pt;
+    height: 14px;
 }
 .half{
 	width:120pt;
