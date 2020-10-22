@@ -79,17 +79,13 @@ div.userInput{
 	/* height: 28px; */
 	padding: 3pt;
     width: 250pt;
-	border-radius: 7px;
-    /* margin-left: 40px; */
+	border-radius: 5pt;
     border: none;
 	font-size: 16px;
 	background-color: white;
 }
 .durration_time{
-	border: hidden;
 	padding-left: 15pt;
-
-	outline: none;
 }
 .half{
 	width:120pt;
@@ -585,20 +581,29 @@ input[type="file"] {
 .rsvp_to_event_calender_upload{
     margin-left: 40px;
 }
+.butt_block{
+	width: 250pt;
+	display: block;
+	overflow: hidden;
+}
+.butt_left{
 
-
-.custom_file_upload {
-    position: absolute;
-    height: 0px;
-    width: 75px;
-    border-radius: 0px 10px 10px 0px;
+	width:60%;
+	border-radius: 5pt 0pt 0pt 5pt;
+	/* overflow: hidden; */
+	vertical-align:top;
+	display: inline-block;
+}
+.butt_right{
+    border-radius: 0pt 5pt 5pt 0pt;
 
     background-color: #91D9BF;
-    display: inline-block;
-    padding-top: 10px;
-    padding-left: 30px;
-    padding-bottom: 20px;
-    cursor: pointer;
+	/* display: inline-block; */
+	width:35%;
+	cursor: pointer;
+	overflow: hidden;
+	vertical-align:top;
+	float: right;
 }
 .create_event_label{
     top: 455px;
@@ -633,13 +638,14 @@ input[type="file"] {
 }
 
 .file_upload_button_text{
-    position: absolute;
+    /* position: absolute; */
     left:23px;
     top: 5px;
     font-size: 18px;
 }
-input[type="text"], input[type="password"], input[type="email"], textarea, select { 
-    outline: none;
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea, select { 
+	outline: none;
+	border: hidden;
 }
 
 
@@ -723,16 +729,10 @@ main {
     display: grid;
     grid-template-columns: auto auto; 
 }
-.gridLeft{
-    /* grid-column: 1; */
-    /* grid-area: 1/1/2/2; */
-}
-.gridRight{
-    /* grid-column: 2; */
 
-}
 .span{
 	width: inherit;
+	margin: auto;
 }
 .red{
 	background-color:#F24B59;
