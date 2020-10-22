@@ -12,48 +12,50 @@
 </head>
 
 <body id="body">
-  <h1></h1>
-    <div class="leftcontainer">
-		  <a href="landing.html"><img src="comment.png" class="img" alt="comment pic"></a>
-      <ul class="list">
-        <li><a class="leftbutton1" href="createEvent.html"><div class="valign1"><p class="create_event_text">Create Event</p></div></a></li>
-        <li><a class="leftbutton2" href="createEvent.html"><p class="edit_event_text">Edit Event</p></a></li>
-        <li><a class="leftbutton3" href="createEvent.html"><p class="rsvp_to_event_text">RSVP to an Event</p></a></li>
-        <li><a class="leftbutton4" href="createEvent.html"><p class="schedule_event_text">Schedule Event</p></a></li>
-      </ul>
-    </div>
+    <nav>
+	    <a href="landing.html"><img src="comment.png" class="img" alt="comment pic"></a>
+		<ul class="list">
+			<li><a class="button" href="createEvent.html">Create Event</a></li>
+			<li><a class="button" href="createEvent.html">Edit Event</a></li>
+			<li><a class="button" href="createEvent.html">RSVP to an Event</a></li>
+			<li><a class="button" href="createEvent.html">Schedule Event</a></li>
+		</ul>
+    </nav>
   
-    <div class="primarydiv">
-      <form class="RSVPform" action="">
-
-        <div class="titlecontainer">
-            
-              <label class="titlelabel">&nbsp;&nbsp;I'll check my schedule...</label>
-        </div>
-          <div class="userInputContainer">
-            <div class="center">
-              <label class="textCode">Enter Event Code</label><br>
-              <input type="text" class="input_code" placeholder="2F088152DE"></input>
-              <br><br>
-              <label class="textParticipant">Participant</label>
-
-  <!-- these next 4 lines of code was borrowed from https://www.w3schools.com/howto/howto_css_switch.asp-->
-              <label class="switch">
-                <input id="slider" type="checkbox"></input>
-                <span class="slider round"></span>
-              </label>
-        
-              <label class="textOrganizer">Organizer</label>
-              <br><br>
-
-              <label id="password_text" class="textEvent">Enter Event Password</label><br>
-              <input id="password_input" type="text" class="input" placeholder="password"></input>
-              <br><br>
-              <button class="submit">Submit</button></br>
+  <main>
+	<h1>
+		I'll check my schedule...
+	</h1>
+          <div class="center"> <!--centers across larger container-->
+            <div class="inner_layout">
+             <div class="userInputContainer"> <!---->
+                <ul>
+					<li>
+                        <label class="textCode">Enter Event Code</label><br>
+                        <input type="text" class="input_code" placeholder="2F088152DE"></input>
+					</li>
+                    <li>
+                        <!-- these next 4 lines of code was borrowed from https://www.w3schools.com/howto/howto_css_switch.asp-->
+                        <div class="switch_container">
+                        <label class="textParticipant">Participant</label>
+                        <label class="switch">
+                        <input id="slider" type="checkbox"></input>
+                        <span class="slider round"></span>
+                        </label>
+                        <label class="textOrganizer">Organizer</label>
+                        </div>
+                    </li>    
+					<li>
+                        <label id="password_text" class="textEvent">Enter Event Password</label><br>
+                        <input id="password_input" type="text" class="input" placeholder="password"></input>
+					</li>
+					<li>
+                        <button class="submit">Submit</button></br>
+					</li>
+             </div>
             </div>
           </div>
       </form>
-    </div>
   <script type="text/javascript" src="rsvpView_r.js"></script>
 </body>
 </html>
