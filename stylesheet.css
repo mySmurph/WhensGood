@@ -283,52 +283,20 @@ div.userbuttons{
 }
 
 .userInputContainer{
-    display: grid;
+    /* display: grid;
     grid-template-rows: 1fr;
-    justify-items: center;
-    /* position:absolute;
-    top: 13%;
-    left: 37.5%; */
-    background-color: #91D9BF;
+    justify-items: center; */
+    /* position: relative;
+    top:10px; */
+    /* background-color: #91D9BF;
     border-radius: 10px;
     height:230px;
     width:330px;
-    padding:10px; 
-}
-.center{
-    display: grid;
-    grid-template-rows: 1fr;
-    justify-items: center;
+    padding:10px;  */
 }
 
-.textParticipant{
-    font-size: 18px;
-    margin-right: 6px;
-    position: absolute;
-    top: 22%;
-    left: 50%;
-    font-size: 18px;
-}
 
-.textOrganizer{
-    font-size: 18px;
-    margin-left: 10px;
-    position: absolute;
-    top: 22%;
-    left: 65%;
-}
 
-.submit{
-
-    height: 25px;
-    width: 300px;
-    border-radius: 10px;
-    background-color:#F24B59;
-    color: white;
-    font-size: 16px;
-    text-align: center; 
-    border: none;
-}
 
 .input{
     height: 25px;
@@ -343,30 +311,85 @@ div.userbuttons{
         border-radius: 10px;
         border: none;
 }
+
+
+
+/* START rsvp css */
+.center{
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-items: center;
+}
+
+.textParticipant{
+    font-size: 18px;
+    margin-right: 6px;
+    position: relative;
+    top: 30%;
+    left: -5px;
+    font-size: 18px;
+}
+
+.textOrganizer{
+    font-size: 18px;
+    position: relative;
+    top: 30%;
+    left: 10px;
+}
+.submit{
+    position: relative;
+    top: -5px;
+    height: 25px;
+    width: 300px;
+    border-radius: 10px;
+    background-color:#F24B59;
+    color: white;
+    font-size: 16px;
+    text-align: center; 
+    border: none;
+}
+
+.inner_layout{
+
+    background-color: #91D9BF;
+    border-radius: 10px;
+    height:230px;
+    width:330px;
+    padding:10px; 
+    margin-top: 30px;
+}
+.inner_layout > div{
+    justify-items: center;
+}
+.switch_container{
+    position: relative;
+    top: -60px;
+}
+.password_container{
+    position: relative;
+    top: -30px;
+}
+
 /* the following css code was borrowed from
 https://www.w3schools.com/howto/howto_css_switch.asp  I had to adjust the code for this
 particular project*/
 /* The switch - the box around the slider */
-.inner_layout{
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-}
+
 
 .switch {
-    position: absolute;
-    width: 53px;
-    height: 25px;
-    top: 22%;
-    left: 60%; 
+    position: relative;
+    width: 45px;
+    height: 30px;
+    top: 8px;
+    left: 0px; 
     text-align: center;
   }
   
   /* Hide default HTML checkbox */
   .switch input {
     opacity: 0;
-    width: 0;
-    height: 0;
+    width: 40px;
+    height: 0px;
     border-radius: 15px;
   }
   
@@ -418,7 +441,10 @@ particular project*/
     border-radius: 50%;
   }
 
- /* end of borrowed code */
+ /* END of borrowed code */
+
+/* END rsvpView css */
+
 
   .textEvent{
     font-size: 20px;

@@ -27,32 +27,29 @@
 		I'll check my schedule...
 	</h1>
           <div class="center"> <!--centers across larger container-->
-            <div class="inner_layout">
-             <div class="userInputContainer"> <!---->
-                <ul>
-					<li>
-                        <label class="textCode">Enter Event Code</label><br>
-                        <input type="text" class="input_code" placeholder="2F088152DE"></input>
-					</li>
-                    <li>
-                        <!-- these next 4 lines of code was borrowed from https://www.w3schools.com/howto/howto_css_switch.asp-->
-                        <div class="switch_container">
-                        <label class="textParticipant">Participant</label>
-                        <label class="switch">
-                        <input id="slider" type="checkbox"></input>
-                        <span class="slider round"></span>
-                        </label>
-                        <label class="textOrganizer">Organizer</label>
-                        </div>
-                    </li>    
-					<li>
-                        <label id="password_text" class="textEvent">Enter Event Password</label><br>
-                        <input id="password_input" type="text" class="input" placeholder="password"></input>
-					</li>
-					<li>
-                        <button class="submit">Submit</button></br>
-					</li>
-             </div>
+            <div class="center inner_layout">  <!--actual container centers within container-->
+                <div>
+                    <label class="textCode">Enter Event Code</label><br>
+                    <input type="text" class="input_code" placeholder="2F088152DE"></input>
+                </div>
+            
+                <!-- these next 4 lines of code was borrowed from https://www.w3schools.com/howto/howto_css_switch.asp-->
+                <div class="switch_container">
+                    <label class="textParticipant">Participant</label>
+                    <label class="switch">
+                    <input id="slider" type="checkbox"></input>
+                    <span class="slider round"></span>
+                    </label>
+                    <label class="textOrganizer">Organizer</label>
+                </div>
+                
+                <div class="password_container">
+                    <label id="password_text" class="textEvent">Enter Event Password</label><br>
+                    <input id="password_input" type="text" class="input" placeholder="password"></input>
+                </div>
+                <div>
+                    <button class="submit">Submit</button></br>
+                </div>
             </div>
           </div>
       </form>
