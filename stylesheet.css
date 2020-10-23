@@ -123,7 +123,9 @@ main{
     left: 85px;
     margin: auto;
     top: 30px;
-    width: 1500px;
+	/* width: 1500px; */
+	width: 300pt;
+	/* maded the button smaller and easy to deal with */
 }
 .red{
 	background-color:#F24B59;
@@ -208,6 +210,29 @@ main{
     left:23px;
     position: absolute;
     top: 4px;
+}
+div > #hourTable{
+	background-color: white;
+	border-radius: 5pt;
+	overflow: hidden;
+}
+#hourTable{
+	border-collapse: collapse;
+	border: transparent dotted 15pt;
+}
+
+#hourTable td{
+	border: dotted .25pt #F2F1DF;
+	width: 32pt;
+	height: 3pt;
+}
+#hourTable tr:nth-child(4n+1), th{
+	border-bottom: solid 2pt #F2F1DF;
+}
+th{
+	font-size: 8pt;
+	font-weight: lighter;
+	vertical-align: middle;
 }
 
 /* CSS SPECIFIC TO BOTH                                             CREATE EVENT HTML FILE AND RSVP TO EVENT FILE      END */
