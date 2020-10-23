@@ -4,34 +4,6 @@
     display: inline-block;
 }
 
-/* .titlelabel{
-    font-weight: bold;
-    font-size: larger;
-    vertical-align: center;
-    position: relative;
-    top:17%;
-} */
-
-/* .input1{
-    color: black;
-    font-size: 14px;
-    height: 18px;
-    margin-left: 5px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-label.label1{
-    font-size: 20px;
-    position: relative;
-
-}
-div.userInput{
-    position: relative;
-    top: 10%;
-    left: 20px;
-} */
-
 .textInput{
 	padding: 3pt;
     width: 250pt;
@@ -294,39 +266,24 @@ particular project*/
     height: 0;
     border-radius: 15px;
   }
-  /* .text_accept{
-    font-size: 18px;
-    margin-left: 10px;
-    position: absolute;
-    top: 34%;
-    left: -65px;
-  } */
-  /* .text_decline{
-    font-size: 18px;
-    margin-right: 6px;
-    position: absolute;
-    top: 34%;
-    left: 80px;
-    font-size: 18px;
-  } */
+
   .slider2_container{
-      position: relative;
-      top: -10px;
-      left: 120px;
+      position: absolute;
+      top: 250px;
+      left: 1200px;
   }
   .slider2{
       position: absolute;
       left: -60px;
   }
   .participants_name{
-    position: relative;
-    left: 810px;
-    top: -70px;
+    position: absolute;
+    left: 1050px;
   }
   .participitants_email_title{
-    position: relative;
-    left: -28px;
-    top: -25px;
+    position: absolute;
+    left: 1050px;
+    top: 150px;
   }
   button.rsvp_button{
     height: 25px;
@@ -337,9 +294,9 @@ particular project*/
     font-size: 16px;
     text-align: center; 
     border: none;
-    position: relative;
-    top: 150px;
-    left: -26px;
+    position: absolute;
+    top: 470px;
+    left: 1050px;
 }
 
 input[type="file"] {
@@ -356,7 +313,7 @@ input[type="file"] {
 
 .rsvp_to_event_calender_upload{
     margin-left: 40px;
-    position: relative;
+    position: absolute;
     left: 700px;
 }
 
@@ -373,20 +330,7 @@ input[type="file"] {
     padding-bottom: 20px;
     cursor: pointer;
 }
-/*
-.butt_block{
-	width: 250pt;
-	display: block;
-	overflow: hidden;
-}
-.butt_left{
 
-	width:60%;
-	border-radius: 5pt 0pt 0pt 5pt;
-	/* overflow: hidden; */
-	/* vertical-align:top;
-	display: inline-block;
-} */
 .create_event_label{
     top: 490px;
     left: 516px;
@@ -394,9 +338,9 @@ input[type="file"] {
 }
 
 .rsvp_to_event_label{
-    position: relative;
-    top: 57px;
-    left: 1075px;
+    position: absolute;
+    top: 380px;
+    left: 1315px;
 }
 
 .fixed_input{
@@ -414,9 +358,9 @@ input[type="file"] {
 }
 
 .rsvp_to_event_file_input_button{
-    position: relative;
-    top:50px;
-    left: 660px;
+    position: absolute;
+    top: 380px;
+    left: 1010px;
     height: 23px;
     width: 260px;
 }
@@ -485,14 +429,16 @@ main {
     font-size: 16px;
 }
 .text_input_participants_name{
+    position: absolute;
     width: 380px;
-    left: 810px;
-    top: -70px; 
+    left: 1050px;
+    top: 80px; 
 }
 .text_input_right_col{
+    position: absolute;
     width: 380px;
-    left: -25px;
-    top: -30px; 
+    left: 1050px;
+    top: 175px; 
 }
 .decline_rsvp{
     position: relative;
@@ -505,27 +451,28 @@ main {
     left: -65px;
 }
 .accept_event_text{
-    position: relative;
-    left: 810px;
-    top: -10px;
+    position: absolute;
+    left: 1050px;
+    top: 250px;
 }
 .participants_cal_text{
-    position: relative;
-    left: 810px;
-    top: 55px;
+    position: absolute;
+    left: 1050px;
+    top: 350px;
 }
 .text_input_left_col{
-    left: 40px; 
+    position: absolute;
+    left: 300px;
+    top: 80px; 
 }
 .event_duration_text{
-    position: relative;
-    left: -510px;
-    top: -22px;
+    position: absolute;
+    left: 600px;
 }
 .rsvp_event_window_text{
-    position: relative;
-    left: -790px;
-    top: 30px;
+    position: absolute;
+    left: 300px;
+    top: 150px;
 }
 
 .event_duration_input_box{
@@ -535,13 +482,13 @@ main {
     border: none;
 	font-size: 14px;
     background-color: white;
-    position: relative;
-    top: -25px;
-    left: 320px;
+    position: absolute;
+    top: 80px;
+    left: 600px;
 }
 .rsvp_deadline_text{
-    position: relative;
-    left: 40px;
+    position: absolute;
+    left: 300px;
 }
 
 .button{
