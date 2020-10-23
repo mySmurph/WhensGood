@@ -33,7 +33,6 @@ div.userInput{
 } */
 
 .textInput{
-	/* height: 28px; */
 	padding: 3pt;
     width: 250pt;
 	border-radius: 5pt;
@@ -160,15 +159,14 @@ button.schedule{
     font-size: 18px;
     margin-right: 6px;
     position: relative;
-    top: 30%;
+    top: 8px;
     left: -5px;
-    font-size: 18px;
 }
 
 .textOrganizer{
     font-size: 18px;
     position: relative;
-    top: 30%;
+    top: 8px;
     left: 10px;
 }
 .submit{
@@ -312,13 +310,23 @@ particular project*/
     font-size: 18px;
   } */
   .slider2_container{
-      position: absolute;
-      top: 170px;
-      left: 110px;
+      position: relative;
+      top: -10px;
+      left: 120px;
   }
   .slider2{
       position: absolute;
-      left:15px;
+      left: -60px;
+  }
+  .participants_name{
+    position: relative;
+    left: 810px;
+    top: -70px;
+  }
+  .participitants_email_title{
+    position: relative;
+    left: -28px;
+    top: -25px;
   }
   button.rsvp_button{
     height: 25px;
@@ -329,9 +337,9 @@ particular project*/
     font-size: 16px;
     text-align: center; 
     border: none;
-    position: absolute;
-    top: 350px;
-    left: 900px;
+    position: relative;
+    top: 150px;
+    left: -26px;
 }
 
 input[type="file"] {
@@ -348,6 +356,8 @@ input[type="file"] {
 
 .rsvp_to_event_calender_upload{
     margin-left: 40px;
+    position: relative;
+    left: 700px;
 }
 
 .custom_file_upload {
@@ -384,8 +394,9 @@ input[type="file"] {
 }
 
 .rsvp_to_event_label{
-    top: 240px;
-    left: 257px;
+    position: relative;
+    top: 57px;
+    left: 1075px;
 }
 
 .fixed_input{
@@ -403,10 +414,11 @@ input[type="file"] {
 }
 
 .rsvp_to_event_file_input_button{
-    top:240px;
-    left: 2px;
+    position: relative;
+    top:50px;
+    left: 660px;
     height: 23px;
-    width: 210px;
+    width: 260px;
 }
 
 .file_upload_button_text{
@@ -464,6 +476,73 @@ main {
     margin:0 auto;
     width:inherit;
 }
+.rsvpinput{
+    height: 25px;
+    width: 250px;
+    border-radius: 7px;
+    position: relative;
+    border: none;
+    font-size: 16px;
+}
+.text_input_participants_name{
+    width: 380px;
+    left: 810px;
+    top: -70px; 
+}
+.text_input_right_col{
+    width: 380px;
+    left: -25px;
+    top: -30px; 
+}
+.decline_rsvp{
+    position: relative;
+    top: 30px;
+    left: -148px;
+}
+.accept_rsvp{
+    position: relative;
+    top: 30px;
+    left: -65px;
+}
+.accept_event_text{
+    position: relative;
+    left: 810px;
+    top: -10px;
+}
+.participants_cal_text{
+    position: relative;
+    left: 810px;
+    top: 55px;
+}
+.text_input_left_col{
+    left: 40px; 
+}
+.event_duration_text{
+    position: relative;
+    left: -510px;
+    top: -22px;
+}
+.rsvp_event_window_text{
+    position: relative;
+    left: -790px;
+    top: 30px;
+}
+
+.event_duration_input_box{
+	padding: 3pt;
+    width: 250pt;
+	border-radius: 5pt;
+    border: none;
+	font-size: 14px;
+    background-color: white;
+    position: relative;
+    top: -25px;
+    left: 320px;
+}
+.rsvp_deadline_text{
+    position: relative;
+    left: 40px;
+}
 
 .button{
     -webkit-appearance: button;
@@ -493,7 +572,17 @@ main {
     display: grid;
     grid-template-columns: auto auto; 
 }
+gridContainer1{
+    width:inherit;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-column-gap: 15px;
+}
 
+.gridContainer1 > div{
+    grid-auto-columns: 15px;
+    margin: 1em;
+}
 .span{
 	/* width: inherit; */
     margin: auto;
