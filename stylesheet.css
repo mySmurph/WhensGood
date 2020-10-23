@@ -1,102 +1,223 @@
-.img{
-    height: 65px;
-    width: 160px; 
-    display: inline-block;
+/* CSS SPECIFIC TO EVERY HTML FILE START */
+.span{
+    left: 85px;
+    margin: auto;
+    top: 30px;
+    width: 1500px;
+}
+.red{
+	background-color:#F24B59;
+    color: white;
+    font-weight: bold;
+	size: 24pt;
 }
 
+ul{
+	list-style: none;
+}
+
+ul li{
+	padding-bottom: 10pt;
+}
+
+label{
+	font-size: 14pt;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url(calender.png) no-repeat;
+    border-width: thin;
+    color: rgba(0, 0, 0, 0);
+    height: 17px;
+    display: block;
+    opacity: 1;
+    width: 18px;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="number"], textarea, select { 
+    border: hidden;
+    outline: none;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.gridContainer1 > div{
+    grid-auto-columns: 15px;
+    margin: 1em;
+}
+
+.button{
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    background-color:#91D9BF;
+    border: none;
+    border-radius: 17px;
+    color: black;
+    margin: auto;
+    padding: 6pt;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 120pt;
+}
+
+.big{
+    padding: 25pt;
+    width: 120pt;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-columns: auto auto; 
+    width:inherit;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav{
+    float: left;
+    padding:10pt;
+    width: 150pt;
+}
+
+h1{
+    background-color:#378C7D;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    padding: 5pt;
+    position: sticky;
+    text-align: left;
+    width: inherit;
+}
+
+
+.img{
+    display: inline-block;
+    height: 65px;
+    width: 160px; 
+}
+
+main{
+    background-color: #F2F1DF;
+    border-radius: 10px;
+    margin-left: 180pt;
+    margin-right: auto;
+    margin-top: 10pt;
+    min-height: calc(100vh - 20px);
+}
+
+/*  CSS SPECIFIC TO EVERY HTML FILE END */
+
+/* CSS SPECIFIC TO LANDING PAGE HTML FILE START */
+
+.content{
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    margin:0 auto;
+    width:inherit;
+}
+
+/* CSS SPECIFIC TO LANDING PAGE HTML FILE END */
+
 .textInput{
+    background-color: white;
+    border: none;
+    border-radius: 5pt;
+    font-size: 14px;
 	padding: 3pt;
     width: 250pt;
-	border-radius: 5pt;
-    border: none;
-	font-size: 14px;
-	background-color: white;
 }
+
 .durration_time{
-    padding-left: 15pt;
     height: 14px;
+    padding-left: 15pt;
+
 }
 .half{
 	width:120pt;
 }
 
 button.schedule{
-    height: 30px;
-    width: 92%;
-    border-radius: 10px;
     background-color:#F24B59;
+    border: none;
+    border-radius: 10px;
     color: white;
     font-size: 16px;
-    text-align: center; 
-    border: none;
-    position: absolute;
-    top: 68%;
+    height: 30px;
     left: 4%;
+    position: absolute;
+    text-align: center; 
+    top: 68%;
+    width: 92%;
 }
-
-/* div.userbuttons{
-    position: relative;
-    top: 5%;
-    left: 42%;
-} */
 
 .rsvp{
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
-    text-decoration: none;
-    color: black;
-
-    height: 40px;
-    width: 175px;
-    border-radius: 10px;
     background-color:#91D9BF;
-    padding:20px;
-    margin-top: 20px;
     border: none;
+    border-radius: 10px;
+    color: black;
+    height: 40px;
+    margin-top: 20px;
+    padding:20px;
+    text-decoration: none;
+    width: 175px;
 }
 
 .create{
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
-    text-decoration: none;
-    color: black;
-
-    height: 40px;
-    width: 175px;
-    border-radius: 10px;
     background-color:#91D9BF;
-    padding: 20px;
-    margin-top: 20px;
     border: none;
+    border-radius: 10px;
+    color: black;
+    height: 40px;
+    margin-top: 20px;
+    padding: 20px;
+    text-decoration: none;
+    width: 175px;
 }
 
 .create_event_text{
+    font-size: 12px;
+    left: 6px;
     position: relative;
     top: -6px;
-    left: 6px;
-
-    font-size: 12px;
 }
 
 .edit_event_text{
-    position: absolute;
-    top: -6px;
+    font-size: 12px;
     left: 10px;
-    font-size: 12px;
+    position: absolute;
+    top: -6px;
 }
+
 .rsvp_to_event_text{
-    position: absolute;
-    top: -6px;
+    font-size: 12px;
     left: 8px;
-    font-size: 12px;
-}
-.schedule_event_text{
     position: absolute;
     top: -6px;
-    left: 9px;
+}
+
+.schedule_event_text{
     font-size: 12px;
+    left: 9px;
+    position: absolute;
+    top: -6px;
 }
 
 .textEvent{
@@ -104,21 +225,21 @@ button.schedule{
     margin-left: 2px;
     visibility: hidden;
 }
- .input{
+
+.input{
+    border: none;
+    border-radius: 10px;
     height: 25px;
     width: 290px;
-    border-radius: 10px;
-    border: none;
     visibility: hidden;
 }
+
 .input_code{
-        height: 25px;
-        width: 290px;
-        border-radius: 10px;
-        border: none;
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    width: 290px;
 }
-
-
 
 /* START rsvp css */
 .center{
@@ -129,39 +250,39 @@ button.schedule{
 
 .textParticipant{
     font-size: 18px;
+    left: -5px;
     margin-right: 6px;
     position: relative;
     top: 8px;
-    left: -5px;
 }
 
 .textOrganizer{
     font-size: 18px;
+    left: 10px;
     position: relative;
     top: 8px;
-    left: 10px;
 }
+
 .submit{
-    position: relative;
-    top: -5px;
-    height: 25px;
-    width: 300px;
-    border-radius: 10px;
     background-color:#F24B59;
+    border: none;
+    border-radius: 10px;
     color: white;
     font-size: 16px;
+    height: 25px;
+    position: relative;
     text-align: center; 
-    border: none;
+    top: -5px;
+    width: 300px;
 }
 
 .inner_layout{
-
     background-color: #91D9BF;
     border-radius: 10px;
     height:230px;
-    width:330px;
-    padding:10px; 
     margin-top: 30px;
+    padding:10px; 
+    width:330px;
 }
 .inner_layout > div{
     justify-items: center;
@@ -182,45 +303,45 @@ particular project*/
 
 
 .switch {
-    position: relative;
-    width: 45px;
     height: 30px;
-    top: 8px;
     left: 0px; 
+    position: relative;
     text-align: center;
+    top: 8px;
+    width: 45px;
   }
   
   /* Hide default HTML checkbox */
   .switch input {
+    border-radius: 15px;
+    height: 0px;
     opacity: 0;
     width: 40px;
-    height: 0px;
-    border-radius: 15px;
   }
   
   /* The slider */
   .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #F24B59;
     -webkit-transition: .4s;
+    background-color: #F24B59;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
     transition: .4s;
   }
   
   .slider:before {
-    position: absolute;
+    -webkit-transition: .4s;
+    background-color: white;
+    bottom: 4px;
     content: "";
     height: 18px;
-    width: 18px;
     left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
+    position: absolute;
     transition: .4s;
+    width: 18px;
   }
   
   input:checked + .slider {
@@ -251,56 +372,56 @@ particular project*/
 /* END rsvpView css */
 
 .switch2 {
-    position: absolute;
-    width: 53px;
     height: 25px;
-    top: 33%;
     left: 39%; 
+    position: absolute;
     text-align: center;
+    top: 33%;
+    width: 53px;
   }
   
   /* Hide default HTML checkbox */
   .switch2 input {
+    border-radius: 15px;
+    height: 0;
     opacity: 0;
     width: 0;
-    height: 0;
-    border-radius: 15px;
   }
 
   .slider2_container{
+      left: 1200px;
       position: absolute;
       top: 250px;
-      left: 1200px;
   }
+
   .slider2{
-      position: absolute;
-      left: -60px;
+    left: -60px;
+    position: absolute;
   }
+
   .participants_name{
-    position: absolute;
     left: 1050px;
+    position: absolute;
   }
+
   .participitants_email_title{
-    position: absolute;
     left: 1050px;
+    position: absolute;
     top: 150px;
   }
+
   button.rsvp_button{
-    height: 25px;
-    width: 400px;
-    border-radius: 10px;
     background-color:#F24B59;
+    border: none;
+    border-radius: 10px;
     color: white;
     font-size: 16px;
-    text-align: center; 
-    border: none;
-    position: absolute;
-    top: 470px;
+    height: 25px;
     left: 1050px;
-}
-
-input[type="file"] {
-    display: none;
+    position: absolute;
+    text-align: center; 
+    top: 470px;
+    width: 400px;
 }
 
 .cal_file_upload{
@@ -312,259 +433,154 @@ input[type="file"] {
 }
 
 .rsvp_to_event_calender_upload{
+    left: 700px;
     margin-left: 40px;
     position: absolute;
-    left: 700px;
 }
 
 .custom_file_upload {
-    position: absolute;
-    height: 0px;
-    width: 75px;
-    border-radius: 0px 10px 10px 0px;
-
     background-color: #91D9BF;
-    display: inline-block;
-    padding-top: 6px;
-    padding-left: 30px;
-    padding-bottom: 20px;
+    border-radius: 0px 10px 10px 0px;
     cursor: pointer;
+    display: inline-block;
+    height: 0px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-top: 6px;
+    position: absolute;
+    width: 75px;
 }
 
 .create_event_label{
-    top: 490px;
     left: 516px;
-
+    top: 490px;
 }
 
 .rsvp_to_event_label{
+    left: 1315px;
     position: absolute;
     top: 380px;
-    left: 1315px;
 }
 
 .fixed_input{
-    position: absolute;
-    border-radius: 7px 0px 0px 7px;
-    margin-left: 40px;
     border: none;
+    border-radius: 7px 0px 0px 7px;
     font-size: 16px;
+    margin-left: 40px;
+    position: absolute;
 }
+
 .create_e_file_input_button{
-    top:490px;
-    left: 240px;
     height: 23px;
+    left: 240px;
+    top:490px;
     width: 231px;
 }
 
 .rsvp_to_event_file_input_button{
+    height: 23px;
+    left: 1010px;
     position: absolute;
     top: 380px;
-    left: 1010px;
-    height: 23px;
     width: 260px;
 }
 
 .file_upload_button_text{
-    position: absolute;
+    font-size: 16px;
     left:23px;
+    position: absolute;
     top: 4px;
-    font-size: 16px;
 }
 
-
-input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="number"], textarea, select { 
-	outline: none;
-	border: hidden;
-}
-
-body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-nav{
-    padding:10pt;
-    width: 150pt;
-    float: left;
-}
-h1{
-    width: inherit;
-    padding: 5pt;
-    border-radius: 10px;
-    background-color:#378C7D;
-    color: white;
-    font-size: 16px;
-    text-align: left;
-    position: sticky;
-}
-
-
-.img{
-    height: 65px;
-    width: 160px; 
-    display: inline-block;
-}
-
-main {
-    margin-left: 180pt;
-    margin-right: auto;
-    margin-top: 10pt;
-    background-color: #F2F1DF;
-    min-height: calc(100vh - 20px);
-    border-radius: 10px;
-}
-.content{
-    margin:0 auto;
-    width:inherit;
-}
 .rsvpinput{
-    height: 25px;
-    width: 250px;
-    border-radius: 7px;
-    position: relative;
     border: none;
+    border-radius: 7px;
     font-size: 16px;
+    height: 25px;
+    position: relative;
+    width: 250px;
 }
+
 .text_input_participants_name{
-    position: absolute;
-    width: 380px;
     left: 1050px;
+    position: absolute;
     top: 80px; 
-}
-.text_input_right_col{
-    position: absolute;
     width: 380px;
+}
+
+.text_input_right_col{
     left: 1050px;
-    top: 175px; 
-}
-.decline_rsvp{
-    position: relative;
-    top: 30px;
-    left: -148px;
-}
-.accept_rsvp{
-    position: relative;
-    top: 30px;
-    left: -65px;
-}
-.accept_event_text{
     position: absolute;
+    top: 175px; 
+    width: 380px;
+}
+
+.decline_rsvp{
+    left: -148px;
+    position: relative;
+    top: 30px;
+}
+
+.accept_rsvp{
+    left: -65px;
+    position: relative;
+    top: 30px;
+}
+
+.accept_event_text{
     left: 1050px;
+    position: absolute;
     top: 250px;
 }
+
 .participants_cal_text{
-    position: absolute;
     left: 1050px;
+    position: absolute;
     top: 350px;
 }
+
 .text_input_left_col{
-    position: absolute;
     left: 300px;
+    position: absolute;
     top: 80px; 
 }
+
 .event_duration_text{
-    position: absolute;
     left: 600px;
-}
-.rsvp_event_window_text{
     position: absolute;
+}
+
+.rsvp_event_window_text{
     left: 300px;
+    position: absolute;
     top: 150px;
 }
 
 .event_duration_input_box{
-	padding: 3pt;
-    width: 250pt;
-	border-radius: 5pt;
-    border: none;
-	font-size: 14px;
     background-color: white;
+    border: none;
+    border-radius: 5pt;
+    font-size: 14px;
+    left: 600px;
+    padding: 3pt;
     position: absolute;
     top: 80px;
-    left: 600px;
+    width: 250pt;
 }
+
 .rsvp_deadline_text{
-    position: absolute;
     left: 300px;
+    position: absolute;
 }
 
-.button{
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
 
-    color: black;
-
-    width: 120pt;
-    padding: 6pt;
-    margin: auto;
-    text-align: center;
-    border-radius: 17px;
-    background-color:#91D9BF;
-    border: none;
-    position: relative;
-    /* top: 10%;
-    left: 1%; */
-}
-.big{
-    width: 120pt;
-    padding: 25pt
-}
-.gridContainer{
-    width:inherit;
-    display: grid;
-    grid-template-columns: auto auto; 
-}
 gridContainer1{
-    width:inherit;
     display: grid;
     grid-template-columns: 1fr 1fr; 
     grid-column-gap: 15px;
+    width:inherit;
 }
 
-.gridContainer1 > div{
-    grid-auto-columns: 15px;
-    margin: 1em;
-}
-.span{
-	/* width: inherit; */
-    margin: auto;
-    width: 1500px;
-    left: 85px;
-    top: 30px;
-}
-.red{
-	background-color:#F24B59;
-	color: white;
-	size: 24pt;
-	font-weight: bold;
-}
-ul{
-	list-style: none;
-}
-ul li{
-	padding-bottom: 10pt;
-}
-label{
-	font-size: 14pt;
-}
-input[type="date"]::-webkit-calendar-picker-indicator {
-    color: rgba(0, 0, 0, 0);
-    opacity: 1;
-    display: block;
-    background: url(calender.png) no-repeat;
-    width: 18px;
-    height: 17px;
-    border-width: thin;
-}
 
-/* landing page */
-div.content{
-    display: grid;
-    grid-template-rows: 1fr;
-    justify-items: center;
-}
+
+
