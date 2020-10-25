@@ -2,10 +2,13 @@
 
 ul{
 	list-style: none;
+	margin: 0;
+	padding-left: 0;
 }
 
 ul li{
 	padding-bottom: 10pt;
+	margin: 0;
 }
 
 label{
@@ -50,7 +53,9 @@ input[type="file"] {
     display: grid;
 	grid-template-columns: max-content max-content; 
 	grid-gap: 25pt;
-    width:inherit;
+	width:inherit;
+	margin-left: auto;
+	margin-right: auto;
 }
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -319,16 +324,26 @@ form{
     padding:10px; 
     width:330px;
 }
+.alert{
+    background-color: #91D9BF;
+    border-radius: 5pt;
+    height:fit-content;
+    margin-top: 30px;
+    padding:10px; 
+    width:fit-content;
+}
 .inner_layout > div{
     justify-items: center;
 }
 .switch_container{
-    position: relative;
-    top: -60px;
+	position: relative;
+	display: inline-block;
+	width: 40pt;
+	height: 20pt;
 }
+  
 .password_container{
-    position: relative;
-    top: -30px;
+	display: none;
 }
 
 /* the following css code was borrowed from
@@ -386,12 +401,12 @@ particular project*/
 /* END borrowed code */
 
 .switch {
-    height: 30px;
-    left: 0px; 
-    position: relative;
-    text-align: center;
-    top: 8px;
-    width: 45px;
+    /* height: 15pt;
+    /* left: 0px;  */
+    /* position: relative; */
+    /* text-align: center; */
+    /* top: 8px; */
+    /* width: 43pt; */
   }
   
   /* Hide default HTML checkbox */
@@ -500,7 +515,7 @@ particular project*/
 }
 
 .decline_rsvp{
-    left: -148px;
+    /* left: -148px; */
     position: relative;
     top: 30px;
 }
@@ -527,14 +542,13 @@ particular project*/
     width: 0;
   }
 
-  .slider2_container{
-      left: 1200px;
-      position: absolute;
-      top: 250px;
+  .slider_container{
+      position: relative;
+	  display: inline-block;
   }
 
   .slider2{
-    left: -60px;
+    /* left: -60px; */
     position: absolute;
   }
 

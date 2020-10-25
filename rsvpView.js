@@ -1,21 +1,11 @@
+document.getElementById('slider').addEventListener("change", changeSize);
+var user_type = document.getElementById('slider');
 function changeSize(){
-
-    if(this.checked == true){
-        // increase the size of the userInputBox and show the other two elements
-        // setTimeout() pg 267-268
-
-        domPasswordText.style.visibility = "visible";
-        domInputPassword.style.visibility = "visible";
-        
+	var password = document.getElementById("password_container");
+    if(user_type.checked){
+		password.style.display = "block";
     }
-    else if (this.checked != true){
-        // decrease the size of the userInputBox and hide the two other elements
-        domPasswordText.style.visibility = "hidden";
-        domInputPassword.style.visibility = "hidden";
+    else{
+		password.style.display = "none";
     }
-}
-
-function elements_visibility(){
-    domPasswordText.style.visibility = "hidden";
-    domInputPassword.style.visibility = "hidden";
 }

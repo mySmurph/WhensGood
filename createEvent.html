@@ -8,6 +8,8 @@
 <!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
 	<title>Create Event</title> 
 	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="create_event.js"></script>
 </head>
 
@@ -80,6 +82,7 @@
 				</div>
 
 				<div>
+					<label> Select Event Windows</label>
 					<div id = "hourTable">
 						<ol class="times">
 							<li class = "day"></li>
@@ -803,7 +806,7 @@
 						</ol>
 					</div>
 					<p class = "note">
-						* hold CTRL / CMD key to select multiple event windows on the same day </br>
+						* hold CTRL / CMD key to select multiple event windows on the same day <br/>
 						* click on the Day title to clear all event windows on that day
 					</p>
 					
@@ -815,30 +818,8 @@
 
 </main>
 <p id="feedback">
-	<span>You've selected:</span> <span id="select-result"></span>.
+	<span>Time Slots:</span> <span id="select-result"></span>
 	</p>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-	$( function() {
-	  $( "#selectable-SUN, #selectable-MON, #selectable-TUE, #selectable-WED, #selectable-THR, #selectable-FRI, #selectable-SAT" ).selectable(
-	  {
-		selected: function() {
-		  var result = $( "#select-result" ).empty();
-		  $( ".ui-selected").each(function() {
-			if(jQuery(this).hasClass('day')){
-				jQuery(this).removeClass('ui-selected')
-			}else{
-				result.append( " #" + ( jQuery(this).attr('id')) );
-			}
-			
-		  });
-		  
-		}
-	  }
-	  );
-	} );
-	</script>
 
 </body>
 </html>
