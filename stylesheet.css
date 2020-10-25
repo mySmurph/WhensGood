@@ -64,7 +64,7 @@ body{
     padding: 0;
 	width: 100%;
 	display: grid;
-	grid-template-columns: 200pt auto;
+	grid-template-columns: max-content auto;
 }
 
 nav{
@@ -275,6 +275,9 @@ form{
 	font-size: 65%;
 	font-style: italic;
 	width: inherit;
+}
+#feedback{
+	display: none;
 }
 /* CSS SPECIFIC TO BOTH                                             CREATE EVENT HTML FILE AND RSVP TO EVENT FILE      END */
 
