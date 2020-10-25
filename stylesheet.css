@@ -88,17 +88,13 @@ h1{
 
 .img{
     display: inline-block;
-    height: 65px;
-    width: 160px; 
 }
 
 main{
     background-color: #F2F1DF;
     border-radius: 10px;
-    /* margin-left: 180pt;
-    margin-right: auto;
-    margin-top: 10pt; */
-	/* min-height: calc(99vh); */
+	margin-top: 10pt;
+	margin-right: 10pt;
 	padding-bottom: 25pt;
 }
 
