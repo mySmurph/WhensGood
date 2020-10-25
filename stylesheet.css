@@ -49,7 +49,7 @@ input[type="file"] {
     width: 120pt;
 }
 
-.gridContainer{
+.grid_container{
     display: grid;
 	grid-template-columns: max-content max-content; 
 	grid-gap: 25pt;
@@ -154,7 +154,7 @@ main{
     width: 175px;
 }
 
-.textInput{
+.text_input{
     background-color: white;
     border: none;
     border-radius: 5pt;
@@ -224,7 +224,7 @@ form{
     position: absolute;
     top: 4px;
 }
-#hourTable{
+#hour_table{
 	display: grid;
 	grid-template-columns: 100pt 35pt 35pt 35pt 35pt 35pt 35pt 35pt;
 	background-color: white;
@@ -232,36 +232,36 @@ form{
 	width: fit-content;
 	padding: 10pt;
 }
-.selectableList  .ui-selecting{
+.selectable_list  .ui-selecting{
 	background: #F2F1DF;
 }
 
-.selectableList  .ui-selected{
+.selectable_list  .ui-selected{
 	background: #91D9BF;
 	color: white;
 }
 
-.selectableList, .times{
+.selectable_list, .times{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-.selectableList li:nth-child(4n+1),.times li{
+.selectable_list li:nth-child(4n+1),.times li{
 	border-bottom: #F2F1DF 2pt solid;
 }
-.selectableList li:hover{
+.selectable_list li:hover{
 	outline: #91D9BF dotted; 
 }
-.selectableList:hover{
+.selectable_list:hover{
 	background-color: #F2F1DF50;
 }
-.selectableList li:nth-child(n+2)
+.selectable_list li:nth-child(n+2)
 {color: transparent; font-size: 4pt;}
 .time, .day{
 	height: 16pt;
 	text-align: center;
 }
-.selectableList li:nth-child(n+2){
+.selectable_list li:nth-child(n+2){
 	color: transparent;
 	/* font-size: 1pt; */
 	height: 4pt;
@@ -287,7 +287,7 @@ form{
     justify-items: center;
 }
 
-.textParticipant{
+/* .textParticipant{
     font-size: 18px;
     left: -5px;
     margin-right: 6px;
@@ -300,7 +300,7 @@ form{
     left: 10px;
     position: relative;
     top: 8px;
-}
+} */
 
 .submit{
     background-color:#F24B59;

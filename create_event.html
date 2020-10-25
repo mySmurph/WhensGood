@@ -17,10 +17,10 @@
     <nav>
 	    <a href="landing.html"><img src="LogoWhensGoodLogo.svg" class="img" alt="comment pic"></a>
 		<ul class="list">
-			<li><a class="button" href="createEvent.html">Create Event</a></li>
-			<li><a class="button" href="createEvent.html">Edit Event</a></li>
-			<li><a class="button" href="rsvpView.html">RSVP to an Event</a></li>
-			<li><a class="button" href="organizers_view.html">Schedule Event</a></li>
+			<li><a class="button" href="create_event.html">Create Event</a></li>
+			<li><a class="button" href="edit_event.html">Edit Event</a></li>
+			<li><a class="button" href="rsvp_view.html">RSVP to an Event</a></li>
+			<li><a class="button" href="schedule_event.html">Schedule Event</a></li>
 		</ul>
     </nav>
   
@@ -31,27 +31,27 @@
 
 	<form action="">
 			
-		<div class="gridContainer">
+		<div class="grid_container">
 				<div>
 					<ul>
 						<li>
 							<label>Event Name</label><br/>
-							<input class="textInput" type="text" placeholder="Event Name"/>
+							<input class="text_input" type="text" placeholder="Event Name"/>
 						</li>
 						<li>
 							<label>Event Date Range</label></br>
-							<input id="event_date_range_start" class="textInput half" type="date" class ="create">
-							<input id="event_date_range_end" class="textInput half" type="date" class ="create"/>
+							<input id="event_date_range_start" class="text_input half" type="date" class ="create">
+							<input id="event_date_range_end" class="text_input half" type="date" class ="create"/>
 						</li>
 						<li>
 
 						<li>
 							<label>RSVP Deadline</label><br>
-							<input id="rsvp_deadline" class="textInput" length = 24 type="date" class ="create"/>
+							<input id="rsvp_deadline" class="text_input" length = 24 type="date" class ="create"/>
 						</li>
 						<li>
 							<label>Event Duration</label><br>
-							<div class="textInput">
+							<div class="text_input">
 									<input type="number" class="durration_time" id="hr" min="0" max="12" value="0">HR</input>
                                     <input type="number" class="durration_time" id="min" min="0" max="60" step="15" value="0">MIN</input>
 							</div>
@@ -59,18 +59,18 @@
 						</li>
 						<li>
 							<label>Organizer's Email</label><br>
-							<input class="textInput" type="email" placeholder="example@email.domain"></input>
+							<input class="text_input" type="email" placeholder="example@email.domain"></input>
 						</li>
 						<li>
 							<label>Event Password</label><br>
-							<input class="textInput" type="password" placeholder="password"></input>
+							<input class="text_input" type="password" placeholder="password"></input>
 						</li>
 						<li>
 							<label>Organizer's Calendar</label><br>
 							<div>
 
                                 <label class="custom_file_upload" for="cal_upload"><span class="file_upload_button_text">Browse</span></label>
-                                <input type="text" class="textInput" readonly="readonly" placeholder="Choose File..."></input>
+                                <input type="text" class="text_input" readonly="readonly" placeholder="Choose File..."></input>
                                 <input id="cal_upload" class="create" type="file" value="browse"></input>
 
 
@@ -83,7 +83,7 @@
 
 				<div>
 					<label> Select Event Windows</label>
-					<div id = "hourTable">
+					<div id = "hour_table">
 						<ol class="times">
 							<li class = "day"></li>
 							<li class="time">00:00 AM</li>
@@ -111,7 +111,7 @@
 							<li class="time">10:00 PM</li>
 							<li class="time">11:00 PM</li>
 						  </ol>
-						<ol class = "selectableList" id="selectable-SUN">
+						<ol class = "selectable_list" id="selectable-SUN">
 							<li class = "day">SUN</li>
 							<li class="ui-widget-content" id = "SUN-0000">SUN-0000</li>
 							<li class="ui-widget-content" id = "SUN-0015">SUN-0015</li>
@@ -210,7 +210,7 @@
 							<li class="ui-widget-content" id = "SUN-2330">SUN-2330</li>
 							<li class="ui-widget-content" id = "SUN-2345">SUN-2345</li>
 						</ol>
-						<ol class = "selectableList" id="selectable-MON">
+						<ol class = "selectable_list" id="selectable-MON">
 							<li class = "day">MON</li>
 							<li class="ui-widget-content" id = "MON-0000">MON-0000</li>
 							<li class="ui-widget-content" id = "MON-0015">MON-0015</li>
@@ -309,7 +309,7 @@
 							<li class="ui-widget-content" id = "MON-2330">MON-2330</li>
 							<li class="ui-widget-content" id = "MON-2345">MON-2345</li>
 						</ol>
-						<ol class = "selectableList" id="selectable-TUE">
+						<ol class = "selectable_list" id="selectable-TUE">
 							<li class = "day">TUE</li>
 							<li class="ui-widget-content" id = "TUE-0000">TUE-0000</li>
 							<li class="ui-widget-content" id = "TUE-0015">TUE-0015</li>
@@ -408,7 +408,7 @@
 							<li class="ui-widget-content" id = "TUE-2330">TUE-2330</li>
 							<li class="ui-widget-content" id = "TUE-2345">TUE-2345</li>
 						</ol>
-						<ol class = "selectableList" id="selectable-WED">
+						<ol class = "selectable_list" id="selectable-WED">
 							<li class = "day">WED</li>
 							<li class="ui-widget-content" id = "WED-0000">WED-0000</li>
 							<li class="ui-widget-content" id = "WED-0015">WED-0015</li>
@@ -507,7 +507,7 @@
 							<li class="ui-widget-content" id = "WED-2330">WED-2330</li>
 							<li class="ui-widget-content" id = "WED-2345">WED-2345</li>
 						</ol>
-						<ol class = "selectableList" id="selectable-THR">
+						<ol class = "selectable_list" id="selectable-THR">
 						<li class = "day">THR</li>
 							<li class="ui-widget-content" id = "THR-0000">THR-0000</li>
 							<li class="ui-widget-content" id = "THR-0015">THR-0015</li>
@@ -606,7 +606,7 @@
 							<li class="ui-widget-content" id = "THR-2330">THR-2330</li>
 							<li class="ui-widget-content" id = "THR-2345">THR-2345</li>
 						</ol>
-						<ol class = "selectableList" id="selectable-FRI">
+						<ol class = "selectable_list" id="selectable-FRI">
 						<li class = "day">FRI</li>
 							<li class="ui-widget-content" id = "FRI-0000">FRI-0000</li>
 							<li class="ui-widget-content" id = "FRI-0015">FRI-0015</li>
@@ -705,7 +705,7 @@
 							<li class="ui-widget-content" id = "FRI-2330">FRI-2330</li>
 							<li class="ui-widget-content" id = "FRI-2345">FRI-2345</li>
 						</ol>
-						<ol class = "selectableList" id="selectable-SAT">
+						<ol class = "selectable_list" id="selectable-SAT">
 							<li class = "day">SAT</li>
 							<li class="ui-widget-content" id = "SAT-0000">SAT-0000</li>
 							<li class="ui-widget-content" id = "SAT-0015">SAT-0015</li>
