@@ -211,30 +211,43 @@ main{
     position: absolute;
     top: 4px;
 }
-div > #hourTable{
+#hourTable{
+	display: grid;
+	grid-template-columns: 100pt 35pt 35pt 35pt 35pt 35pt 35pt 35pt;
 	background-color: white;
 	border-radius: 5pt;
-	overflow: hidden;
+	width: fit-content;
+	padding: 10pt;
 }
-#hourTable{
-	border-collapse: collapse;
-	border: transparent dotted 15pt;
-}
+.selectableList  .ui-selecting
+ { background: #F2F1DF; }
 
-#hourTable td{
-	border: dotted .25pt #F2F1DF;
-	width: 32pt;
-	height: 3pt;
-}
-#hourTable tr:nth-child(4n+1), th{
-	border-bottom: solid 2pt #F2F1DF;
-}
-th{
-	font-size: 8pt;
-	font-weight: lighter;
-	vertical-align: middle;
-}
 
+.selectableList  .ui-selected
+{ background: #91D9BF;
+	color: white; }
+
+.selectableList, .times{ list-style-type: none; margin: 0; padding: 0;}
+
+.selectableList li:nth-child(n+2)
+{color: transparent; font-size: 4pt;}
+.time, .day{
+	height: 20pt;
+	text-align: center;
+}
+.selectableList li:nth-child(n+2){
+	color: transparent;
+	/* font-size: 1pt; */
+	height: 5pt;
+}
+.selectableList li:nth-child(4n+1),.times li{
+	border-bottom: #F2F1DF solid;
+}
+.note{
+	font-size: 65%;
+	font-style: italic;
+	width: inherit;
+}
 /* CSS SPECIFIC TO BOTH                                             CREATE EVENT HTML FILE AND RSVP TO EVENT FILE      END */
 
 /* ------------------------------------------------------------------------------------------------------- */
