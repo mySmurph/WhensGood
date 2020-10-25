@@ -41,7 +41,6 @@ input[type="file"] {
     color: black;
     margin: auto;
     padding: 6pt;
-    position: relative;
     text-align: center;
     text-decoration: none;
     width: 120pt;
@@ -49,22 +48,24 @@ input[type="file"] {
 
 .gridContainer{
     display: grid;
-    grid-template-columns: auto auto; 
+	grid-template-columns: max-content max-content; 
+	grid-gap: 25pt;
     width:inherit;
 }
-
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 200pt auto;
 }
 
 nav{
-    float: left;
+    /* float: left; */
     padding:10pt;
-    width: 150pt;
+    /* width: 150pt; */
 }
 
 h1{
@@ -73,9 +74,10 @@ h1{
     color: white;
     font-size: 16px;
     padding: 5pt;
-    position: sticky;
     text-align: left;
-    width: inherit;
+	width: inherit;
+	margin-top: 0;
+	margin-bottom: 25pt;
 }
 
 
@@ -88,10 +90,11 @@ h1{
 main{
     background-color: #F2F1DF;
     border-radius: 10px;
-    margin-left: 180pt;
+    /* margin-left: 180pt;
     margin-right: auto;
-    margin-top: 10pt;
-    min-height: calc(100vh - 20px);
+    margin-top: 10pt; */
+	/* min-height: calc(99vh); */
+	padding-bottom: 25pt;
 }
 
 /*  CSS SPECIFIC TO                                                        EVERY HTML FILE END */
@@ -120,12 +123,13 @@ main{
 /* CSS SPECIFIC TO                                              CREATE EVENT HTML FILE START */
 
 .span{
-    left: 85px;
-    margin: auto;
+    /* left: 85px; */
+	margin-left: auto;
+	margin-right: auto;
     top: 30px;
-	/* width: 1500px; */
-	width: 300pt;
-	/* maded the button smaller and easy to deal with */
+	width: inherit;
+	width: calc(95%);
+	display: block;
 }
 .red{
 	background-color:#F24B59;
@@ -168,10 +172,6 @@ main{
 
 }
 
-.create_event_label{
-    left: 516px;
-    top: 490px;
-}
 
 .create_e_file_input_button{
     height: 23px;
@@ -185,9 +185,19 @@ main{
 /* ------------------------------------------------------------------------------------------------------- */
 
 /* CSS SPECIFIC TO BOTH                                             CREATE EVENT HTML FILE AND RSVP TO EVENT FILE     END */
+form{
+	display: block;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
 .custom_file_upload {
     background-color: #91D9BF;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0 5pt 5pt 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 5pt;
+    border-bottom-right-radius: 5pt;
+    border-bottom-left-radius: 0px;
     cursor: pointer;
     display: inline-block;
     height: 0px;
@@ -195,14 +205,16 @@ main{
     padding-left: 30px;
     padding-top: 6px;
     position: absolute;
-    width: 75px;
+    width: 60pt;
+    /* float: right; */
+	margin-left: 173pt;
 }
 .fixed_input{
     border: none;
     border-radius: 7px 0px 0px 7px;
     font-size: 16px;
-    margin-left: 40px;
-    position: absolute;
+    /* margin-left: 40px;
+    position: absolute; */
 }
 
 .file_upload_button_text{
@@ -219,30 +231,41 @@ main{
 	width: fit-content;
 	padding: 10pt;
 }
-.selectableList  .ui-selecting
- { background: #F2F1DF; }
+.selectableList  .ui-selecting{
+	background: #F2F1DF;
+}
 
+.selectableList  .ui-selected{
+	background: #91D9BF;
+	color: white;
+}
 
-.selectableList  .ui-selected
-{ background: #91D9BF;
-	color: white; }
-
-.selectableList, .times{ list-style-type: none; margin: 0; padding: 0;}
-
+.selectableList, .times{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.selectableList li:nth-child(4n+1),.times li{
+	border-bottom: #F2F1DF 2pt solid;
+}
+.selectableList li:hover{
+	outline: #91D9BF dotted; 
+}
+.selectableList:hover{
+	background-color: #F2F1DF50;
+}
 .selectableList li:nth-child(n+2)
 {color: transparent; font-size: 4pt;}
 .time, .day{
-	height: 20pt;
+	height: 16pt;
 	text-align: center;
 }
 .selectableList li:nth-child(n+2){
 	color: transparent;
 	/* font-size: 1pt; */
-	height: 5pt;
+	height: 4pt;
 }
-.selectableList li:nth-child(4n+1),.times li{
-	border-bottom: #F2F1DF solid;
-}
+
 .note{
 	font-size: 65%;
 	font-style: italic;

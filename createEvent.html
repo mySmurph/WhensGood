@@ -49,12 +49,6 @@
 						</li>
 						<li>
 							<label>Event Duration</label><br>
-							<!-- <input id="event_duration_input" class="textInput" type="text" class ="create"placeholder="1 HR 15 MIN">
-							<div class="increment_button_container bc1">
-								<img id="up_button" class="up_button ub1" src="upButton.png" />
-								<img id="down_button" class="down_button db1" src="downButton.png" />
-							</div>
-							</input> -->
 							<div class="textInput">
 									<input type="number" class="durration_time" id="hr" min="0" max="12" value="0">HR</input>
                                     <input type="number" class="durration_time" id="min" min="0" max="60" step="15" value="0">MIN</input>
@@ -71,17 +65,10 @@
 						</li>
 						<li>
 							<label>Organizer's Calendar</label><br>
-							<div class="butt_block">
+							<div>
 
-								<!-- <input type="text" class="textInput butt_left" readonly="readonly" placeholder="Choose File..."/>
-								
-                                <div class="textInput butt_right" for="cal_upload">Browse</div>
-								
-                                <input id="cal_upload" type="file" class ="create" value="browse"/> -->
-
-
-                                <label class="custom_file_upload create_event_label" for="cal_upload"><span class="file_upload_button_text">Browse</span></label>
-                                <input type="text" class="fixed_input create_e_file_input_button" readonly="readonly" placeholder="Choose File..."></input>
+                                <label class="custom_file_upload" for="cal_upload"><span class="file_upload_button_text">Browse</span></label>
+                                <input type="text" class="textInput" readonly="readonly" placeholder="Choose File..."></input>
                                 <input id="cal_upload" class="create" type="file" value="browse"></input>
 
 
@@ -816,7 +803,8 @@
 						</ol>
 					</div>
 					<p class = "note">
-						* hold CTRL / CMD key to select multiple time windows on the same day
+						* hold CTRL / CMD key to select multiple event windows on the same day </br>
+						* click on the Day title to clear all event windows on that day
 					</p>
 					
 				</div>
@@ -833,14 +821,22 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
 	$( function() {
-	  $( "#selectable-SUN, #selectable-MON, #selectable-TUE, #selectable-WED, #selectable-THR, #selectable-FRI, #selectable-SAT" ).selectable({
-		stop: function() {
+	  $( "#selectable-SUN, #selectable-MON, #selectable-TUE, #selectable-WED, #selectable-THR, #selectable-FRI, #selectable-SAT" ).selectable(
+	  {
+		selected: function() {
 		  var result = $( "#select-result" ).empty();
-		  $( ".ui-selected", this ).each(function() {
-			result.append( " #" + ( jQuery(this).attr('id')) );
+		  $( ".ui-selected").each(function() {
+			if(jQuery(this).hasClass('day')){
+				jQuery(this).removeClass('ui-selected')
+			}else{
+				result.append( " #" + ( jQuery(this).attr('id')) );
+			}
+			
 		  });
+		  
 		}
-	  });
+	  }
+	  );
 	} );
 	</script>
 
