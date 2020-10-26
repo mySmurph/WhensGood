@@ -283,19 +283,6 @@ form{
     justify-content: center;
 }
 
-.submit{
-    background-color:#F24B59;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-size: 16px;
-    height: 25px;
-    position: relative;
-    text-align: center; 
-    top: -5px;
-    width: 300px;
-}
-
 .alert{
     background-color: #91D9BF;
     border-radius: 5pt;
@@ -381,12 +368,6 @@ particular project*/
     width: 40px;
   }
 
-.textEvent{
-    font-size: 20px;
-    margin-left: 2px;
-    visibility: hidden;
-}
-
 .input_code{
     border: none;
     border-radius: 10px;
@@ -414,15 +395,6 @@ particular project*/
     position: absolute;
 }
 
-.rsvpinput{
-    border: none;
-    border-radius: 7px;
-    font-size: 16px;
-    height: 25px;
-    position: relative;
-    width: 250px;
-}
-
 .text_input_left_col{
     left: 300px;
     position: absolute;
@@ -432,19 +404,6 @@ particular project*/
 .event_duration_text{
     left: 600px;
     position: absolute;
-}
-
-.event_duration_input_box{
-    background-color: white;
-    border: none;
-    border-radius: 5pt;
-    font-size: 14px;
-    left: 600px;
-    padding-bottom: 3pt;
-    padding-top: 3pt;
-    position: absolute;
-    top: 80px;
-    width: 256pt;
 }
 
 .rsvp_event_window_text{
@@ -523,28 +482,9 @@ particular project*/
     top: 350px;
 }
 
-
 .participants_name{
     left: 1050px;
     position: absolute;
-}
-
-.cal_file_upload{
-    font-size: 16px;
-}
-
-.rsvp_button{
-    background-color:#F24B59;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-size: 16px;
-    height: 25px;
-    left: 1050px;
-    position: absolute;
-    text-align: center; 
-    top: 470px;
-    width: 400px;
 }
 
 .rsvp_to_event_calender_upload{
