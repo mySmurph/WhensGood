@@ -71,7 +71,7 @@ body{
 	width: 100%;
 }
 
-nav{
+.nav{
     /* float: left; */
     padding:10pt;
     /* width: 150pt; */
@@ -94,7 +94,7 @@ h1{
     display: inline-block;
 }
 
-main{
+.main{
     background-color: #F2F1DF;
     border-radius: 10px;
     margin-right: 10pt;
