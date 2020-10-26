@@ -7,8 +7,8 @@ ul{
 }
 
 ul li{
+    margin: 0;
 	padding-bottom: 10pt;
-	margin: 0;
 }
 
 label{
@@ -18,9 +18,9 @@ label{
 input[type="date"]::-webkit-calendar-picker-indicator {
     background: url(calender.png) no-repeat;
     border-width: thin;
-    color: rgba(0, 0, 0, 0);
-    height: 17px;
+    color: black;
     display: block;
+    height: 17px;
     opacity: 1;
     width: 18px;
 }
@@ -58,13 +58,13 @@ input[type="file"] {
 	margin-right: auto;
 }
 body{
+	display: grid;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+	grid-template-columns: max-content auto;
     height: 100%;
     margin: 0;
     padding: 0;
 	width: 100%;
-	display: grid;
-	grid-template-columns: max-content auto;
 }
 
 nav{
@@ -78,11 +78,11 @@ h1{
     border-radius: 10px;
     color: white;
     font-size: 16px;
+	margin-bottom: 25pt;
+	margin-top: 0;
     padding: 5pt;
     text-align: left;
 	width: inherit;
-	margin-top: 0;
-	margin-bottom: 25pt;
 }
 
 
@@ -93,9 +93,9 @@ h1{
 main{
     background-color: #F2F1DF;
     border-radius: 10px;
+    margin-right: 10pt;
 	margin-top: 10pt;
-	margin-right: 10pt;
-	padding-bottom: 25pt;
+    padding-bottom: 25pt;
 }
 
 /*  CSS SPECIFIC TO                                                        EVERY HTML FILE END */
@@ -188,20 +188,20 @@ main{
 /* CSS SPECIFIC TO BOTH                                             CREATE EVENT HTML FILE AND RSVP TO EVENT FILE     END */
 form{
 	display: block;
-	width: fit-content;
 	margin-left: auto;
-	margin-right: auto;
+    margin-right: auto;
+    width: fit-content;
 }
 .custom_file_upload {
     background-color: #91D9BF;
-    border-radius: 0 5pt 5pt 0;
-    border-top-left-radius: 0px;
+    /* border-radius: 0 5pt 5pt 0;
+    border-top-left-radius: 0px; */
     border-top-right-radius: 5pt;
     border-bottom-right-radius: 5pt;
-    border-bottom-left-radius: 0px;
+    /* border-bottom-left-radius: 0px; */
     cursor: pointer;
     display: inline-block;
-    height: 0px;
+    /* height: 0px; */
     padding-bottom: 20px;
     padding-left: 30px;
     padding-top: 6px;
@@ -335,10 +335,10 @@ form{
     justify-items: center;
 }
 .switch_container{
-	position: relative;
-	display: inline-block;
+    display: inline-block;
+    height: 20pt;
+    position: relative;
 	width: 40pt;
-	height: 20pt;
 }
   
 .password_container{
@@ -351,7 +351,6 @@ particular project*/
 /* The switch - the box around the slider */
   /* The slider */
   .slider {
-    -webkit-transition: .4s;
     background-color: #F24B59;
     bottom: 0;
     cursor: pointer;
@@ -360,10 +359,10 @@ particular project*/
     right: 0;
     top: 0;
     transition: .4s;
+    -webkit-transition: .4s;
   }
   
   .slider:before {
-    -webkit-transition: .4s;
     background-color: white;
     bottom: 4px;
     content: "";
@@ -371,6 +370,7 @@ particular project*/
     left: 4px;
     position: absolute;
     transition: .4s;
+    -webkit-transition: .4s;
     width: 18px;
   }
   
@@ -399,19 +399,19 @@ particular project*/
 
 /* END borrowed code */
 
-.switch {
+/* .switch { */
     /* height: 15pt;
     /* left: 0px;  */
     /* position: relative; */
     /* text-align: center; */
     /* top: 8px; */
     /* width: 43pt; */
-  }
+  /* } */
   
   /* Hide default HTML checkbox */
 .switch input {
     border-radius: 15px;
-    height: 0px;
+    /* height: 0px; */
     opacity: 0;
     width: 40px;
   }
@@ -433,8 +433,8 @@ particular project*/
     border: none;
     border-radius: 10px;
     height: 25px;
-    width: 290px;
     visibility: hidden;
+    width: 290px;
 }
 
 /* CSS SPECIFIC TO                                                  RSVP VIEW EVENT HTML FILE         END */
@@ -542,8 +542,8 @@ particular project*/
   }
 
   .slider_container{
-      position: relative;
-	  display: inline-block;
+    display: inline-block;
+    position: relative;
   }
 
   .slider2{
