@@ -30,7 +30,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
 }
 
 input:focus{
-    outline: none;
+    outline-style: none;
 }
 
 input[type="file"] {
@@ -45,7 +45,8 @@ input[type="file"] {
     border-radius: 17px;
     color: black;
     margin: auto;
-    padding: 10pt;
+    padding-bottom: 10pt;
+    padding-top: 10pt;
     text-align: center;
     text-decoration: none;
     width: 120pt;
