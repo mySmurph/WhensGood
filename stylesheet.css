@@ -27,6 +27,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="number"], textarea, select { 
     border: hidden;
+}
+
+input:focus{
     outline: none;
 }
 
@@ -37,7 +40,6 @@ input[type="file"] {
 .button{
     -webkit-appearance: button;
     -moz-appearance: button;
-    /* appearance: button; */
     background-color:#91D9BF;
     border: none;
     border-radius: 17px;
@@ -50,12 +52,13 @@ input[type="file"] {
 }
 
 .grid_container{
+    column-gap: 25pt;
     display: grid;
-	grid-template-columns: max-content max-content; 
-	grid-gap: 25pt;
+    grid-template-columns: max-content max-content;
+    margin-left: auto;
+    margin-right: auto; 
+    row-gap: 25pt;
 	width:inherit;
-	margin-left: auto;
-	margin-right: auto;
 }
 body{
 	display: grid;
@@ -141,7 +144,7 @@ main{
 .create{
     -webkit-appearance: button;
     -moz-appearance: button;
-    appearance: button;
+    /* appearance: button; */
     background-color:#91D9BF;
     border: none;
     border-radius: 10px;
@@ -205,13 +208,6 @@ form{
     width: 60pt;
     /* float: right; */
 }
-/* .fixed_input{
-    border: none;
-    border-radius: 7px px px 7px;
-    font-size: 16px; */
-    /* margin-left: 40px;
-    position: absolute; */
-/* } */
 
 .file_upload_button_text{
     font-size: 16px;
@@ -250,8 +246,11 @@ form{
 .selectable_list:hover{
 	background-color: #F2F1DF50;
 }
-.selectable_list li:nth-child(n+2)
-{color: transparent; font-size: 4pt;}
+.selectable_list li:nth-child(n+2){
+    color: transparent; 
+    font-size: 4pt;
+}
+
 .time, .day{
 	height: 16pt;
 	text-align: center;
@@ -279,7 +278,7 @@ form{
 .center{
     display: grid;
     grid-template-rows: 1fr;
-    justify-items: center;
+    justify-content: center;
 }
 
 .submit{
@@ -312,7 +311,7 @@ form{
     width:fit-content;
 }
 .inner_layout > div{
-    justify-items: center;
+    justify-content: center;
 }
 .switch_container{
     display: inline-block;
@@ -338,8 +337,8 @@ particular project*/
     position: absolute;
     right: 0;
     top: 0;
-    transition: .4s;
-    -webkit-transition: .4s;
+    transition-duration: 400ms;
+    /* -webkit-transition-duration: 400ms; */
   }
   
   .slider:before {
@@ -349,8 +348,8 @@ particular project*/
     height: 18px;
     left: 4px;
     position: absolute;
-    transition: .4s;
-    -webkit-transition: .4s;
+    transition-duration: 400ms;
+    /* -webkit-transition-duration: 400ms; */
     width: 18px;
   }
   
