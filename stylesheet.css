@@ -49,16 +49,16 @@ input[type="file"] {
     padding-top: 10pt;
     text-align: center;
     text-decoration: none;
-    width: 120pt;
+    width: 140pt;
 }
 
 .grid_container{
     column-gap: 25pt;
     display: grid;
     grid-template-columns: max-content max-content;
+    margin-bottom: 5pt;
     margin-left: auto;
     margin-right: auto; 
-    row-gap: 25pt;
 	width:inherit;
 }
 body{
@@ -110,15 +110,16 @@ main{
 
 .content{
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: max-content;
     justify-content: center;
     margin:0 auto;
     width:inherit;
 }
 
 .big{
-    padding: 25pt;
-    width: 120pt;
+    padding-bottom: 25pt;
+    padding-top: 25pt;
+    width: 170pt;
 }
 
 /* CSS SPECIFIC TO                                                   LANDING PAGE HTML FILE END */
@@ -150,9 +151,9 @@ main{
     border: none;
     border-radius: 10px;
     color: black;
-    height: 40px;
     margin-top: 20px;
-    padding: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
     text-decoration: none;
     width: 175px;
 }
@@ -162,8 +163,9 @@ main{
     border: none;
     border-radius: 5pt;
     font-size: 14px;
-	padding: 3pt;
-    width: 250pt;
+    padding-bottom: 3pt;
+    padding-top: 3pt;
+    width: 253pt;
 }
 
 .half{
@@ -203,10 +205,9 @@ form{
     display: inline-block;
     margin-left: 173pt;
     padding-bottom: 20px;
-    padding-left: 30px;
     padding-top: 6px;
     position: absolute;
-    width: 60pt;
+    width: 83pt;
     /* float: right; */
 }
 
@@ -278,7 +279,7 @@ form{
 
 .center{
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: max-content;
     justify-content: center;
 }
 
@@ -295,14 +296,6 @@ form{
     width: 300px;
 }
 
-.inner_layout{
-    background-color: #91D9BF;
-    border-radius: 10px;
-    height:230px;
-    margin-top: 30px;
-    padding:10px; 
-    width:330px;
-}
 .alert{
     background-color: #91D9BF;
     border-radius: 5pt;
@@ -311,9 +304,11 @@ form{
     padding:10px; 
     width:fit-content;
 }
+
 .inner_layout > div{
     justify-content: center;
 }
+
 .switch_container{
     display: inline-block;
     height: 20pt;
@@ -445,10 +440,11 @@ particular project*/
     border-radius: 5pt;
     font-size: 14px;
     left: 600px;
-    padding: 3pt;
+    padding-bottom: 3pt;
+    padding-top: 3pt;
     position: absolute;
     top: 80px;
-    width: 250pt;
+    width: 256pt;
 }
 
 .rsvp_event_window_text{
