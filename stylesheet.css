@@ -37,7 +37,7 @@ input[type="file"] {
 .button{
     -webkit-appearance: button;
     -moz-appearance: button;
-    appearance: button;
+    /* appearance: button; */
     background-color:#91D9BF;
     border: none;
     border-radius: 17px;
@@ -107,7 +107,7 @@ main{
 .content{
     display: grid;
     grid-template-rows: 1fr;
-    justify-items: center;
+    justify-content: center;
     margin:0 auto;
     width:inherit;
 }
@@ -124,13 +124,12 @@ main{
 /* CSS SPECIFIC TO                                              CREATE EVENT HTML FILE START */
 
 .span{
-    /* left: 85px; */
+    display: block;
 	margin-left: auto;
 	margin-right: auto;
     top: 30px;
 	width: inherit;
 	width: calc(95%);
-	display: block;
 }
 .red{
 	background-color:#F24B59;
@@ -194,29 +193,25 @@ form{
 }
 .custom_file_upload {
     background-color: #91D9BF;
-    /* border-radius: 0 5pt 5pt 0;
-    border-top-left-radius: 0px; */
-    border-top-right-radius: 5pt;
     border-bottom-right-radius: 5pt;
-    /* border-bottom-left-radius: 0px; */
+    border-top-right-radius: 5pt;
     cursor: pointer;
     display: inline-block;
-    /* height: 0px; */
+    margin-left: 173pt;
     padding-bottom: 20px;
     padding-left: 30px;
     padding-top: 6px;
     position: absolute;
     width: 60pt;
     /* float: right; */
-	margin-left: 173pt;
 }
-.fixed_input{
+/* .fixed_input{
     border: none;
-    border-radius: 7px 0px 0px 7px;
-    font-size: 16px;
+    border-radius: 7px px px 7px;
+    font-size: 16px; */
     /* margin-left: 40px;
     position: absolute; */
-}
+/* } */
 
 .file_upload_button_text{
     font-size: 16px;
@@ -224,13 +219,13 @@ form{
     position: absolute;
     top: 4px;
 }
-#hour_table{
+.hour_table{
+    background-color: white;
+	border-radius: 5pt;
 	display: grid;
 	grid-template-columns: 100pt 35pt 35pt 35pt 35pt 35pt 35pt 35pt;
-	background-color: white;
-	border-radius: 5pt;
-	width: fit-content;
-	padding: 10pt;
+    padding: 10pt;
+    width: fit-content;
 }
 .selectable_list  .ui-selecting{
 	background: #F2F1DF;
@@ -272,7 +267,7 @@ form{
 	font-style: italic;
 	width: inherit;
 }
-#feedback{
+.feedback{
 	display: none;
 }
 /* CSS SPECIFIC TO BOTH                                             CREATE EVENT HTML FILE AND RSVP TO EVENT FILE      END */
@@ -286,21 +281,6 @@ form{
     grid-template-rows: 1fr;
     justify-items: center;
 }
-
-/* .textParticipant{
-    font-size: 18px;
-    left: -5px;
-    margin-right: 6px;
-    position: relative;
-    top: 8px;
-}
-
-.textOrganizer{
-    font-size: 18px;
-    left: 10px;
-    position: relative;
-    top: 8px;
-} */
 
 .submit{
     background-color:#F24B59;
@@ -389,29 +369,19 @@ particular project*/
   }
   
   /* Rounded sliders */
-  .slider.round {
-    border-radius: 10px;
+  .round{
+      border-radius: 10px;
   }
-  
-  .slider.round:before {
+
+  .round:before {
     border-radius: 50%;
   }
 
 /* END borrowed code */
 
-/* .switch { */
-    /* height: 15pt;
-    /* left: 0px;  */
-    /* position: relative; */
-    /* text-align: center; */
-    /* top: 8px; */
-    /* width: 43pt; */
-  /* } */
-  
   /* Hide default HTML checkbox */
 .switch input {
     border-radius: 15px;
-    /* height: 0px; */
     opacity: 0;
     width: 40px;
   }
