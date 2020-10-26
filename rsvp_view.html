@@ -8,7 +8,7 @@
 <!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
   <title>RSVP View</title> 
   <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-
+<script type="text/javascript" src="rsvp_view.js"></script>
 </head>
 
 <body id="body">
@@ -22,41 +22,41 @@
 		</ul>
     </div>
   
-  <div class="main">
-	<h1>
-		I'll check my schedule...
-	</h1>
-	
-  <!--actual container centers within container-->
-	<form class="alert" action="rsvp_to_event.html">
-		<ul>
-			<li>
-				<label>Enter Event Code</label><br/>
-                <input type="text" class="text_input" placeholder="2F088152DE"></input>
-			</li>
-			<li>
-				<label>Participant</label>
-				<div class="switch_container">
-					<!-- these next 4 lines of code was borrowed from https://www.w3schools.com/howto/howto_css_switch.asp-->
-						<label class="switch">
-						<input type="checkbox" id="slider"></input>
-						<span class="slider round"></span>
-						</label>
-				</div>
-				<label>Orgainizer</label>
-			</li>
-			<li>
-				<div class="password_container" id = "password_container">
-                    <label>Enter Event Password</label><br/>
-                    <input id="password_input" type="text" class="text_input" placeholder="password"></input>
-				</div>
-			</li>
-		</ul>
+    <div class="main">
+        <h1>
+            I'll check my schedule...
+        </h1>
+        
+    <!--actual container centers within container-->
+        <form class="alert" action="rsvp_to_event.html">
+            <ul>
+                <li>
+                    <label>Enter Event Code</label><br />
+                    <input type="text" class="text_input" id="event_code" placeholder="2F088152DE"></input>
+                </li>
+                <li>
+                    <label>Participant</label>
+                    <div class="switch_container">
+                        <!-- these next 4 lines of code was borrowed from https://www.w3schools.com/howto/howto_css_switch.asp-->
+                            <label class="switch">
+                            <input type="checkbox" id="slider"></input>
+                            <span class="slider round"></span>
+                            </label>
+                    </div>
+                    <label>Orgainizer</label>
+                </li>
+                <li>
+                    <div class="password_container" id = "password_container">
+                        <label>Enter Event Password</label><br />
+                        <input id="password_input" type="text" class="text_input" placeholder="password"></input>
+                    </div>
+                </li>
+            </ul>
                 <div>
-                    <button class="button red span">Submit</button></br>
+                    <button class="button red span">Submit</button><br />
                 </div>
-
-    </form>
-  <script type="text/javascript" src="rsvp_view.js"></script>
+        </form>
+    </div>
+    <script type="text/javascript" src="rsvp_view_r.js"></script>
 </body>
 </html>
