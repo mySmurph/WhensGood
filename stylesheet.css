@@ -11,7 +11,7 @@ ul li{
 	padding-bottom: 10pt;
 }
 
-label{
+label, .label{
 	font-size: 14pt;
 }
 
@@ -142,7 +142,7 @@ main{
 	size: 24pt;
 }
 
-.create{
+.calendar{
     -webkit-appearance: button;
     -moz-appearance: button;
     /* appearance: button; */
@@ -150,11 +150,10 @@ main{
     border: none;
     border-radius: 10px;
     color: black;
-    margin-top: 20px;
     padding-bottom: 20px;
-    padding-top: 20px;
+	padding-top: 20px;
+	padding-right: 10pt;
     text-decoration: none;
-    width: 175px;
 }
 
 .text_input{
@@ -162,15 +161,18 @@ main{
     border: none;
     border-radius: 5pt;
     font-size: 14px;
-    padding-bottom: 3pt;
-    padding-top: 3pt;
+    padding-bottom: 4pt;
+    padding-top: 4pt;
     width: 253pt;
 }
 
 .half{
-	width:120pt;
+	width:115pt;
 }
 
+.threeQuarters{
+	width:245pt;
+}
 .durration_time{
     height: 14px;
     padding-left: 15pt;

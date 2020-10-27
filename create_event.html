@@ -1,6 +1,6 @@
 <!--  http://cis444.cs.csusm.edu/newso011/hw1.html  testing again 3-->
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -8,8 +8,8 @@
 <!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
 	<title>Create Event</title> 
 	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -37,50 +37,48 @@
 		Create New Event!!
 	</h1>
 
-	<form action="">
+	<form>
 			
 		<div class="grid_container">
 				<div>
 					<ul>
 						<li>
-							<label>Event Name</label><br/>
-							<input class="text_input" type="text" id="event_name" />
+							<label aria-label="Give your event a name for people to know what the event is for.">Event Name<br/>
+							<input class="text_input" type="text" id="event_name" /></label>
 						</li>
 						<li>
-							<label>Event Date Range</label></br>
-							<input id="event_date_range_start" class="text_input half create" type="date" />
-							<input id="event_date_range_end" class="text_input half create" type="date" />
+							<label aria-label="Set the date range of when you would like your event to take place.">Event Date Range<br/></label>
+								<input id="event_date_range_start" class="text_input half calendar" type="date" aria-label= "event_date_range_start" />
+								<input id="event_date_range_end" class="text_input half calendar" type="date" aria-label="event_date_range_end"/>
 						</li>
 						<li>
-							<label>RSVP Deadline</label><br>
-							<input id="rsvp_deadline" class="text_input create" length = 24 type="date" />
+							<label aria-label="Let your guest know by what date they need to respond by.">RSVP Deadline<br/></label>
+							<input id="rsvp_deadline" class="text_input threeQuarters calendar" type="date" aria-label="rsvp_deadline" />
 						</li>
 						<li>
-							<label>Event Duration</label><br>
+							<label aria-label="Set the minimum amount of time you need for your event to take place.">Event Duration<br/></label>
 							<div class="text_input">
-                                <input type="number" class="durration_time" id="hr" min="0" max="12" value="0">HR</input>
-                                <input type="number" class="durration_time" id="min" min="0" max="60" step="15" value="0">MIN</input>
+									<input type="number" class="durration_time" id="hr" min="0" max="12" value="0" aria-label="Hours"/>HR
+									<input type="number" class="durration_time" id="min" min="0" max="60" step="15" value="0" aria-label="Minutes"/>MIN
 							</div>
 						</li>
 						<li>
-							<label>Organizer's Email</label><br />
-							<input class="text_input" type="email" id="organizers_email"></input>
+							<label aria-label="Enter your contact info.">Organizer's Email<br/>
+							<input class="text_input" type="email" id="organizers_email"/></label>
 						</li>
 						<li>
-							<label>Event Password</label><br>
-							<input class="text_input" type="password" id="event_password"></input>
+							<label aria-label="Set a password so you can access the scheduler later">Event Password<br/></label>
+							<input class="text_input" type="password" id="event_password"  aria-label="password"/>
 						</li>
 						<li>
-							<label>Organizer's Calendar</label><br>
-							<div>
-                                <label class="custom_file_upload" for="cal_upload">
-                                    <span class="file_upload_button_text">Browse</span>
-                                </label>
-                                <input type="text" class="text_input" readonly="readonly" id="choose_file"></input>
-                                <input id="cal_upload" class="create" type="file" value="browse"></input>
-							</div>
+							<label aria-label="Upload your own calendar so it can be acounted for just like the participents">Organizer's Calendar<br/></label>
+							
+								<label class="custom_file_upload">
+									<span class="file_upload_button_text">Browse</span>
+								</label>
+									<input type="text" class="text_input" readonly="readonly" id="choose_file" aria-label="file field"/>
+									<input id="cal_upload" class="create" type="file" aria-label="file button"/>
 						</li>
-
 					</ul>
 					
 				</div>
@@ -808,13 +806,16 @@
 							<li class="ui-widget-content" id = "SAT-2330">SAT-2330</li>
 							<li class="ui-widget-content" id = "SAT-2345">SAT-2345</li>
 						</ol>
+					
 					</div>
 					<p class = "note">
 						* hold CTRL / CMD key to select multiple event windows on the same day <br/>
 						* click on the Day title to clear all event windows on that day
 					</p>
 				</div>
-		</div>
+					
+			</div>
+
 		<button class="button span red" id = "button">Schedule Event</button>
 	</form>
 
