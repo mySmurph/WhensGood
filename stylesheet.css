@@ -363,11 +363,11 @@ particular project*/
 /* END borrowed code */
 
   /* Hide default HTML checkbox */
-.switch input {
+/* input[type='checkbox'] {
     border-radius: 15px;
     opacity: 0;
     width: 40px;
-  }
+  } */
 
 .input_code{
     border: none;
@@ -511,3 +511,30 @@ particular project*/
 
 
 /* CSS SPECIFIC TO                                                  RSVP TO EVENT HTML FILE         END */
+
+/* alternate switch box to get TV errors to go away */
+.switchbox{
+	display: flex;
+}
+.switchbox input {
+	-moz-appearance: none;
+	-o-appearance: none;
+	-webkit-appearance: none;
+	background-color: #fafafa;
+	border-radius: .825em;
+	border: 2pt solid #F24B59;
+	box-shadow: inset -1.50em 0 0 1pt #F24B59;
+	margin-right: .25em;
+	outline: none;
+	padding-top: 7pt;
+	padding-bottom: 7pt;
+	position: relative;
+	transition: box-shadow .2s ease-in-out;
+	width: 30pt;
+}
+
+.switchbox input:checked {
+	border-color: #378C7D;
+	box-shadow: inset 1.50em 0 0 1pt #378C7D;
+}
+

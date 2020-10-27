@@ -43,15 +43,11 @@
                     <input type="text" class="text_input" id="event_code"></input>
                 </li>
                 <li>
-                    <label>Participant</label>
-                    <div class="switch_container">
-                        <!-- these next 4 lines of code was borrowed from https://www.w3schools.com/howto/howto_css_switch.asp-->
-                            <label class="switch">
-                            <input type="checkbox" id="slider"></input>
-                            <span class="slider round"></span>
-                            </label>
-                    </div>
-                    <label>Orgainizer</label>
+                    <div class="switchbox">
+						<div class = "label">Participant</div>
+						<input type="checkbox" id="switchbox" data-check-switch aria-label="rsvp"/>
+						<div class = "label">Orgainizer</div>
+					</div>
                 </li>
                 <li>
                     <div class="password_container" id = "password_container">
