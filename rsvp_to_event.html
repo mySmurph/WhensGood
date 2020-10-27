@@ -8,7 +8,6 @@
 <!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
   <title>RSVP To Event</title> 
   <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-  <script type="text/javascript" src="rsvp_to_event.js"></script>
 </head>
 
 <body>
@@ -58,11 +57,11 @@
 					<ul>
 						<li>
 							<label>Participant's Name</label><br/>
-							<input class="text_input" type="text" placeholder="Zapp Brannigan" id="name"></input>
+							<input class="text_input" type="text" id="name"></input>
 						</li>
 						<li>
 							<label>Participant's Email</label><br />
-							<input class="text_input" type="email" placeholder="example@email.domain" id="email"></input>
+							<input class="text_input" type="email" id="email"></input>
 						</li>
 						<li>
 							<label>Accept Event Participation</label><br />
@@ -82,7 +81,7 @@
 							<div>
 
                                 <label class="custom_file_upload" for="cal_upload"><span class="file_upload_button_text">Browse</span></label>
-                                <input type="text" class="text_input" readonly="readonly" placeholder="Choose File..."></input>
+                                <input type="text" class="text_input" readonly="readonly" id="choose_file"></input>
                                 <input id="cal_upload" class="create" type="file" value="browse"></input>
 							</div>
 						</li>
@@ -94,6 +93,6 @@
             </div>
         </form>
   </main>
-  <script type="text/javascript" src="rsvp_to_event_r.js"></script>
+<script type="text/javascript" src="rsvp_to_event.js"></script>
 </body>
 </html>

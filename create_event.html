@@ -9,12 +9,10 @@
 	<title>Create Event</title> 
 	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script type="text/javascript" src="create_event.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
-	
     <nav>
 		<a href="#main" aria-label="Skip to main"></a>
 		<a href="landing.html"><img src="LogoWhensGoodLogo.svg" class="img" alt="comment pic" /></a>
@@ -46,7 +44,7 @@
 					<ul>
 						<li>
 							<label>Event Name</label><br/>
-							<input class="text_input" type="text" placeholder="Event Name"/>
+							<input class="text_input" type="text" id="event_name" />
 						</li>
 						<li>
 							<label>Event Date Range</label></br>
@@ -60,27 +58,26 @@
 						<li>
 							<label>Event Duration</label><br>
 							<div class="text_input">
-									<input type="number" class="durration_time" id="hr" min="0" max="12" value="0">HR</input>
-                                    <input type="number" class="durration_time" id="min" min="0" max="60" step="15" value="0">MIN</input>
+                                <input type="number" class="durration_time" id="hr" min="0" max="12" value="0">HR</input>
+                                <input type="number" class="durration_time" id="min" min="0" max="60" step="15" value="0">MIN</input>
 							</div>
 						</li>
 						<li>
 							<label>Organizer's Email</label><br />
-							<input class="text_input" type="email" placeholder="example@email.domain"></input>
+							<input class="text_input" type="email" id="organizers_email"></input>
 						</li>
 						<li>
 							<label>Event Password</label><br>
-							<input class="text_input" type="password" placeholder="password"></input>
+							<input class="text_input" type="password" id="event_password"></input>
 						</li>
 						<li>
 							<label>Organizer's Calendar</label><br>
 							<div>
-
-                                <label class="custom_file_upload" for="cal_upload"><span class="file_upload_button_text">Browse</span></label>
-                                <input type="text" class="text_input" readonly="readonly" placeholder="Choose File..."></input>
+                                <label class="custom_file_upload" for="cal_upload">
+                                    <span class="file_upload_button_text">Browse</span>
+                                </label>
+                                <input type="text" class="text_input" readonly="readonly" id="choose_file"></input>
                                 <input id="cal_upload" class="create" type="file" value="browse"></input>
-
-
 							</div>
 						</li>
 
@@ -816,9 +813,7 @@
 						* hold CTRL / CMD key to select multiple event windows on the same day <br/>
 						* click on the Day title to clear all event windows on that day
 					</p>
-					
 				</div>
-				
 		</div>
 		<button class="button span red" id = "button">Schedule Event</button>
 	</form>
@@ -827,6 +822,6 @@
 <p id="feedback" class="feedback">
 	<span>Time Slots:</span> <span id="select-result"></span>
 	</p>
-
+    <script type="text/javascript" src="create_event.js"></script>
 </body>
 </html>
