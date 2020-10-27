@@ -287,10 +287,10 @@ form{
 .alert{
     background-color: #91D9BF;
     border-radius: 5pt;
-    height:fit-content;
+    max-height:fit-content;
     margin-top: 30px;
     padding:10px; 
-    width:fit-content;
+	width:fit-content;
 }
 
 .inner_layout > div{
@@ -529,7 +529,8 @@ particular project*/
 	padding-top: 7pt;
 	padding-bottom: 7pt;
 	position: relative;
-	transition: box-shadow .2s ease-in-out;
+	transition:	box-shadow .2s ease-in-out,
+				border-color .2s ease-in-out;
 	width: 30pt;
 }
 
