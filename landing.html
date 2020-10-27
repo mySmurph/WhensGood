@@ -1,7 +1,7 @@
 
 <!--  http://cis444.cs.csusm.edu/newso011/hw1.html   -->
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -12,8 +12,8 @@
 </head>
 
 <body>
-    <div class="nav">
-	    <a href="#main"><img src="LogoWhensGoodLogo.svg" class="img" alt="comment pic" /></a>
+    <nav class="nav">
+		<a href="landing.html"><img src="LogoWhensGoodLogo.svg" class="img" alt="comment pic" /></a>
 		<ul class="list">
 			<li>
                 <a class="button" href="create_event.html">Create Event</a>
@@ -28,11 +28,11 @@
                 <a class="button" href="schedule_event.html">Schedule Event</a>
             </li>
 		</ul>
-    </div>
+    </nav>
   
-    <div class="main" id="main">
-      <h1> 
-        I'll check my schedule...
+    <main class="maincontent" id="main">
+      <h1><a href="#maincontent" aria-label="Skip to main">
+        I'll check my schedule...</a> 
       </h1>
        <div class = "content"> 
             <ul class="list">
@@ -44,7 +44,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </main>
   
 </body>
 </html>
