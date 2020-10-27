@@ -64,7 +64,7 @@ input[type="file"] {
 body{
 	display: grid;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-	grid-template-columns: max-content auto;
+	grid-template-columns: min-content auto;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -89,7 +89,8 @@ h1{
 
 
 .img{
-    display: inline-block;
+	display: inline-block;
+	width: 200px;
 }
 
 main{
