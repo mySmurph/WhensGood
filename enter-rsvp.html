@@ -7,7 +7,7 @@
 <head>
 <!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
   <title>RSVP View</title> 
-  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 </head>
 
 <body>
@@ -19,13 +19,13 @@
                 <a class="button" href="create_event.html">Create Event</a>
             </li>
 			<li>
-                <a class="button" href="edit_event.html">Edit Event</a>
+                <a class="button" href="enter-edit_event.html">Edit Event</a>
             </li>
 			<li>
-                <a class="button" href="create_event.html">RSVP to an Event</a>
+                <a class="button" href="enter-rsvp.html">RSVP to an Event</a>
             </li>
 			<li>
-                <a class="button" href="schedule_event.html">Schedule Event</a>
+                <a class="button" href="enter-schedule_event.html">Schedule Event</a>
             </li>
 		</ul>
     </nav>
@@ -40,7 +40,7 @@
             <ul>
                 <li>
                     <label>Enter Event Code<br />
-                    <input type="text" class="text_input" id="event_code"/></label>
+                    <input type="text" class="text_input full" id="event_code"/></label>
                 </li>
                 <li>
                     <div class="switchbox">
@@ -52,7 +52,7 @@
                 <li>
                     <div class="password_container" id = "password_container">
                         <label>Enter Event Password<br/>
-                        <input id="password_input" type="text" class="text_input"/></label>
+                        <input id="password_input" type="text" class="text_input full"/></label>
                     </div>
                 </li>
             </ul>
@@ -61,6 +61,6 @@
                 </div>
         </form>
     </main>
-    <script type="text/javascript" src="rsvp_view.js"></script>
+    <script type="text/javascript" src="script/rsvp_view.js"></script>
 </body>
 </html>

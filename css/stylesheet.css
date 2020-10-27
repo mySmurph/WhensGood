@@ -151,8 +151,8 @@ main{
     border-radius: 10px;
     color: black;
     padding-bottom: 20px;
-	padding-top: 20px;
 	padding-right: 10pt;
+	padding-top: 20px;
     text-decoration: none;
 }
 
@@ -162,16 +162,17 @@ main{
     border-radius: 5pt;
     font-size: 14px;
     padding-bottom: 4pt;
-    padding-top: 4pt;
-    width: 253pt;
+	padding-left: 10pt;
+	padding-top: 4pt;
 }
-
-.half{
-	width:115pt;
-}
-
-.threeQuarters{
+.full{
 	width:245pt;
+}
+.half{
+	width:105pt;
+}
+.threeQuarters{
+	width:235pt;
 }
 .durration_time{
     height: 14px;
@@ -287,8 +288,8 @@ form{
 .alert{
     background-color: #91D9BF;
     border-radius: 5pt;
-    max-height:fit-content;
     margin-top: 30px;
+    max-height:fit-content;
     padding:10px; 
 	width:fit-content;
 }
@@ -307,67 +308,6 @@ form{
 .password_container{
 	display: none;
 }
-
-/* the following css code was borrowed from
-https://www.w3schools.com/howto/howto_css_switch.asp  I had to adjust the code for this
-particular project*/
-/* The switch - the box around the slider */
-  /* The slider */
-  .slider {
-    background-color: #F24B59;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition-duration: 400ms;
-    /* -webkit-transition-duration: 400ms; */
-  }
-  
-  .slider:before {
-    background-color: white;
-    bottom: 4px;
-    content: "";
-    height: 18px;
-    left: 4px;
-    position: absolute;
-    transition-duration: 400ms;
-    /* -webkit-transition-duration: 400ms; */
-    width: 18px;
-  }
-  
-  input:checked + .slider {
-    background-color: #378C7D;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .round{
-      border-radius: 10px;
-  }
-
-  .round:before {
-    border-radius: 50%;
-  }
-
-/* END borrowed code */
-
-  /* Hide default HTML checkbox */
-/* input[type='checkbox'] {
-    border-radius: 15px;
-    opacity: 0;
-    width: 40px;
-  } */
 
 .input_code{
     border: none;
@@ -521,17 +461,14 @@ particular project*/
 	-o-appearance: none;
 	-webkit-appearance: none;
 	background-color: #fafafa;
-	border-radius: .825em;
 	border: 2pt solid #F24B59;
+	border-radius: .825em;
 	box-shadow: inset -1.50em 0 0 1pt #F24B59;
 	margin-right: .25em;
-	outline: none;
-	padding-top: 7pt;
-	padding-bottom: 7pt;
+	padding: 7pt 14pt;
 	position: relative;
-	transition:	box-shadow .2s ease-in-out,
-				border-color .2s ease-in-out;
-	width: 30pt;
+	transition:	box-shadow 500ms ease-in-out,
+			border-color 500ms ease-in-out;
 }
 
 .switchbox input:checked {

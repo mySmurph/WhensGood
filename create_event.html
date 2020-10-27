@@ -7,7 +7,7 @@
 <head>
 <!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
 	<title>Create Event</title> 
-	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
@@ -21,13 +21,13 @@
                 <a class="button" href="create_event.html">Create Event</a>
             </li>
 			<li>
-                <a class="button" href="edit_event.html">Edit Event</a>
+                <a class="button" href="enter-edit_event.html">Edit Event</a>
             </li>
 			<li>
-                <a class="button" href="create_event.html">RSVP to an Event</a>
+                <a class="button" href="enter-rsvp.html">RSVP to an Event</a>
             </li>
 			<li>
-                <a class="button" href="schedule_event.html">Schedule Event</a>
+                <a class="button" href="enter-schedule_event.html">Schedule Event</a>
             </li>
 		</ul>
     </nav>
@@ -44,7 +44,7 @@
 					<ul>
 						<li>
 							<label aria-label="Give your event a name for people to know what the event is for.">Event Name<br/>
-							<input class="text_input" type="text" id="event_name" /></label>
+							<input class="text_input full" type="text" id="event_name" /></label>
 						</li>
 						<li>
 							<label aria-label="Set the date range of when you would like your event to take place.">Event Date Range<br/></label>
@@ -57,18 +57,18 @@
 						</li>
 						<li>
 							<label aria-label="Set the minimum amount of time you need for your event to take place.">Event Duration<br/></label>
-							<div class="text_input">
+							<div class="text_input full">
 									<input type="number" class="durration_time" id="hr" min="0" max="12" value="0" aria-label="Hours"/>HR
 									<input type="number" class="durration_time" id="min" min="0" max="60" step="15" value="0" aria-label="Minutes"/>MIN
 							</div>
 						</li>
 						<li>
 							<label aria-label="Enter your contact info.">Organizer's Email<br/>
-							<input class="text_input" type="email" id="organizers_email"/></label>
+							<input class="text_input full" type="email" id="organizers_email"/></label>
 						</li>
 						<li>
 							<label aria-label="Set a password so you can access the scheduler later">Event Password<br/></label>
-							<input class="text_input" type="password" id="event_password"  aria-label="password"/>
+							<input class="text_input full" type="password" id="event_password"  aria-label="password"/>
 						</li>
 						<li>
 							<label aria-label="Upload your own calendar so it can be acounted for just like the participents">Organizer's Calendar<br/></label>
@@ -76,7 +76,7 @@
 								<label class="custom_file_upload">
 									<span class="file_upload_button_text">Browse</span>
 								</label>
-									<input type="text" class="text_input" readonly="readonly" id="choose_file" aria-label="file field"/>
+									<input type="text" class="text_input full" readonly="readonly" id="choose_file" aria-label="file field"/>
 									<input id="cal_upload" class="create" type="file" aria-label="file button"/>
 						</li>
 					</ul>
@@ -823,6 +823,6 @@
 <p id="feedback" class="feedback">
 	<span>Time Slots:</span> <span id="select-result"></span>
 	</p>
-    <script type="text/javascript" src="create_event.js"></script>
+    <script type="text/javascript" src="script/create_event.js"></script>
 </body>
 </html>
