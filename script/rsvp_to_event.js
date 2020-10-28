@@ -9,24 +9,10 @@ domChooseFile.setAttribute("placeholder", "Choose File...");
 domName.setAttribute("placeholder", "Zapp Brannigan");
 domEmail.setAttribute("placeholder", "example@email.domain"); 
 
-$(document).ready(function() {
-	$(".selectable_list" ).selectable(
-	{
-		
-	  stop: function() {
-		// clear Selection
-		$( ".ui-selected").each(
-			function() {
-				jQuery(this).removeClass('ui-selected');
-			}
-		);
-	  }
-	}
-	);
-  } );
+
 
 function submitRSVP(){
-	alert(domChooseFile.value);
+	alert(document.getElementById("cal_upload").value);
 }
 function hasName(){
 	return domName.value>0;
@@ -37,3 +23,18 @@ function hasEmail(){
 function hasAccepted(){
 	return domSlider.checked;
 }
+// $(".hour_table").ready(function() {
+// 	$(".selectable_list" ).selectable(
+// 	{
+		
+// 	  stop: function() {
+// 		// clear Selection
+// 		$( ".ui-selected").each(
+// 			function() {
+// 				jQuery(this).removeClass('ui-selected');
+// 			}
+// 		);
+// 	  }
+// 	}
+// 	);
+//   } );
