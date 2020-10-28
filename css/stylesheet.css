@@ -9,6 +9,7 @@ ul{
 ul li{
     margin: 0;
 	padding-bottom: 10pt;
+	padding-left: 0;
 }
 
 label, .label{
@@ -220,12 +221,15 @@ form{
     top: 4px;
 }
 .hour_table{
-    background-color: white;
-	border-radius: 5pt;
+
 	display: grid;
 	grid-template-columns: 100pt 35pt 35pt 35pt 35pt 35pt 35pt 35pt;
-    padding: 10pt;
     width: fit-content;
+}
+.white{
+    background-color: white;
+	border-radius: 5pt;
+    padding: 10pt;
 }
 .selectable_list  .ui-selecting{
 	background: #F2F1DF;
@@ -250,21 +254,24 @@ form{
 .selectable_list:hover{
 	background-color: #F2F1DF50;
 }
-.selectable_list li:nth-child(n+2){
-    color: transparent; 
-    font-size: 4pt;
-}
-
 .time, .day{
 	height: 16pt;
 	text-align: center;
 }
 .selectable_list li:nth-child(n+2){
 	color: transparent;
-	/* font-size: 1pt; */
+	font-size: 1pt;
 	height: 4pt;
 }
-
+.availible{
+	background-color: #91D9BF80;
+}
+.unavailible{
+	background-color: #F24B59;
+}
+.selected_window{
+	background-color: #378C7D;
+}
 .note{
 	font-size: 65%;
 	font-style: italic;
@@ -476,3 +483,9 @@ form{
 	box-shadow: inset 1.50em 0 0 1pt #378C7D;
 }
 
+.participant_List{
+	margin: 10pt;
+	padding: 10pt;
+	border-radius: 5pt;
+	background-color: #F2F1DF;
+}

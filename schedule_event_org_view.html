@@ -1,6 +1,6 @@
 <!--  http://cis444.cs.csusm.edu/newso011/hw1.html  testing again 3-->
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -8,6 +8,8 @@
 <!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
 	<title>Finalize Event Page</title> 
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -35,60 +37,192 @@
 		Schedule Event
 	</h1>
 
-	<form action="">
+	<form>
 			
 		<div class="grid_container">
 				<div>
 					<label> Event Windows</label>
-					<div id = "hour_table" class="hour_table">
+					<div id = "hour_table" class="hour_table  white">
 						<ol class="times">
 							<li class = "day"></li>
-							<li class="time">11:00 PM</li>
+							<li class="time">04:00 PM</li>
+							<li class="time">05:00 PM</li>
+							<li class="time">06:00 PM</li>
+							<li class="time">07:00 PM</li>
 						  </ol>
 						<ol class = "selectable_list" id="selectable-SUN">
 							<li class = "day">SUN</li>
-							<li class="ui-widget-content" id = "SUN-2345">SUN-2345</li>
+							<li class="ui-widget-content unavailible window" id="SUN-1600">SUN-1600</li>
+							<li class="ui-widget-content unavailible window" id="SUN-1615">SUN-1615</li>
+							<li class="ui-widget-content availible window" id="SUN-1630">SUN-1630</li>
+							<li class="ui-widget-content availible window" id="SUN-1645">SUN-1645</li>
+							<li class="ui-widget-content availible window" id="SUN-1700">SUN-1700</li>
+							<li class="ui-widget-content availible window" id="SUN-1715">SUN-1715</li>
+							<li class="ui-widget-content availible window" id="SUN-1730">SUN-1730</li>
+							<li class="ui-widget-content availible window" id="SUN-1745">SUN-1745</li>
+							<li class="ui-widget-content availible window" id="SUN-1800">SUN-1800</li>
+							<li class="ui-widget-content availible window" id="SUN-1815">SUN-1815</li>
+							<li class="ui-widget-content" id="SUN-1830">SUN-1830</li>
+							<li class="ui-widget-content" id="SUN-1845">SUN-1845</li>
+							<li class="ui-widget-content" id="SUN-1900">SUN-1900</li>
+							<li class="ui-widget-content" id="SUN-1915">SUN-1915</li>
+							<li class="ui-widget-content" id="SUN-1930">SUN-1930</li>
+							<li class="ui-widget-content" id="SUN-1945">SUN-1945</li>
 						</ol>
 						<ol class = "selectable_list" id="selectable-MON">
 							<li class = "day">MON</li>
-							<li class="ui-widget-content" id = "MON-2345">MON-2345</li>
+							<li class="ui-widget-content" id="MON-1600">MON-1600</li>
+							<li class="ui-widget-content" id="MON-1615">MON-1615</li>
+							<li class="ui-widget-content" id="MON-1630">MON-1630</li>
+							<li class="ui-widget-content" id="MON-1645">MON-1645</li>
+							<li class="ui-widget-content" id="MON-1700">MON-1700</li>
+							<li class="ui-widget-content" id="MON-1715">MON-1715</li>
+							<li class="ui-widget-content" id="MON-1730">MON-1730</li>
+							<li class="ui-widget-content" id="MON-1745">MON-1745</li>
+							<li class="ui-widget-content" id="MON-1800">MON-1800</li>
+							<li class="ui-widget-content" id="MON-1815">MON-1815</li>
+							<li class="ui-widget-content" id="MON-1830">MON-1830</li>
+							<li class="ui-widget-content" id="MON-1845">MON-1845</li>
+							<li class="ui-widget-content" id="MON-1900">MON-1900</li>
+							<li class="ui-widget-content" id="MON-1915">MON-1915</li>
+							<li class="ui-widget-content" id="MON-1930">MON-1930</li>
+							<li class="ui-widget-content" id="MON-1945">MON-1945</li>
 						</ol>
 						<ol class = "selectable_list" id="selectable-TUE">
 							<li class = "day">TUE</li>
-							<li class="ui-widget-content" id = "TUE-2345">TUE-2345</li>
+							<li class="ui-widget-content" id="TUE-1600">TUE-1600</li>
+							<li class="ui-widget-content" id="TUE-1615">TUE-1615</li>
+							<li class="ui-widget-content" id="TUE-1630">TUE-1630</li>
+							<li class="ui-widget-content" id="TUE-1645">TUE-1645</li>
+							<li class="ui-widget-content" id="TUE-1700">TUE-1700</li>
+							<li class="ui-widget-content" id="TUE-1715">TUE-1715</li>
+							<li class="ui-widget-content" id="TUE-1730">TUE-1730</li>
+							<li class="ui-widget-content" id="TUE-1745">TUE-1745</li>
+							<li class="ui-widget-content" id="TUE-1800">TUE-1800</li>
+							<li class="ui-widget-content" id="TUE-1815">TUE-1815</li>
+							<li class="ui-widget-content" id="TUE-1830">TUE-1830</li>
+							<li class="ui-widget-content" id="TUE-1845">TUE-1845</li>
+							<li class="ui-widget-content" id="TUE-1900">TUE-1900</li>
+							<li class="ui-widget-content" id="TUE-1915">TUE-1915</li>
+							<li class="ui-widget-content" id="TUE-1930">TUE-1930</li>
+							<li class="ui-widget-content" id="TUE-1945">TUE-1945</li>
 						</ol>
 						<ol class = "selectable_list" id="selectable-WED">
 							<li class = "day">WED</li>
-							<li class="ui-widget-content" id = "WED-2345">WED-2345</li>
+							<li class="ui-widget-content" id="WED-1600">WED-1600</li>
+							<li class="ui-widget-content" id="WED-1615">WED-1615</li>
+							<li class="ui-widget-content" id="WED-1630">WED-1630</li>
+							<li class="ui-widget-content" id="WED-1645">WED-1645</li>
+							<li class="ui-widget-content" id="WED-1700">WED-1700</li>
+							<li class="ui-widget-content" id="WED-1715">WED-1715</li>
+							<li class="ui-widget-content" id="WED-1730">WED-1730</li>
+							<li class="ui-widget-content" id="WED-1745">WED-1745</li>
+							<li class="ui-widget-content" id="WED-1800">WED-1800</li>
+							<li class="ui-widget-content" id="WED-1815">WED-1815</li>
+							<li class="ui-widget-content" id="WED-1830">WED-1830</li>
+							<li class="ui-widget-content" id="WED-1845">WED-1845</li>
+							<li class="ui-widget-content" id="WED-1900">WED-1900</li>
+							<li class="ui-widget-content" id="WED-1915">WED-1915</li>
+							<li class="ui-widget-content" id="WED-1930">WED-1930</li>
+							<li class="ui-widget-content" id="WED-1945">WED-1945</li>
 						</ol>
 						<ol class = "selectable_list" id="selectable-THR">
 							<li class = "day">THR</li>
-							<li class="ui-widget-content" id = "THR-2345">THR-2345</li>
+							<li class="ui-widget-content" id="THR-1600">THR-1600</li>
+							<li class="ui-widget-content" id="THR-1615">THR-1615</li>
+							<li class="ui-widget-content" id="THR-1630">THR-1630</li>
+							<li class="ui-widget-content" id="THR-1645">THR-1645</li>
+							<li class="ui-widget-content" id="THR-1700">THR-1700</li>
+							<li class="ui-widget-content" id="THR-1715">THR-1715</li>
+							<li class="ui-widget-content" id="THR-1730">THR-1730</li>
+							<li class="ui-widget-content" id="THR-1745">THR-1745</li>
+							<li class="ui-widget-content" id="THR-1800">THR-1800</li>
+							<li class="ui-widget-content" id="THR-1815">THR-1815</li>
+							<li class="ui-widget-content" id="THR-1830">THR-1830</li>
+							<li class="ui-widget-content" id="THR-1845">THR-1845</li>
+							<li class="ui-widget-content" id="THR-1900">THR-1900</li>
+							<li class="ui-widget-content" id="THR-1915">THR-1915</li>
+							<li class="ui-widget-content" id="THR-1930">THR-1930</li>
+							<li class="ui-widget-content" id="THR-1945">THR-1945</li>
 						</ol>
 						<ol class = "selectable_list" id="selectable-FRI">
 							<li class = "day">FRI</li>
-							<li class="ui-widget-content" id = "FRI-2345">FRI-2345</li>
+							<li class="ui-widget-content" id="FRI-1600">FRI-1600</li>
+							<li class="ui-widget-content" id="FRI-1615">FRI-1615</li>
+							<li class="ui-widget-content availible window" id="FRI-1630">FRI-1630</li>
+							<li class="ui-widget-content availible window" id="FRI-1645">FRI-1645</li>
+							<li class="ui-widget-content availible window" id="FRI-1700">FRI-1700</li>
+							<li class="ui-widget-content availible window" id="FRI-1715">FRI-1715</li>
+							<li class="ui-widget-content availible window" id="FRI-1730">FRI-1730</li>
+							<li class="ui-widget-content unavailible window" id="FRI-1745">FRI-1745</li>
+							<li class="ui-widget-content unavailible window" id="FRI-1800">FRI-1800</li>
+							<li class="ui-widget-content unavailible window" id="FRI-1815">FRI-1815</li>
+							<li class="ui-widget-content availible window" id="FRI-1830">FRI-1830</li>
+							<li class="ui-widget-content availible window" id="FRI-1845">FRI-1845</li>
+							<li class="ui-widget-content availible window" id="FRI-1900">FRI-1900</li>
+							<li class="ui-widget-content availible window" id="FRI-1915">FRI-1915</li>
+							<li class="ui-widget-content availible window" id="FRI-1930">FRI-1930</li>
+							<li class="ui-widget-content availible window" id="FRI-1945">FRI-1945</li>
 						</ol>
 						<ol class = "selectable_list" id="selectable-SAT">
 							<li class = "day">SAT</li>
-							<li class="ui-widget-content" id = "SAT-2345">SAT-2345</li>
+							<li class="ui-widget-content" id="SAT-1600">SAT-1600</li>
+							<li class="ui-widget-content" id="SAT-1615">SAT-1615</li>
+							<li class="ui-widget-content" id="SAT-1630">SAT-1630</li>
+							<li class="ui-widget-content" id="SAT-1645">SAT-1645</li>
+							<li class="ui-widget-content availible window" id="SAT-1700">SAT-1700</li>
+							<li class="ui-widget-content availible window" id="SAT-1715">SAT-1715</li>
+							<li class="ui-widget-content availible window" id="SAT-1730">SAT-1730</li>
+							<li class="ui-widget-content availible window" id="SAT-1745">SAT-1745</li>
+							<li class="ui-widget-content availible window" id="SAT-1800">SAT-1800</li>
+							<li class="ui-widget-content availible window" id="SAT-1815">SAT-1815</li>
+							<li class="ui-widget-content availible window" id="SAT-1830">SAT-1830</li>
+							<li class="ui-widget-content availible window" id="SAT-1845">SAT-1845</li>
+							<li class="ui-widget-content unavailible window" id="SAT-1900">SAT-1900</li>
+							<li class="ui-widget-content unavailible window" id="SAT-1915">SAT-1915</li>
+							<li class="ui-widget-content unavailible window" id="SAT-1930">SAT-1930</li>
+							<li class="ui-widget-content unavailible window" id="SAT-1945">SAT-1945</li>
 						</ol>
-				
+						<p class="feedback" id="feedback">
+							<span>Time Slots:</span> <span id="select-result"></span>
+						</p>
 					</div>
 				</div>
 				<div>
 					<label>Event Participants</label><br/>
-					<div class="">
-
-					</div>
+						<ul class="white full">
+							<li>
+								Accept
+								<ul id = "accept" class = "participant_List">
+									<li>
+										name 1
+									</li>
+									<li>
+										name 3
+									</li>
+									<li>
+										name 4
+									</li>
+								</ul>
+							</li>
+							<li>
+								Decline
+								<ul id = "decline" class = "participant_List">
+									<li>
+										name 2
+									</li>
+								</ul>
+							</li>
+						</ul>
 					
 				</div>
 
-            <button type="submit" class="button span red" id = "button">Button Needed for Total Validator</button>
+            
 		</div>
-		
+		<button type="submit" class="button span red" id = "button">Schedule Event</button>
 	</form>
 	
-    </main>
+</main>
+<script type="text/javascript" src="script/schedule_event.js"></script>
 </body>
 </html>
