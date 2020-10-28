@@ -368,7 +368,7 @@ form{
 	margin-right: .25em;
 	padding: 7pt 14pt;
 	position: relative;
-	transition-duration: 500ms;
+	transition-duration: 50ms;
 }
 
 .switchbox input:checked {
