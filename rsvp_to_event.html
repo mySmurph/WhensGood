@@ -8,8 +8,6 @@
 <!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
   <title>RSVP To Event</title> 
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -362,23 +360,23 @@
 						<li>
 							<label aria-label="Upload your calendar">Participant's Calendar<br/></label>
 							
-								<label class="custom_file_upload">
+								<label class="custom_file_upload" for="cal_upload">
 									<span class="file_upload_button_text">Browse</span>
 								</label>
 									<input type="text" class="text_input full" readonly="readonly" id="choose_file" aria-label="file field" />
 									<input id="cal_upload" class="create" type="file" aria-label="file button" ></input>
 						</li>
 						<li>
-							<input class="custom_file_upload" type = "file"></input>
-						</li>
-						<li>
 							<button class="button red span" id = "button">RSVP to Event</button>
 						</li>
 					</ul>
 				</div>
-            </div>
+			</div>
         </form>
   </main>
-<script type="text/javascript" src="script/rsvp_to_event.js"></script>
+
+	<script type="text/javascript" src="script/rsvp_to_event.js"></script>
+	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 </body>
 </html>
