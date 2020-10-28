@@ -39,8 +39,7 @@ input[type="file"] {
 }
 
 .button{
-    -webkit-appearance: button;
-    -moz-appearance: button;
+	display: block;
     background-color:#91D9BF;
     border: none;
     border-radius: 17px;

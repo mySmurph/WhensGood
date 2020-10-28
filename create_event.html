@@ -50,18 +50,18 @@
 						</li>
 						<li>
 							<label aria-label="Set the date range of when you would like your event to take place.">Event Date Range<br /></label>
-							<input id="event_date_range_start" class="text_input half calendar" type="date" aria-label="event_date_range_start" />
-							<input id="event_date_range_end" class="text_input half calendar" type="date" aria-label="event_date_range_end" />
+							<input id="event_date_range_start" class="text_input half calendar" type="date" aria-label="event_date_range_start" placeholder="mm/dd/yyy"/>
+							<input id="event_date_range_end" class="text_input half calendar" type="date" aria-label="event_date_range_end" placeholder="mm/dd/yyy"/>
 						</li>
 						<li>
 							<label aria-label="Let your guest know by what date they need to respond by.">RSVP Deadline<br /></label>
-							<input id="rsvp_deadline" class="text_input threeQuarters calendar" type="date" aria-label="rsvp_deadline" />
+							<input id="rsvp_deadline" class="text_input threeQuarters calendar" type="date" aria-label="rsvp_deadline" placeholder="mm/dd/yyy"/>
 						</li>
 						<li>
 							<label aria-label="Set the minimum amount of time you need for your event to take place.">Event Duration<br /></label>
 							<div class="text_input full">
 								<input type="number" class="durration_time" id="hr" min="0" max="12" value="0" aria-label="Hours" />HR
-								<input type="number" class="durration_time" id="min" min="0" max="60" step="15" value="0" aria-label="Minutes" />MIN
+								<input type="number" class="durration_time" id="min" min="0" max="59" step="15" value="0" aria-label="Minutes"/>MIN
 							</div>
 						</li>
 						<li>
