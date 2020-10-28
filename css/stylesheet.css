@@ -223,7 +223,7 @@ form{
 .hour_table{
 
 	display: grid;
-	grid-template-columns: 100pt 35pt 35pt 35pt 35pt 35pt 35pt 35pt;
+	grid-template-columns: 100pt  55pt 55pt 55pt 55pt 55pt 55pt 55pt;
     width: fit-content;
 }
 .white{
@@ -237,7 +237,6 @@ form{
 
 .selectable_list  .ui-selected{
 	background: #91D9BF;
-	color: white;
 }
 
 .selectable_list, .times{
@@ -258,7 +257,16 @@ form{
 	height: 16pt;
 	text-align: center;
 }
-.selectable_list li:nth-child(n+2){
+.date{
+	height: 24pt;
+	text-align: center;
+	word-wrap: 2;
+}
+.date > span{
+	font-size: 50%;
+	display: block;
+}
+.segment{
 	color: transparent;
 	font-size: 1pt;
 	height: 4pt;

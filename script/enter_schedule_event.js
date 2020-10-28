@@ -1,4 +1,4 @@
-document.getElementById("button").addEventListener("click", validateCridentials);
+document.getElementById("button").addEventListener("click",validateCridentials);
 var domEventCode = document.getElementById("event_code");
 var domInputPassword = document.getElementById("password_input");
 
@@ -10,7 +10,7 @@ function validateCridentials(){
 	var password = domInputPassword.value;
 	if(password==0 || eventCode==0){
 		alert("no event found");
-		// window.location.replace("landing.html"); //redirect to home
-		// return false;
+		return false;
 	}
+	return true;
 }

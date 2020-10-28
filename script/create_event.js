@@ -10,7 +10,7 @@ domChooseFile.setAttribute("placeholder", "Choose File...");
 
 
 $(document).ready(function() {
-	$( "#selectable-SUN, #selectable-MON, #selectable-TUE, #selectable-WED, #selectable-THR, #selectable-FRI, #selectable-SAT" ).selectable(
+	$(".selectable_list").selectable(
 	{
 	  selected: function() {
 		var result = $( "#select-result" ).empty();
