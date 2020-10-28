@@ -260,11 +260,10 @@ form{
 .date{
 	height: 24pt;
 	text-align: center;
-	word-wrap: 2;
 }
 .date > span{
+    display: block;
 	font-size: 50%;
-	display: block;
 }
 .segment{
 	color: transparent;
@@ -347,9 +346,9 @@ form{
 /* CSS SPECIFIC TO                                                  RSVP TO EVENT HTML FILE         START */
 
 .inline_list{
+    column-gap: 10pt;
 	display: grid;
 	grid-template-columns: max-content max-content;
-	grid-column-gap: 10pt;
 }
 
 /* CSS SPECIFIC TO                                                  RSVP TO EVENT HTML FILE         END */
@@ -369,8 +368,7 @@ form{
 	margin-right: .25em;
 	padding: 7pt 14pt;
 	position: relative;
-	transition:	box-shadow 500ms ease-in-out,
-			border-color 500ms ease-in-out;
+	transition-duration: 500ms;
 }
 
 .switchbox input:checked {
@@ -379,8 +377,8 @@ form{
 }
 
 .participant_List{
+    background-color: #F2F1DF;
+    border-radius: 5pt;
 	margin: 10pt;
 	padding: 10pt;
-	border-radius: 5pt;
-	background-color: #F2F1DF;
 }
