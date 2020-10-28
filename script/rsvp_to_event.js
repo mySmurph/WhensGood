@@ -1,12 +1,39 @@
 
-let domChooseFile = document.getElementById("choose_file");
-let domName = document.getElementById("name");
-let domEmail = document.getElementById("email");
-let domSlider = document.getElementById("switchbox");
+var domChooseFile = document.getElementById("choose_file");
+var domName = document.getElementById("name");
+var domEmail = document.getElementById("email");
+var domSlider = document.getElementById("switchbox");
+document.getElementById("button").addEventListener('click', submitRSVP);
 
 domChooseFile.setAttribute("placeholder", "Choose File...");
 domName.setAttribute("placeholder", "Zapp Brannigan");
 domEmail.setAttribute("placeholder", "example@email.domain"); 
 
-// domSlider.addEventListener("click", changeSize, false);
-// domBody.addEventListener("load", elements_visibility, false);
+$(document).ready(function() {
+	$(".selectable_list" ).selectable(
+	{
+		
+	  stop: function() {
+		// clear Selection
+		$( ".ui-selected").each(
+			function() {
+				jQuery(this).removeClass('ui-selected');
+			}
+		);
+	  }
+	}
+	);
+  } );
+
+function submitRSVP(){
+	alert(domChooseFile.value);
+}
+function hasName(){
+	return domName.value>0;
+}
+function hasEmail(){
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(domEmail.value);
+}
+function hasAccepted(){
+	return domSlider.checked;
+}

@@ -235,7 +235,7 @@ form{
 	background: #F2F1DF;
 }
 
-.selectable_list  .ui-selected{
+.selectable_list  .ui-selected, .window{
 	background: #91D9BF;
 }
 
@@ -346,124 +346,11 @@ form{
 
 /* CSS SPECIFIC TO                                                  RSVP TO EVENT HTML FILE         START */
 
-.rsvp_deadline_text{
-    left: 300px;
-    position: absolute;
+.inline_list{
+	display: grid;
+	grid-template-columns: max-content max-content;
+	grid-column-gap: 10pt;
 }
-
-.text_input_left_col{
-    left: 300px;
-    position: absolute;
-    top: 80px; 
-}
-
-.event_duration_text{
-    left: 600px;
-    position: absolute;
-}
-
-.rsvp_event_window_text{
-    left: 300px;
-    position: absolute;
-    top: 150px;
-}
-
-.text_input_participants_name{
-    left: 1050px;
-    position: absolute;
-    top: 80px; 
-    width: 380px;
-}
-
-.participitants_email_title{
-    left: 1050px;
-    position: absolute;
-    top: 150px;
-  }
-
-  .text_input_right_col{
-    left: 1050px;
-    position: absolute;
-    top: 175px; 
-    width: 380px;
-}
-
-.accept_event_text{
-    left: 1050px;
-    position: absolute;
-    top: 250px;
-}
-
-.decline_rsvp{
-    /* left: -148px; */
-    position: relative;
-    top: 30px;
-}
-
-.accept_rsvp{
-    left: -65px;
-    position: relative;
-    top: 30px;
-}
-
-.switch2 {
-    height: 25px;
-    left: 39%; 
-    position: absolute;
-    text-align: center;
-    top: 33%;
-    width: 53px;
-  }
-  
-  .switch2 input {
-    border-radius: 15px;
-    height: 0;
-    opacity: 0;
-    width: 0;
-  }
-
-  .slider_container{
-    display: inline-block;
-    position: relative;
-  }
-
-  .slider2{
-    /* left: -60px; */
-    position: absolute;
-  }
-
-  .participants_cal_text{
-    left: 1050px;
-    position: absolute;
-    top: 350px;
-}
-
-.participants_name{
-    left: 1050px;
-    position: absolute;
-}
-
-.rsvp_to_event_calender_upload{
-    left: 700px;
-    margin-left: 40px;
-    position: absolute;
-}
-
-
-.rsvp_to_event_file_input_button{
-    height: 23px;
-    left: 1010px;
-    position: absolute;
-    top: 380px;
-    width: 260px;
-}
-
-.rsvp_to_event_label{
-    left: 1315px;
-    position: absolute;
-    top: 380px;
-}
-
 
 /* CSS SPECIFIC TO                                                  RSVP TO EVENT HTML FILE         END */
 
