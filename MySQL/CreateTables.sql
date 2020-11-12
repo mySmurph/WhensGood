@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS Days;
 
 CREATE TABLE Events(
 	EventCode VARCHAR(24) PRIMARY KEY,
+    EventTitle VARCHAR(55),
 	Durration DECIMAL(3,0),
 	Deadline DATE,
 	EventPassword VARCHAR(16)
