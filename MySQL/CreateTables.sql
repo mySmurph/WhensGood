@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Days;
 
 CREATE TABLE Events(
-	EventCode VARCHAR(24) PRIMARY KEY,
+	EventCode VARCHAR(16) PRIMARY KEY,
     EventTitle VARCHAR(55),
 	Durration DECIMAL(3,0),
 	Deadline DATE,
@@ -17,11 +17,12 @@ CREATE TABLE Events(
 );
 
 CREATE TABLE User_Types(
-	UserTypeID VARCHAR(11) PRIMARY KEY
+	UserTypeID VARCHAR(1) PRIMARY KEY, 
+    UserType VARCHAR(11)
 );
 
 CREATE TABLE Users(
-	UserID VARCHAR(8) PRIMARY KEY,
+	UserID VARCHAR(16) PRIMARY KEY,
 	UserType VARCHAR(11) NOT NULL,
 	UserName VARCHAR(55),
     RSVP boolean NOT NULL,
@@ -31,12 +32,18 @@ CREATE TABLE Users(
 );
 
 CREATE TABLE Days(
-	EventCode VARCHAR(24),
-	UserID VARCHAR(8),
-	TimeArray VARCHAR(96),
+	EventCode VARCHAR(16),
+	UserID VARCHAR(16),
 	EventDate DECIMAL(8,0),
+	TimeArray VARCHAR(96),
 		CONSTRAINT pk_Days PRIMARY KEY (EventCode, UserID, EventDate),
 		CONSTRAINT fk_event_code FOREIGN KEY (EventCode) REFERENCES Events(EventCode),
 		CONSTRAINT fk_userID FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
+use WhensGood_db;
+insert into User_Types(UserTypeID, UserType)
+values
+	('O', 'Organizer'),
+	('E', 'Event'),
+	('P','Participant');
