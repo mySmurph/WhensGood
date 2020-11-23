@@ -58,18 +58,9 @@ Values
     '000000000000000000000000000000000000111111111111111111111111111111110000000000000000000000000000'
 )
 ;
--- Lookup Event
-SELECT
-	EventDate Date, TimeArray Time
-from
-	Days d
-Inner Join
-	Users u using(UserID)
-WHERE
-	d.EventCode = '1kxeqfw3ce' AND u.UserType = 'E';
 
 
--- update Event
+-- update Event: Change Existing day
 update Days
 Cross Join
 	Users using(UserID)
@@ -82,4 +73,4 @@ WHERE
     AND	UserType = 'E'
 ;
 
-select * from Days;
+

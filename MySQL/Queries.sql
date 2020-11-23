@@ -41,10 +41,27 @@ Where
 	AND	RSVP = False
 ;
 
+-- Display Event Information
+SELECT
+	EventDate Date, TimeArray Time
+from
+	Days d
+Inner Join
+	Users u using(UserID)
+WHERE
+	d.EventCode = '1kxeqfw3ce' AND u.UserType = 'E';
+
 -- get all calendars to an event
-SELECT TimeArray
+SELECT 
+	EventDate Date, TimeArray Time
 FROM Days
 Where
 		Days.EventCode = '1kxEqfw3ce'
     AND Days.TimeArray IS NOT NULL
 ;
+
+-- Lookup Event (RSVP: No Password)
+Select count(Distinct EventCode) as EventFound from Events Where EventCode = '1kxeqfw3ce';
+-- Lookup Event (Schedule/Edit: Case Sensitive Password Required)
+Select count(Distinct EventCode) as EventFound from Events Where EventCode = '1kxeqfw3ce' AND  EventPassword like Binary 'myFakePassword' ; -- returns 0, password is incorrect
+Select count(Distinct EventCode) as EventFound from Events Where EventCode = '1kxEQfw3ce' AND  EventPassword like Binary 'MyFakePassword' ; -- returns 1

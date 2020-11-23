@@ -7,16 +7,14 @@ insert into Users(
 	Email, 				-- Organizer's email
 	CalenderFile
 )
-Values
-(
+Values(
 	'e8l7whwrtb',
     'P', 
     'Bender Rodriguez',
     True, 
     'BenderRodriguez@PlanetExpress.nny', 
     'bendersCalendar.ical'
-)
-;
+);
 
 insert into  Days(
 	EventCode,
@@ -24,8 +22,7 @@ insert into  Days(
 	EventDate,
 	TimeArray
 )
-Values
-(
+Values(
 	'1kxeqfw3ce',
     'e8l7whwrtb', 
     '20201126',
@@ -54,8 +51,7 @@ insert into Users(
 	Email,
 	CalenderFile
 )
-Values
-(
+Values(
 	'e8l8gk1cms',
     'P', 
     'Kif Kroker',
@@ -71,23 +67,10 @@ insert into  Days(
 	EventDate,
 	TimeArray
 )
-Values
-(
+Values(
 	'1kxeqfw3ce',
     'e8l8gk1cms', 
-    '20201126',
-    NULL
-),
-(
-	'1kxeqfw3ce',
-    'e8l8gk1cms', 
-    '20201127',
-    NULL
-),
-(
-	'1kxeqfw3ce',
-    'e8l8gk1cms', 
-    '20201128',
+    0,
     NULL
 )
 ;
