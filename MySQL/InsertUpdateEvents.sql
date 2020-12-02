@@ -60,6 +60,7 @@ Values
 ;
 
 
+
 -- update Event: Change Existing day
 update Days
 Cross Join
@@ -73,4 +74,4 @@ WHERE
     AND	UserType = 'E'
 ;
 
-
+SELECT * FROM Days;

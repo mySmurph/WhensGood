@@ -41,7 +41,7 @@ Where
 	AND	RSVP = False
 ;
 
--- Display Event Information
+-- Display Event Days Information
 SELECT
 	EventDate Date, TimeArray Time
 from

@@ -1,13 +1,13 @@
 -- CREATE SCHEMA `WhensGood_db` ;
 use WhensGood_db;
 -- Drop All Tables
-alter table Days DROP FOREIGN KEY  fk_event_code;
-alter table Days DROP FOREIGN KEY  fk_userID;
-alter table Users DROP FOREIGN KEY  fk_userType;
-DROP TABLE IF EXISTS Events;
-DROP TABLE IF EXISTS User_Types;
-DROP TABLE IF EXISTS Users;
-DROP TABLE IF EXISTS Days;
+-- alter table Days DROP FOREIGN KEY  fk_event_code;
+-- alter table Days DROP FOREIGN KEY  fk_userID;
+-- alter table Users DROP FOREIGN KEY  fk_userType;
+-- DROP TABLE IF EXISTS Events;
+-- DROP TABLE IF EXISTS User_Types;
+-- DROP TABLE IF EXISTS Users;
+-- DROP TABLE IF EXISTS Days;
 
 -- Create all Tables
 CREATE TABLE Events(
@@ -48,3 +48,5 @@ values
 	('O', 'Organizer'),
 	('E', 'Event'),
 	('P','Participant');
+    
+SELECT * FROM User_Types;
