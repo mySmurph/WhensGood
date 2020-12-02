@@ -1,5 +1,4 @@
-
-<!--  http://cis444.cs.csusm.edu/group4/WhensGood/landing.html  -->
+<!--  http://cis444.cs.csusm.edu/group4/WhensGood/enter-schedule_event.html -->
 <!-- T.V. PASS! -->
 <!DOCTYPE html>
 
@@ -7,12 +6,11 @@
 
 <head>
 <!--<meta charset = "UTF-8"/> not necessary according to Total Validator-->
-  <title>Home Page</title> 
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+	<title>Edit Event</title> 
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 </head>
 
 <body>
-	
     <nav>
 		<a href="#main" aria-label="Skip to main"></a>
 		<a href="landing.html"><img src="LogoWhensGoodLogo.svg" class="img" alt="comment pic" /></a>
@@ -33,20 +31,27 @@
     </nav>
   
     <main id="main">
-      <h1>
-        I'll check my schedule...
-      </h1>
-       <div class = "content"> 
-            <ul class="list">
-                <li>
-                    <a class="button big" href="enter-rsvp.html" >RSVP to an Event</a>
-                </li>
-                <li>
-                    <a class="button big" href="create_event.html">Create an Event</a>
-                </li>
-            </ul>
-        </div>
-    </main>
-  
+        <h1>
+            Lets put it on the schedule...
+        </h1>
+        
+    <!--actual container centers within container-->
+		<form class="alert" action="schedule_event_org_view.html">
+			<ul>
+				<li>
+					<label>Enter Event Code<br />
+					<input type="text" class="text_input full" id="event_code"/></label>
+				</li>
+				<li>
+					<label>Enter Event Password<br/>
+					<input id="password_input" type="password" class="text_input full"/></label>
+				</li>
+			</ul>
+				<div>
+					<button class="button red span" id = "button">Submit</button><br/>
+				</div>
+		</form>
+	</main>
+	<script type="text/javascript" src="script/enter_schedule_event.js"></script>
 </body>
 </html>

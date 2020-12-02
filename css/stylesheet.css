@@ -1,0 +1,383 @@
+/* CSS SPECIFIC TO                                              EVERY HTML FILE START */
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+ul li{
+    margin: 0;
+	padding-bottom: 10pt;
+	padding-left: 0;
+}
+
+label, .label{
+	font-size: 14pt;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url(calender.png) no-repeat;
+    border-width: thin;
+    color: black;
+    display: block;
+    height: 17px;
+    opacity: 1;
+    width: 18px;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="number"], textarea, select { 
+    border: hidden;
+}
+
+input:focus{
+    outline-style: none;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+.button{
+	display: block;
+    background-color:#91D9BF;
+    border: none;
+    border-radius: 17px;
+    color: black;
+    margin: auto;
+    padding-bottom: 10pt;
+    padding-top: 10pt;
+    text-align: center;
+    text-decoration: none;
+    width: 140pt;
+}
+
+.grid_container{
+    column-gap: 25pt;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    margin-bottom: 5pt;
+    margin-left: auto;
+    margin-right: auto; 
+	width:inherit;
+}
+body{
+	display: grid;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+	grid-template-columns: min-content auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+	width: 100%;
+}
+
+nav{
+    padding:10pt;
+}
+
+h1{
+    background-color:#378C7D;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+	margin-bottom: 25pt;
+	margin-top: 0;
+    padding: 5pt;
+    text-align: left;
+	width: inherit;
+}
+
+
+.img{
+	display: inline-block;
+	width: 200px;
+}
+
+main{
+    background-color: #F2F1DF;
+    border-radius: 10px;
+    margin-right: 10pt;
+	margin-top: 10pt;
+    padding-bottom: 25pt;
+}
+
+/*  CSS SPECIFIC TO                                                        EVERY HTML FILE END */
+
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* CSS SPECIFIC TO                                                LANDING PAGE HTML FILE START */
+
+.content{
+    display: grid;
+    grid-template-rows: max-content;
+    justify-content: center;
+    margin:0 auto;
+    width:inherit;
+}
+
+.big{
+    padding-bottom: 25pt;
+    padding-top: 25pt;
+    width: 170pt;
+}
+
+/* CSS SPECIFIC TO                                                   LANDING PAGE HTML FILE END */
+
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* CSS SPECIFIC TO                                              CREATE EVENT HTML FILE START */
+
+.span{
+    display: block;
+	margin-left: auto;
+	margin-right: auto;
+    top: 30px;
+	width: inherit;
+	width: calc(95%);
+}
+.red{
+	background-color:#F24B59;
+    color: white;
+    font-weight: bold;
+	size: 24pt;
+}
+
+.calendar{
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    /* appearance: button; */
+    background-color:#91D9BF;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    padding-bottom: 20px;
+	padding-right: 10pt;
+	padding-top: 20px;
+    text-decoration: none;
+}
+
+.text_input{
+    background-color: white;
+    border: none;
+    border-radius: 5pt;
+    font-size: 14px;
+    padding-bottom: 4pt;
+	padding-left: 10pt;
+	padding-top: 4pt;
+}
+.full{
+	width:245pt;
+}
+.half{
+	width:105pt;
+}
+.threeQuarters{
+	width:235pt;
+}
+.durration_time{
+    height: 14px;
+    padding-left: 15pt;
+
+}
+
+
+.create_e_file_input_button{
+    height: 23px;
+    left: 240px;
+    top:490px;
+    width: 231px;
+}
+
+/* CSS SPECIFIC TO                                                  CREATE EVENT HTML FILE         END */
+
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* CSS SPECIFIC TO BOTH                                             CREATE EVENT HTML FILE AND RSVP TO EVENT FILE     END */
+form{
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+.custom_file_upload {
+    background-color: #91D9BF;
+    border-bottom-right-radius: 5pt;
+    border-top-right-radius: 5pt;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 173pt;
+    padding-bottom: 20px;
+    padding-top: 6px;
+    position: absolute;
+    width: 83pt;
+    /* float: right; */
+}
+
+.file_upload_button_text{
+    font-size: 16px;
+    left:23px;
+    position: absolute;
+    top: 4px;
+}
+.hour_table{
+
+	display: grid;
+	grid-template-columns: 100pt  55pt 55pt 55pt 55pt 55pt 55pt 55pt;
+    width: fit-content;
+}
+.white{
+    background-color: white;
+	border-radius: 5pt;
+    padding: 10pt;
+}
+.selectable_list  .ui-selecting{
+	background: #F2F1DF;
+}
+
+.selectable_list  .ui-selected, .window{
+	background: #91D9BF;
+}
+
+.selectable_list, .times{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.selectable_list li:nth-child(4n+1),.times li{
+	border-bottom: #F2F1DF 2pt solid;
+}
+.selectable_list li:hover{
+	outline: #91D9BF dotted; 
+}
+.selectable_list:hover{
+	background-color: #F2F1DF50;
+}
+.time, .day{
+	height: 16pt;
+	text-align: center;
+}
+.date{
+	height: 24pt;
+	text-align: center;
+}
+.date > span{
+    display: block;
+	font-size: 50%;
+}
+.segment{
+	color: transparent;
+	font-size: 1pt;
+	height: 4pt;
+}
+.availible{
+	background-color: #91D9BF80;
+}
+.unavailible{
+	background-color: #F24B59;
+}
+.selected_window{
+	background-color: #378C7D;
+}
+.note{
+	font-size: 65%;
+	font-style: italic;
+	width: inherit;
+}
+.feedback{
+	display: none;
+}
+/* CSS SPECIFIC TO BOTH                                             CREATE EVENT HTML FILE AND RSVP TO EVENT FILE      END */
+
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* CSS SPECIFIC TO                                                  RSVP VIEW EVENT HTML FILE         START */
+
+.center{
+    display: grid;
+    grid-template-rows: max-content;
+    justify-content: center;
+}
+
+.alert{
+    background-color: #91D9BF;
+    border-radius: 5pt;
+    margin-top: 30px;
+    max-height:fit-content;
+    padding:10px; 
+	width:fit-content;
+}
+
+.inner_layout > div{
+    justify-content: center;
+}
+
+.switch_container{
+    display: inline-block;
+    height: 20pt;
+    position: relative;
+	width: 40pt;
+}
+  
+.password_container{
+	display: none;
+}
+
+.input_code{
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    width: 290px;
+}
+
+.input{
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    visibility: hidden;
+    width: 290px;
+}
+
+/* CSS SPECIFIC TO                                                  RSVP VIEW EVENT HTML FILE         END */
+
+/* ------------------------------------------------------------------------------------------------------- */
+
+
+/* CSS SPECIFIC TO                                                  RSVP TO EVENT HTML FILE         START */
+
+.inline_list{
+    column-gap: 10pt;
+	display: grid;
+	grid-template-columns: max-content max-content;
+}
+
+/* CSS SPECIFIC TO                                                  RSVP TO EVENT HTML FILE         END */
+
+/* alternate switch box to get TV errors to go away */
+.switchbox{
+	display: flex;
+}
+.switchbox input {
+	-moz-appearance: none;
+	-o-appearance: none;
+	-webkit-appearance: none;
+	background-color: #fafafa;
+	border: 2pt solid #F24B59;
+	border-radius: .825em;
+	box-shadow: inset -1.50em 0 0 1pt #F24B59;
+	margin-right: .25em;
+	padding: 7pt 14pt;
+	position: relative;
+	transition-duration: 50ms;
+}
+
+.switchbox input:checked {
+	border-color: #378C7D;
+	box-shadow: inset 1.50em 0 0 1pt #378C7D;
+}
+
+.participant_List{
+    background-color: #F2F1DF;
+    border-radius: 5pt;
+	margin: 10pt;
+	padding: 10pt;
+}
