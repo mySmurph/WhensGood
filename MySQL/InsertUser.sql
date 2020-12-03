@@ -1,4 +1,8 @@
 -- Create Participant User (Accept)
+
+SET @EventCode = '1kxeqfw3ce';
+SET @UserID = 'e8l7whwrtb';
+SET @InsertedDays = NULL;
 insert into Users(
 	UserID,				-- $userID = base_convert((strval(intval(time())-159999999) . sprintf('%03d',rand (0, 999)) . sprintf('%03d',rand (0, 999))) , 10, 36);
 	UserType,			-- 'E' = Event
@@ -8,7 +12,7 @@ insert into Users(
 	CalenderFile
 )
 Values(
-	'e8l7whwrtb',
+	@UserID,
     'P', 
     'Bender Rodriguez',
     True, 
@@ -23,26 +27,34 @@ insert into  Days(
 	TimeArray
 )
 Values(
-	'1kxeqfw3ce',
-    'e8l7whwrtb', 
+	@EventCode,
+	@UserID,
     '20201126',
     '111111111111111111111111111111111111111111111111111111000000000000000000000000000011111111111111'
 ),
 (
-	'1kxeqfw3ce',
-    'e8l7whwrtb', 
+	@EventCode,
+	@UserID,
     '20201127',
     '111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'
 ),
 (
-	'1kxeqfw3ce',
-    'e8l7whwrtb', 
+	@EventCode,
+	@UserID,
     '20201128',
     '111111111111111111111111111111111111111111111111000000000000000011111111111111111111111111111111'
 )
 ;
-Select * from Users;
 
+
+
+Select Group_CONCAT(CONCAT(EventDate,': ',  IFNULL(TimeArray, 'NULL')) SEPARATOR '\r\n')
+into @InsertedDays
+From Days
+Where 
+		EventCode = @EventCode
+    AND	UserID = @UserID
+;
 insert into LOGS(
 	AssociatedUserID, 
     DateTime,
@@ -50,17 +62,24 @@ insert into LOGS(
 )
 VALUES
 (
-	'e8l7whwrtb', 
+	@UserID, 
     NOW(),
     'USER CREATED'
 ),
 (
-	'e8l7whwrtb', 
+	@UserID, 
     NOW(),
-    'DAYS INSERTED for EVENT: 1kxeqfw3ce'
+    CONCAT_WS('\r\n','DAYS INSERTED for EVENT:',@EventCode, @InsertedDays)
 );
+SET @EventCode = NULL;
+SET @UserID = NULL;
+SET @InsertedDays = NULL;
+
 
 -- Create Participant User (Decline)
+SET @EventCode = '1kxeqfw3ce';
+SET @UserID = 'e8l8gk1cms';
+SET @InsertedDays = NULL;
 insert into Users(
 	UserID,				-- $userID = base_convert((strval(intval(time())-159999999) . sprintf('%03d',rand (0, 999)) . sprintf('%03d',rand (0, 999))) , 10, 36);
 	UserType,			-- 'P' = Participant
@@ -70,7 +89,7 @@ insert into Users(
 	CalenderFile
 )
 Values(
-	'e8l8gk1cms',
+	@UserID,
     'P', 
     'Kif Kroker',
     False, 
@@ -79,6 +98,7 @@ Values(
 )
 ;
 
+
 insert into  Days(
 	EventCode,
 	UserID,
@@ -86,12 +106,20 @@ insert into  Days(
 	TimeArray
 )
 Values(
-	'1kxeqfw3ce',
-    'e8l8gk1cms', 
-    0,
+	@EventCode,
+	@UserID,
+    '00000000',
     NULL
 )
 ;
+Select Group_CONCAT(CONCAT(EventDate,': ', IFNULL(TimeArray, 'NULL')) SEPARATOR '\r\n')
+into @InsertedDays
+From Days
+Where 
+		EventCode = @EventCode
+    AND	UserID = @UserID
+;
+select @InsertedDays;
 
 insert into LOGS(
 	AssociatedUserID, 
@@ -100,12 +128,16 @@ insert into LOGS(
 )
 VALUES
 (
-	'e8l8gk1cms', 
+	@UserID, 
     NOW(),
     'USER CREATED'
 ),
 (
-	'e8l8gk1cms', 
+	@UserID, 
     NOW(),
-    'DAYS INSERTED for EVENT: 1kxeqfw3ce'
+    CONCAT_WS('\r\n','DAYS INSERTED for EVENT:',@EventCode, @InsertedDays)
 );
+
+SET @EventCode = NULL;
+SET @UserID = NULL;
+SET @InsertedDays = NULL;
