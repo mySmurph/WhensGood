@@ -7,8 +7,8 @@
 	};
 
 	function connectDB(){
-		$host =  'localhost';	//cis444 server
-		// $host =  'db';	// Local Server
+		// $host =  'localhost';	//cis444 server
+		$host =  'db';	// Local Server
 		$userid =  'group4';
 		$password = 'IjChbKtynlNZ';
 		$schema =  'group4';

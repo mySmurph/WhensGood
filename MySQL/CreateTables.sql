@@ -1,14 +1,14 @@
--- CREATE SCHEMA `WhensGood_db` ;
-use WhensGood_db;
+-- CREATE SCHEMA `group4` ;
+use group4;
 -- -- Drop All Tables
-alter table Days DROP FOREIGN KEY  fk_event_code;
-alter table Days DROP FOREIGN KEY  fk_userID;
-alter table Users DROP FOREIGN KEY  fk_userType;
-DROP TABLE IF EXISTS Events;
-DROP TABLE IF EXISTS User_Types;
-DROP TABLE IF EXISTS Users;
-DROP TABLE IF EXISTS Days;
-DROP TABLE IF EXISTS LOGS;
+-- alter table Days DROP FOREIGN KEY  fk_event_code;
+-- alter table Days DROP FOREIGN KEY  fk_userID;
+-- alter table Users DROP FOREIGN KEY  fk_userType;
+-- DROP TABLE IF EXISTS Events;
+-- DROP TABLE IF EXISTS User_Types;
+-- DROP TABLE IF EXISTS Users;
+-- DROP TABLE IF EXISTS Days;
+-- DROP TABLE IF EXISTS LOGS;
 
 -- -- Create all Tables
 CREATE TABLE Events(
