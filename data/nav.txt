@@ -1,0 +1,18 @@
+<nav>
+<a href="#main" aria-label="Skip to main"></a>
+<a href="index.php"><img src="LogoWhensGoodLogo.svg" class="img" alt="comment pic" /></a>
+<ul class="list">
+<li>
+	<a class="button" href="CreateEvent.php">Create Event</a>
+	</li>
+	<li>
+		<a class="button" href="Enter_EditEvent.php">Edit Event</a>
+	</li>
+	<li>
+		<a class="button" href="Enter_RSVP.php">RSVP to an Event</a>
+	</li>
+	<li>
+		<a class="button" href="Enter_ScheduleEvent.php">Schedule Event</a>
+	</li>
+</ul>
+</nav>

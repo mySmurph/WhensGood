@@ -11,25 +11,11 @@
 </head>
 
 <body>
-    <nav>
-		<a href="#main" aria-label="Skip to main"></a>
-		<a href="landing.html"><img src="LogoWhensGoodLogo.svg" class="img" alt="comment pic" /></a>
-		<ul class="list">
-			<li>
-                <a class="button" href="create_event.html">Create Event</a>
-            </li>
-			<li>
-                <a class="button" href="enter-edit_event.html">Edit Event</a>
-            </li>
-			<li>
-                <a class="button" href="enter-rsvp.html">RSVP to an Event</a>
-            </li>
-			<li>
-                <a class="button" href="enter-schedule_event.html">Schedule Event</a>
-            </li>
-		</ul>
-    </nav>
-  
+	<?php 
+	include ("functions.php");
+	printNavigtion();
+	?>
+	
     <main id="main">
         <h1>
             I'll check my schedule...
