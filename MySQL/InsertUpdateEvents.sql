@@ -17,6 +17,8 @@ Values
 )
 ;
 
+
+
 insert into Users(
 	UserID,				-- $userID = base_convert((strval(intval(time())-159999999) . sprintf('%03d',rand (0, 999)) . sprintf('%03d',rand (0, 999))) , 10, 36);
 	UserType,			-- 'E' = Event
@@ -75,3 +77,25 @@ WHERE
 ;
 
 SELECT * FROM Days;
+
+insert into LOGS(
+	AssociatedUserID, 
+    DateTime,
+    Description
+)
+VALUES
+(
+	'e8l6kj91ek', 
+    NOW(),
+    'USER CREATED'
+),
+(
+	'e8l6kj91ek', 
+    NOW(),
+    'EVENT CREATED: 1kxeqfw3ce'
+),
+(
+	'e8l6kj91ek', 
+    NOW(),
+    'DAYS INSERTED for EVENT: 1kxeqfw3ce'
+);

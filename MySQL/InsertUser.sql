@@ -41,6 +41,24 @@ Values(
     '111111111111111111111111111111111111111111111111000000000000000011111111111111111111111111111111'
 )
 ;
+Select * from Users;
+
+insert into LOGS(
+	AssociatedUserID, 
+    DateTime,
+    Description
+)
+VALUES
+(
+	'e8l7whwrtb', 
+    NOW(),
+    'USER CREATED'
+),
+(
+	'e8l7whwrtb', 
+    NOW(),
+    'DAYS INSERTED for EVENT: 1kxeqfw3ce'
+);
 
 -- Create Participant User (Decline)
 insert into Users(
@@ -74,3 +92,20 @@ Values(
     NULL
 )
 ;
+
+insert into LOGS(
+	AssociatedUserID, 
+    DateTime,
+    Description
+)
+VALUES
+(
+	'e8l8gk1cms', 
+    NOW(),
+    'USER CREATED'
+),
+(
+	'e8l8gk1cms', 
+    NOW(),
+    'DAYS INSERTED for EVENT: 1kxeqfw3ce'
+);
