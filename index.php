@@ -15,7 +15,7 @@
 	
 <?php 
 	include ("functions.php");
-	printNavigtion();
+	printNavigation();
 	?>
   
     <main id="main">
