@@ -23,7 +23,7 @@
         <h1>
             RSVP to Event
         </h1>
-        <form>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
             <div class="grid_container">
 				<div>
 					<ul class = "inline_list">
@@ -352,7 +352,7 @@
 									<span class="file_upload_button_text">Browse</span>
 								</label>
 									<input type="text" class="text_input full" readonly="readonly" id="choose_file" aria-label="file field" />
-									<input id="cal_upload" class="create" type="file" aria-label="Browse" />
+									<input id="cal_upload" name="cal_upload" class="create" type="file" aria-label="Browse" />
 						</li>
 						<li>
 							<button class="button red span" id = "button">RSVP to Event</button>
@@ -360,6 +360,12 @@
 					</ul>
 				</div>
 			</div>
+
+					<!-- Generated userID : hidden from user -->
+					<?php
+						$userID = base_convert((strval(intval(time())-159999999) . sprintf('%03d',rand (0, 999)) . sprintf('%03d',rand (0, 999))) , 10, 36);
+						echo "<input type=\"hidden\" id = \"userID\" name = \"userID\" value = \"".$userID."\" >"
+					?>
         </form>
   </main>
 
