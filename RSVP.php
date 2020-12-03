@@ -1,4 +1,4 @@
-<!--  hhttp://cis444.cs.csusm.edu/group4/WhensGood/rsvp_to_event.html -->
+<!--  https://cis444.cs.csusm.edu/group4/WhensGood/RSVP.php -->
 <!-- T.V. PASS! -->
 <!DOCTYPE html>
 

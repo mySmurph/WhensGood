@@ -1,4 +1,4 @@
-<!--  http://cis444.cs.csusm.edu/group4/WhensGood/enter-schedule_event.html -->
+<!--  https://cis444.cs.csusm.edu/group4/WhensGood/Enter_ScheduleEvent.php-->
 <!-- T.V. PASS! -->
 <!DOCTYPE html>
 
@@ -22,7 +22,7 @@
         </h1>
         
     <!--actual container centers within container-->
-		<form class="alert" action="schedule_event_org_view.html">
+		<form class="alert" action="ScheduleEvent.php">
 			<ul>
 				<li>
 					<label>Enter Event Code<br />

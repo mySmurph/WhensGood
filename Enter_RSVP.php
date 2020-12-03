@@ -1,4 +1,4 @@
-<!-- https://cis444.cs.csusm.edu/group4/WhensGood/enter-rsvp.html -->
+<!-- https://cis444.cs.csusm.edu/group4/WhensGood/Enter_RSVP.php -->
 <!-- T.V. PASS! -->
 <!DOCTYPE html>
 
@@ -22,7 +22,7 @@
         </h1>
         
     <!--actual container centers within container-->
-		<form class="alert" action="rsvp_to_event.html">
+		<form class="alert" action="RSVP.php">
 			<ul>
 				<li>
 					<label>Enter Event Code<br />

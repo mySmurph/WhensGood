@@ -1,4 +1,4 @@
-<!--  http://cis444.cs.csusm.edu/group4/WhensGood/create_event.html -->
+<!--  https://cis444.cs.csusm.edu/group4/WhensGood/ScheduleEvent.php -->
 <!-- T.V. PASS! -->
 <!DOCTYPE html>
 
@@ -23,7 +23,7 @@
 			Create New Event!!
 		</h1>
 
-		<form action="schedule_event_org_view.html" onsubmit="return ValidateForm()">
+		<form action="ScheduleEvent.php" onsubmit="return ValidateForm()">
 
 			<div class="grid_container">
 				<div>

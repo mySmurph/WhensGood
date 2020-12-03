@@ -1,4 +1,4 @@
-<!--  http://cis444.cs.csusm.edu/group4/WhensGood/schedule_event_org_view.html -->
+<!--  https://cis444.cs.csusm.edu/group4/WhensGood/ScheduleEvent.php -->
 
 <!DOCTYPE html>
 
@@ -28,7 +28,7 @@
 		<div class="grid_container">
 				<div>
 					<label> Event Windows</label>
-					<a href="create_event.html" class = "note">[Edit Event]</a>
+					<a href="CreateEvent.php" class = "note">[Edit Event]</a>
 					<span class = "feedback" id = "StartDate">11-1-2020</span>
 					<div id = "hour_table_00" class="hour_table  white">
 						<ol class="times">

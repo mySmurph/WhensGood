@@ -1,4 +1,4 @@
-<!--  http://cis444.cs.csusm.edu/group4/WhensGood/enter-edit_event.html -->
+<!--  https://cis444.cs.csusm.edu/group4/WhensGood/Enter_EditEvent.php-->
 <!-- T.V. PASS! -->
 <!DOCTYPE html>
 
@@ -25,7 +25,7 @@
         </h1>
         
     <!--actual container centers within container-->
-		<form class="alert" action="CreateEvent.html">
+		<form class="alert" action="CreateEvent.php">
 			<ul>
 				<li>
 					<label>Enter Event Code<br />
