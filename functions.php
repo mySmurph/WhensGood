@@ -155,13 +155,17 @@ class DateWindows{
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
 				function echoHTMLCalendar($eventWindow, $eventMask, $earlyest, $latest, $includeDate){
+
+
+					$class = $includeDate? 'date' :'day';
+
 					//Stat building the  the table
 					echo ' <div id = "hour_table_'.$week.'" class="hour_table white">';
 					for($iday = 0; $iday < count($eventWindow); $iday++){
 						$week = str_pad(intdiv($iday, count(WEEKDAYS)), 2, '0', STR_PAD_LEFT);
 						// print time column
 						if ($iday % count(WEEKDAYS) == 0){
-							echo '<ol class="times"><li class = "date"></li>';
+							echo '<ol class="times"><li class = "'.$class.'"></li>';
 							for($time = $earlyest; $time < $latest; ++$time){
 								//math
 								$hour  = 1+((intdiv($time, SEGMENTS)-1) %12);
@@ -175,14 +179,18 @@ class DateWindows{
 						}
 	
 						$dayOfTheWeek = WEEKDAYS[date('w',$eventWindow[$iday][DATE_INDEX])];
-						$date = $includeDate? date(" n/j/Y",$eventWindow[$iday][DATE_INDEX]) :'';
+						$date = $includeDate? date("n/j/Y",$eventWindow[$iday][DATE_INDEX]) :'';
+						$dateYMD = $includeDate? date("Ymd",$eventWindow[$iday][DATE_INDEX]) :'00000000';
 	
-						echo '<ol class = "selectable_list" id="selectable-'.$dayOfTheWeek.'-'.date("Ymd",$eventWindow[$iday][DATE_INDEX]) .'">';
-						echo '<li class = "date">'.$dayOfTheWeek.'<span>'.$date.'</span></li>';
+						echo '<ol class = "selectable_list" id="selectable-'.$dayOfTheWeek.'-'.$dateYMD.'">';
+						echo '<li class = "'.$class.'">'.$dayOfTheWeek.'<span>'.$date.'</span></li>';
 						//print time chunks
 						for($time = $earlyest; $time < $latest; ++$time){
 							$booEV = $eventWindow[$iday][TIMES_INDEX][$time];
 							$booEVA = $eventMask[$iday][TIMES_INDEX][$time];
+
+							$selectClass = $booEV? ($includeDate? ( $booEVA?'':'un').'availible window':'ui-selected'):'';
+							
 							//math
 							$hourM = intdiv($time, SEGMENTS);
 							$min = 15*($time% SEGMENTS);
@@ -190,7 +198,7 @@ class DateWindows{
 							//format
 							$milHour = str_pad($hourM, 2, '0', STR_PAD_LEFT) .	$min = str_pad($min, 2, '0', STR_PAD_LEFT);
 	
-							echo '<li class="segment ui-widget-content '.($booEV? ( $booEVA?'':'un').'availible window':'').'" id="'.$dayOfTheWeek.'-'.date("Ymd",$eventWindow[$iday][DATE_INDEX]).'-'.$milHour.'">'.$dayOfTheWeek.'-$milHour</li>';
+							echo '<li class="segment ui-widget-content '.$selectClass.'" id="'.$dayOfTheWeek.'-'.$dateYMD.'-'.$milHour.'">'.$dayOfTheWeek.'-$milHour</li>';
 						}				
 						echo '</ol>';
 					}
