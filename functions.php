@@ -228,7 +228,7 @@ class DateWindows{
 				//format
 				$milHour = str_pad($hourM, 2, '0', STR_PAD_LEFT) .	$min = str_pad($min, 2, '0', STR_PAD_LEFT);
 
-				echo '<li class="segment ui-widget-content '.$selectClass.'" id="'.$dayOfTheWeek.'-'.$dateYMD.'-'.$milHour.'">'.$dayOfTheWeek.'-'.$milHour.'</li>';
+				echo '<li class="segment ui-widget-content '.$selectClass.'" id="'.$dayOfTheWeek.'-'.$time.'-'.$dateYMD.'-'.$milHour.'">'.$dayOfTheWeek.'-'.$milHour.'</li>';
 			}				
 			echo '</ol>';
 		}

@@ -107,12 +107,15 @@ $dw->printCalendarWeek($eventWindow);
 				</div>
 			</div>
 			<button class="button span red" id="button">Schedule Event</button>
+			<p id="feedback" class="feedback">
+		<span>Selections Made:</span> 
+		<!-- <text id="select-result" name = "select-result"></text> -->
+		<textarea type="text" id="select-result" name = "select-result" class="text_input_full"></textarea>
+	</p>
 		</form>
 
 	</main>
-	<p id="feedback" class="feedback">
-		<span>Time Slots:</span> <span id="select-result"></span>
-	</p>
+	
 	<script type="text/javascript" src="script/Validation.js"></script>
 	<script type="text/javascript" src="script/create_event.js"></script>
 </body>

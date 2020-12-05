@@ -1,0 +1,44 @@
+<!--  http://cis444.cs.csusm.edu/group4/WhensGood/db_query.html  -->
+<!-- T.V. PASS! -->
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>Admin Portal</title> 
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+</head>
+
+<body>
+	
+    <nav>
+		<a href="#main" aria-label="Skip to main"></a>
+		<a href="landing.html"><img src="LogoWhensGoodLogo.svg" class="img" alt="comment pic" /></a>
+		<ul class="list">
+			<li>
+                <a class="button" href="landing.html">Logout</a>
+            </li>
+		</ul>
+    </nav>
+  
+    <main id="main">
+      <h1>
+        Admin Portal
+      </h1>
+
+        <form class="alert" method = "post" action = "db_response.php" id = "form">
+			<ul>
+				<li>
+					<label>Please Enter a Database Query<br />
+                    <textarea id = "db_query" name = "db_query" class="text_input_full"></textarea>
+                    </label>
+				</li>
+			</ul>
+				<div>
+					<button type = "submit" class="button red span" id = "admin_password_submit">Submit</button><br />
+				</div>
+		</form>
+    </main>
+    <script type="text/javascript" src="script/sample_query.js"></script>
+</body>
+</html>
