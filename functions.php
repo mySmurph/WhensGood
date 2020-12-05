@@ -29,15 +29,14 @@
             $conn->close();
 
         return $result;
-		};
-		
+        };
 //functions
 const DATE_INDEX = 0; 
 const TIMES_INDEX = 1;
 const SEGMENTS = 4;
 const WEEKDAYS = array('SUN', 'MON', 'TUE', 'WED','THR', 'FRI','SAT');
-$DAY_CONST = 60*60*24;
-$blackMask = '000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000';
+const DAY_CONST = 72000;
+
 class DateWindows{
 
 	function emptyBoolWeek(){
@@ -48,16 +47,17 @@ class DateWindows{
 		}
 		return $emptyWeek;
 	}
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------
+//------------------------------------------------------
 	//2 dim array YYYMMD:00001100 to Date:Bool(Time)
 	function eventToBoolWeek($eventWindow){
+		$blackMask = '000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000';
+		//convete YYYYMMDD to date()
+		foreach($eventWindow as &$day){
+			$day[DATE_INDEX] = strtotime(preg_replace('/d{4}d{2}d{2}/','-',$day[DATE_INDEX]));
+			
+		};
 
-	//convete YYYYMMDD to date()
-	foreach($eventWindow as &$day){
-		$day[DATE_INDEX] = strtotime(preg_replace('/d{4}d{2}d{2}/','-',$day[DATE_INDEX]));
-		
-	};
 		// get number of days before the first day to get to the beguining of the week
 		$before = date('w', $eventWindow[0][DATE_INDEX]);
 		$firstDay = $eventWindow[0][DATE_INDEX];
@@ -67,11 +67,12 @@ class DateWindows{
 
 		// insert blackMask days at the beguining of the event
 		for($d = 1; $d <= $before; $d++){
-			array_unshift($eventWindow, array($firstDay-($d*$DAY_CONST), $blackMask));
+			array_unshift($eventWindow, array($firstDay-($d * DAY_CONST), $blackMask));
 		};
 		// insert blackMask days at the end of the event
 		for($d = 1; $d <= $after; $d++){
-			array_push($eventWindow, array($lastDay+($d*$DAY_CONST), $blackMask));
+			array_push($eventWindow, array($lastDay + ((1+$d) * DAY_CONST), $blackMask));
+			// array_push($eventWindow, array(strtotime($lastDay.' +'.$d.' days'), $blackMask));
 		};
 
 		// convert time to sys time
@@ -90,14 +91,19 @@ class DateWindows{
 		return $eventWindow;
 	}
 
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	function printCalendarBlock($eventWindow, $eventMask){
+//------------------------------------------------------
+//------------------------------------------------------
+	function printCalendarMaskedBlock($eventWindow, $eventMask){
 		$block = DateWindows::getBlock($eventWindow);
 		DateWindows::echoHTMLCalendar($eventWindow, $eventMask, $block[0], $block[1], TRUE);
 	}
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------
+
+function printCalendarBlock($eventWindow){
+	$block = DateWindows::getBlock($eventWindow);
+	DateWindows::echoHTMLCalendar($eventWindow, NULL, $block[0], $block[1], TRUE);
+}
+//------------------------------------------------------
 	function printCalendarWeek($eventWindow){
 		$block = array(0, SEGMENTS*24);
 		$whiteMask = array();
@@ -108,13 +114,13 @@ class DateWindows{
 		$eventMask = array();
 		$firstDay = $eventWindow[0][DATE_INDEX];
 		for($i = 0; $i <7;$i++){
-			array_push($eventMask, array($firstDay+($d*$DAY_CONST), $whiteMask));
+			array_push($eventMask, array($firstDay+($d*DAY_CONST), $whiteMask));
 		};
 		DateWindows::echoHTMLCalendar($eventWindow, $eventMask, $block[0], $block[1], FALSE);
 	}
 
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------			
+//------------------------------------------------------
+//------------------------------------------------------			
 	function nonDistinctweek($eventWindow){
 		$week = array();
 		for($i = 0; $i <7;$i++){
@@ -132,8 +138,8 @@ class DateWindows{
 
 		return $week;
 	}
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------
+//------------------------------------------------------
 
 	function getBlock($eventWindow){
 		// find the earliest and latest times to start printing
@@ -162,11 +168,14 @@ class DateWindows{
 		// add buffers to time
 		$earlyest -= (($earlyest-1)%SEGMENTS) +1; 
 		$latest += 5-(($latest+1)%SEGMENTS);
+
+		// echo $earlyest.$latest;
 		return array($earlyest, $latest);
+
 	}
 
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------
+//------------------------------------------------------
 
 	function echoHTMLCalendar($eventWindow, $eventMask, $earlyest, $latest, $includeDate){
 
@@ -201,7 +210,7 @@ class DateWindows{
 			//print time chunks
 			for($time = $earlyest; $time < $latest; ++$time){
 				$booEV = $eventWindow[$iday][TIMES_INDEX][$time];
-				$booEVA = $eventMask[$iday][TIMES_INDEX][$time];
+				$booEVA = is_null($eventMask)? true : $eventMask[$iday][TIMES_INDEX][$time];
 
 				$selectClass = $booEV? ($includeDate? ( $booEVA?'':'un').'availible window':'ui-selected'):'';
 				
@@ -212,14 +221,14 @@ class DateWindows{
 				//format
 				$milHour = str_pad($hourM, 2, '0', STR_PAD_LEFT) .	$min = str_pad($min, 2, '0', STR_PAD_LEFT);
 
-				echo '<li class="segment ui-widget-content '.$selectClass.'" id="'.$dayOfTheWeek.'-'.$dateYMD.'-'.$milHour.'">'.$dayOfTheWeek.'-$milHour</li>';
+				echo '<li class="segment ui-widget-content '.$selectClass.'" id="'.$dayOfTheWeek.'-'.$dateYMD.'-'.$milHour.'">'.$dayOfTheWeek.'-'.$milHour.'</li>';
 			}				
 			echo '</ol>';
 		}
 		echo '</div>';
 	}
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------
+//------------------------------------------------------
 	
 }
 				
