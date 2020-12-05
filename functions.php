@@ -1,4 +1,6 @@
 <?php
+
+
 	function printNavigation(){
 		$nav = "data/nav.txt";
 		$myfile = fopen($nav, "r") or die("Unable to open file!");
@@ -22,6 +24,7 @@
 			return $db;
 		}
 	};
+
 	function validateCode($code){
         $conn=connectDB();
         $sql = "SELECT EventCode FROM Events WHERE EventCode = '$code' ";
@@ -29,7 +32,11 @@
             $conn->close();
 
         return $result;
-        };
+		};
+
+
+	
+		
 //functions
 const DATE_INDEX = 0; 
 const TIMES_INDEX = 1;
@@ -47,8 +54,8 @@ class DateWindows{
 		}
 		return $emptyWeek;
 	}
-//------------------------------------------------------
-//------------------------------------------------------
+	//------------------------------------------------------
+	//------------------------------------------------------
 	//2 dim array YYYMMD:00001100 to Date:Bool(Time)
 	function eventToBoolWeek($eventWindow){
 		$blackMask = '000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000';
@@ -91,19 +98,19 @@ class DateWindows{
 		return $eventWindow;
 	}
 
-//------------------------------------------------------
-//------------------------------------------------------
+	//------------------------------------------------------
+	//------------------------------------------------------
 	function printCalendarMaskedBlock($eventWindow, $eventMask){
 		$block = DateWindows::getBlock($eventWindow);
 		DateWindows::echoHTMLCalendar($eventWindow, $eventMask, $block[0], $block[1], TRUE);
 	}
-//------------------------------------------------------
+	//------------------------------------------------------
 
-function printCalendarBlock($eventWindow){
-	$block = DateWindows::getBlock($eventWindow);
-	DateWindows::echoHTMLCalendar($eventWindow, NULL, $block[0], $block[1], TRUE);
-}
-//------------------------------------------------------
+	function printCalendarBlock($eventWindow){
+		$block = DateWindows::getBlock($eventWindow);
+		DateWindows::echoHTMLCalendar($eventWindow, NULL, $block[0], $block[1], TRUE);
+	}
+	//------------------------------------------------------
 	function printCalendarWeek($eventWindow){
 		$block = array(0, SEGMENTS*24);
 		$whiteMask = array();
@@ -119,8 +126,8 @@ function printCalendarBlock($eventWindow){
 		DateWindows::echoHTMLCalendar($eventWindow, $eventMask, $block[0], $block[1], FALSE);
 	}
 
-//------------------------------------------------------
-//------------------------------------------------------			
+	//------------------------------------------------------
+	//------------------------------------------------------			
 	function nonDistinctweek($eventWindow){
 		$week = array();
 		for($i = 0; $i <7;$i++){
@@ -138,8 +145,8 @@ function printCalendarBlock($eventWindow){
 
 		return $week;
 	}
-//------------------------------------------------------
-//------------------------------------------------------
+	//------------------------------------------------------
+	//------------------------------------------------------
 
 	function getBlock($eventWindow){
 		// find the earliest and latest times to start printing
@@ -174,8 +181,8 @@ function printCalendarBlock($eventWindow){
 
 	}
 
-//------------------------------------------------------
-//------------------------------------------------------
+	//------------------------------------------------------
+	//------------------------------------------------------
 
 	function echoHTMLCalendar($eventWindow, $eventMask, $earlyest, $latest, $includeDate){
 
@@ -227,8 +234,8 @@ function printCalendarBlock($eventWindow){
 		}
 		echo '</div>';
 	}
-//------------------------------------------------------
-//------------------------------------------------------
+	//------------------------------------------------------
+	//------------------------------------------------------
 	
 }
 				

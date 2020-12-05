@@ -1,3 +1,14 @@
+// window.addEventListener('load',function(){
+// 	var count =  Number(document.getElementById("button").value);
+// 	alert(count);
+// 	if(count !== 0) {
+// 	window.location.replace("http://www.w3schools.com");
+// 	}
+// }
+// );
+
+
+
 document.getElementById("button").addEventListener("click",validateCridentials);
 let domEventCode = document.getElementById("event_code");
 let domBody = document.getElementById("body");
@@ -20,10 +31,13 @@ function changeSize(){
     }
 }
 
-function validateCridentials(){
+
+function validateCridentials() {
 	if((domEventCode.value.length>0) && ( !user_type.checked || (domInputPassword.value.length>0) )){
-		return true;
+		var myForm = document.getElementById("Enter_RSVP_form");
+		myForm.action = "RSVP.php";
+		myForm.method = "POST";
 	}
-	alert("no event found");
-	return false;
-}
+	alert("Enter Event Code to Continue");
+   return false;
+ }

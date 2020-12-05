@@ -22,7 +22,8 @@
         </h1>
         
     <!--actual container centers within container-->
-		<form class="alert" action="RSVP.php">
+		<!-- <form class="alert" action="RSVP.php"> -->
+		<form  class="alert" id = "Enter_RSVP_form">
 			<ul>
 				<li>
 					<label>Enter Event Code<br />
@@ -43,10 +44,10 @@
 				</li>
 			</ul>
 				<div>
-					<button class="button red span" id="button">Submit</button><br />
+					<button type="submit" class="button red span" id="button" >Submit</button><br />
 				</div>
 		</form>
     </main>
-    <script type="text/javascript" src="script/rsvp_view.js"></script>
+    <script type="text/javascript" src="script/enter_rsvp.js"></script>
 </body>
 </html>

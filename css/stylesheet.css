@@ -283,6 +283,8 @@ form{
 	font-style: italic;
 	width: inherit;
 }
+
+/* hides the collection of selected time windows*/
 .feedback{
 	/* display: none; */
 }
