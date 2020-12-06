@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/Enter_ScheduleEvent.php-->
 <!-- T.V. PASS! -->
 <!DOCTYPE html>
@@ -20,24 +23,41 @@
         <h1>
             Lets put it on the schedule...
         </h1>
-        
+<?php 
+
+	$eventFound = $_SESSION['eventFound'];
+	$code = $_SESSION['event_code'];
+	if(isset($eventFound) && !$eventFound){
+		echo "<div class = \"alert_message\">The event code '$code' not found. / The password you’ve entered is incorrect.</div>";
+	}
+	unset($_SESSION['eventFound']);
+	unset($_SESSION['event_code']);
+	session_destroy();
+
+?>
     <!--actual container centers within container-->
-		<form class="alert" action="ScheduleEvent.php">
+	<form  class="alert" id = "Enter_form">
 			<ul>
 				<li>
 					<label>Enter Event Code<br />
-					<input type="text" class="text_input full" id="event_code"/></label>
+					<input type="text" class="text_input full" name="event_code" id="event_code"/></label>
 				</li>
 				<li>
 					<label>Enter Event Password<br/>
-					<input id="password_input" type="password" class="text_input full"/></label>
+					<input type="password" class="text_input full" name ="password_input" id="password_input" /></label>
 				</li>
 			</ul>
-				<div>
-					<button class="button red span" id = "button">Submit</button><br/>
-				</div>
+			<div>
+				<button class="button red span" id = "Enter_Form_Button">Submit</button><br/>
+			</div>
+			<div class = "POST_info" >
+					<input type = "text" aria-label="source" name = "source" value = "Enter_ScheduleEvent.php" readonly />
+					<input type = "text" aria-label="destination" name = "destination" value = "ScheduleEvent.php" readonly />
+			</div>
 		</form>
 	</main>
-	<script type="text/javascript" src="script/enter_schedule_event.js"></script>
+	<!-- <script type="text/javascript" src="script/enter_schedule_event.js"></script> -->
+	<script type="text/javascript" src="script/hub.js"></script>
+</body>
 </body>
 </html>

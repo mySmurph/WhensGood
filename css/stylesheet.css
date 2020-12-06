@@ -12,7 +12,8 @@ ul{
 ul li{
     margin: 0;
 	padding-bottom: 10pt;
-	padding-left: 0;
+    padding-left: 0;
+    padding-top: 10pt;
 }
 
 label, .label{
@@ -337,6 +338,18 @@ form{
     max-height:fit-content;
     padding:10px; 
 	width:fit-content;
+}
+.alert_message{
+    background-color:white;
+    border-radius: 5pt;
+    border: solid 5pt #F24B59;
+    margin: auto;
+    max-height:fit-content;
+    padding:10px; 
+	width:75%;
+}
+.POST_info{
+    display: none;
 }
 
 .inner_layout > div{

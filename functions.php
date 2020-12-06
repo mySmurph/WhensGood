@@ -9,30 +9,57 @@
 	};
 
 	function connectDB(){
+	
 		// $host =  'localhost';	//cis444 server
 		$host =  'db';	// Local Server
 		$userid =  'group4';
 		$password = 'IjChbKtynlNZ';
+		// $password = 'bad password';
 		$schema =  'group4';
-
-		$db = new mysqli($host, $userid,  $password, $schema);
-
-		if ($db->connect_error){
-			print "<p class = \"dbStatus\">Unable to Connect to MySQL</p>". $db -> connect_error;
-			exit;
-		}else{
+		try{
+			$db =  mysqli_connect($host, $userid,  $password, $schema);
 			return $db;
+			// if ($db->connect_error){
+			// 	print "<p class = \"dbStatus\">Unable to Connect to MySQL</p>". $db -> connect_error;
+			// 	throw new Exception('Failed');
+			// }else{
+			// 	return $db;
+			// }
+		}catch(mysqli_sql_exception $e){
+			throw $e; 
 		}
 	};
 
 	function validateCode($code){
-        $conn=connectDB();
-        $sql = "SELECT EventCode FROM Events WHERE EventCode = '$code' ";
-            $result = $conn->query($sql);
-            $conn->close();
-
-        return $result;
-		};
+		try{
+			$conn=connectDB();
+			if(!$conn){
+				return false;
+			}
+			$sql = "Select count(Distinct EventCode) as EventFound from Events Where EventCode = '".$code."';";
+				$result = $conn->query($sql);
+				$conn->close();
+	
+			return intval(array_values(mysqli_fetch_assoc($result))[0])==1;
+		}catch(Exception $e){
+			return false;
+		}
+	};
+	function validateOrganizer($code, $password){
+		try{
+			$conn=connectDB();
+			if(!$conn){
+				return false;
+			}
+			$sql = "Select count(Distinct EventCode) as EventFound from Events Where EventCode = '".$code."' AND  EventPassword like Binary '".$password."' ;";
+				$result = $conn->query($sql);
+				$conn->close();
+	
+			return intval(array_values(mysqli_fetch_assoc($result))[0])==1;
+		}catch(Exception $e){
+			return false;
+		}
+	};
 
 
 	

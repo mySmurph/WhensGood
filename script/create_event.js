@@ -9,6 +9,7 @@ domEventPassword.setAttribute("placeholder", "password");
 domChooseFile.setAttribute("placeholder", "Choose File...");
 
 document.getElementById("cal_upload").addEventListener("change", setFile);
+
 function setFile(){
 	domChooseFile.setAttribute("placeholder", document.getElementById("cal_upload").value);
 }
