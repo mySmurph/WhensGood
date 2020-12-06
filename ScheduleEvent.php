@@ -49,23 +49,33 @@ echo '
 							<li>
 								Accept
 								<ul id = "accept" class = "participant_List">
-									<li>
-										name 1
-									</li>
-									<li>
-										name 3
-									</li>
-									<li>
-										name 4
-									</li>
+';
+//print list of names : accepted
+$participants = getParticipants($code, TRUE);
+if($participants){
+	foreach($participants as $name){
+		echo '<li>'.$name.'</li>';
+	}
+}
+
+
+echo '
 								</ul>
 							</li>
 							<li>
 								Decline
 								<ul id = "decline" class = "participant_List">
-									<li>
-										name 2
-									</li>
+';
+//print list of names : declined
+$participants = getParticipants($code, FALSE);
+if($participants){
+	foreach($participants as $name){
+		echo '<li>'.$name.'</li>';
+	}
+}
+
+
+echo '
 								</ul>
 							</li>
 						</ul>

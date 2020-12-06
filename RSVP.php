@@ -1,5 +1,9 @@
+<?php
+	session_start();
+	// var_dump($_SESSION);
+?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/RSVP.php -->
-<!-- T.V. PASS! -->
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">

@@ -51,6 +51,7 @@ const DAY_CONST = 72000;
 			return false;
 		}
 	};
+
 	function validateOrganizer($code, $password){
 		try{
 			$conn=connectDB();
@@ -66,42 +67,77 @@ const DAY_CONST = 72000;
 			return false;
 		}
 	};
+	
+	function getParticipants($code, $RSVP){
+		try{
 
-	// pass event code :: return array ( array(date, 0010))
-	function getEventWindow($code){
+			$sql = "	SELECT 
+								UserName
+						FROM Users
+						Where 
+								UserID IN (
+									select distinct UserID 
+									From Days 
+									where Days.EventCode = '$code'
+									)
+							AND	UserType = 'p'
+							AND	RSVP = '$RSVP';";
+				
+				echo'<br/>';
+				$parList = runQuery($sql);
+				$names= array();
+				if($parList){
+					foreach($parList as $par){
+						array_push($names, $par[0]);
+					}
+				}			
+			return $names;
+		}catch(Exception $e){
+			return false;
+		}
+	};
+	function runQuery($q){
 		try{
 			$conn=connectDB();
 			if(!$conn){
 				return false;
 			}
+				$responce = $conn->query($q);
+
+
+				if(!$responce ||  mysqli_num_rows($responce) < 1){
+					return false;
+				}
+				$numresults = mysqli_num_rows($responce);
+				$results = array();
+				for($i = 0; $i < $numresults; $i++){
+					array_push($results, array_values(mysqli_fetch_assoc($responce)));
+				}
+				$conn->close();
+				return $results;
+			return ;
+		}catch(Exception $e){
+			return false;
+		}
+	}
+	// pass event code :: return array ( array(date, 0010))
+	function getEventWindow($code){
+		try{
+
 			$sql = "SELECT EventDate Date, TimeArray Time 
 			from Days d Inner Join Users u using(UserID) 
 			WHERE d.EventCode = '$code' AND u.UserType = 'E' 
 			ORDER BY Date ASC ;";
 
-			$result = $conn->query($sql);
-			$conn->close();
-			$numresults = mysqli_num_rows($result);
-			if($numresults<1){
-				return false;
-			}
-			$ev = array();
-			for($i = 0; $i < $numresults; $i++){
-				array_push($ev, array_values(mysqli_fetch_assoc($result)));
-			}
-
-			return $ev;
+			return runQuery($sql);
 		}catch(Exception $e){
 			return false;
 		}
-	}
+	};
 	// pass event code :: return array ( array(date, 1101))
 	function getEventMask($code){
 		try{
-			$conn=connectDB();
-			if(!$conn){
-				return false;
-			}
+
 			$sql = 	"SELECT 
 						EventDate Date, TimeArray Time
 					FROM Days
@@ -110,17 +146,9 @@ const DAY_CONST = 72000;
 						AND Days.TimeArray IS NOT NULL
 					;";
 
-			$result = $conn->query($sql);
-			$conn->close();
-			$numresults = mysqli_num_rows($result);
-			if($numresults<1){
-				return false;
-			}
 			//get participants array and transfrom to YYYYMMDD : [1][1][0][1]
-			$participantCalendars = array();
-			for($i = 0; $i < $numresults; $i++){
-				array_push($participantCalendars, array_values(mysqli_fetch_assoc($result)));
-			}
+			$participantCalendars = runQuery($sql);
+
 			foreach($participantCalendars as &$day){
 				//convert time string  to bool array
 				$intAr = str_split($day[TIMES_INDEX]);
@@ -160,18 +188,18 @@ const DAY_CONST = 72000;
 		}catch(Exception $e){
 			return false;
 		}
-	}
+	};
 	function getDateRange($code){
 		$ev = getEventWindow($code);
 		return array($ev[0][0], $ev[count($ev)-1][0]);
-	}
+	};
 	function getWhite(){
 		$white = array();
 		for($i; $i < SEGMENTS_PER_HOUR*HOURS_PER_DAY; $i++){
 			array_push($white, 1);
 		}
 		return $white;
-	}
+	};
 		
 //functions
 

@@ -38,7 +38,7 @@ Where
 			where Days.EventCode = '1kxeqfw3ce'
 			)
 	AND	UserType = 'p'
-	AND	RSVP = False
+	AND	RSVP = 'FALSE'
 ;
 
 -- Display Event Days Information
