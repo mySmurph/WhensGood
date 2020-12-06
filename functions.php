@@ -14,7 +14,21 @@ const DAY_CONST = 72000;
 		echo fread($myfile,filesize($nav));
 		fclose($myfile);
 	};
-
+	function validateAdmin($user, $pass){
+		try{
+			$conn=connectDB();
+			if(!$conn){
+				return false;
+			}
+			$sql = "SELECT count(UserID) as Admin from Users Where UserID = '$user' AND  Password = MD5('$pass');";
+				$result = $conn->query($sql);
+				$conn->close();
+	
+			return intval(array_values(mysqli_fetch_assoc($result))[0])==1;
+		}catch(Exception $e){
+			return false;
+		}
+	};
 	function connectDB(){
 	
 		// $host =  'localhost';	//cis444 server

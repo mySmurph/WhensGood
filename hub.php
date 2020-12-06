@@ -12,16 +12,26 @@ session_start();
 
 	$eventFound = true;
 
-	if(!isset($destination) || !isset($code)){
-		$destination = $defualtDestination;
+
+	if($source == "admin_portal.php"){
+		$user = $_POST['username'];
+		$pass = $_POST['password'];
+		// $_SESSION['access'] = validateAdmin($user, $pass);
+
+		// $destination = $_SESSION['access'] ? $destination: $source;
+		$destination = validateAdmin($user, $pass)? $destination: $source.'?access=0';
+// var_dump($_SESSION['access']);
+
 	}else{
-		$eventFound = $password =='' ? validateCode($code) :validateOrganizer($code, $password);
-		$destination = $eventFound? $destination:$source;
+		if(!isset($destination) || !isset($code)){
+			$destination = $defualtDestination;
+		}else{
+			$eventFound = $password =='' ? validateCode($code) :validateOrganizer($code, $password);
+			$destination = $eventFound? $destination:$source;
+		}
+		$_SESSION["event_code"] = $code;
+		$_SESSION["eventFound"] = $eventFound;
 	}
-	$_SESSION["event_code"] = $code;
-	$_SESSION["eventFound"] = $eventFound;
-	// var_dump($_POST);
-	// var_dump($destination);
 	header('Location: '. $destination);
 
 ?>

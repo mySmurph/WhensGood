@@ -28,14 +28,18 @@
        <div class = "content"> 
             <ul class="list">
                 <li><div <a class="button big" >
-                    <a class="button big" href="Enter_RSVP.php" >RSVP to an Event</a>
+                    <a  href="Enter_RSVP.php" >RSVP to an Event</a>
                 </div></li>
                 <li><div <a class="button big" >
-                    <a class="button big" href="CreateEvent.php">Create an Event</a>
+                    <a href="CreateEvent.php">Create an Event</a>
                   </div></li>
             </ul>
         </div>
     </main>
-  
+  <footer>
+    <div class = 'button small'>
+      <a href = "admin_portal.php?">Admin Portal</a>
+    </div>
+  </footer>
 </body>
 </html>

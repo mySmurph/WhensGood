@@ -9,7 +9,6 @@
 	// echo $_GET['new'];
 ?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/ScheduleEvent.php -->
-<!-- T.V. PASS! -->
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
