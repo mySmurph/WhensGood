@@ -1,3 +1,13 @@
+<?php
+	if($_GET['new'] == 'TRUE' ||  session_status() === PHP_SESSION_ACTIVE &&( !isset($_SESSION["eventFound"]) || !isset($_SESSION["event_code"]) ||!$_SESSION["eventFound"] )){
+		session_start();
+		session_destroy();
+	}
+	if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+	//if event found then edit event, else create event
+	$editEvent = isset($_SESSION["eventFound"])? $_SESSION["eventFound"]: false;
+	// echo $_GET['new'];
+?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/ScheduleEvent.php -->
 <!-- T.V. PASS! -->
 <!DOCTYPE html>
@@ -16,11 +26,30 @@
 <?php 
 	include ("functions.php");
 	printNavigation();
+	if($editEvent){
+		$code = $_SESSION["event_code"];
+		$eventWindow = getEventWindow($code);
+		$title = getTitle($code);
+		$deadLine = getDeadline($code);
+		$durration = getDurration($code); //array( 0=>[hour], 1=>[min])
+		$range = getDateRange($code);
+			$start = date("Y-n-j", strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[0])));
+			$end =   date("Y-n-j", strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[1])));
+		$email = getEventEmail($code);
+		$h1 = "Edit Event";
+	}else{
+		$code = base_convert((strval(time()) . sprintf('%05d',rand (0, 99999))), 10, 36);
+		$eventWindow = array(
+			array('20200105', '000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000')
+		);
+		$h1 = "Create New Event!!";
+		$durration = array(0,0);
+	}
 	?>
 
 	<main id="main">
 		<h1>
-			Create New Event!!
+		<?php echo $h1?> <span class="h1EventCode"> <?php echo $code?> </span>
 		</h1>
 
 		<form action="ScheduleEvent.php" onsubmit="return ValidateForm()">
@@ -29,31 +58,31 @@
 				<div>
 					<ul>
 						<li>
-							<label aria-label="Give your event a name for people to know what the event is for.">
-								Event Name<br />
-								<input class="text_input full" type="text" id="event_name" />
+							<label aria-label="Give your event a title for people to know what the event is for.">
+								Event Title<br />
+								<input class="text_input full" type="text" id="event_name" value = "<?php echo $title?>" />
 							</label>
 						</li>
 						<li>
 							<label aria-label="Set the date range of when you would like your event to take place.">Event Date Range<br /></label>
-							<input id="event_date_range_start" class="text_input half calendar" type="date" aria-label="event_date_range_start" placeholder="mm/dd/yyy"/>
-							<input id="event_date_range_end" class="text_input half calendar" type="date" aria-label="event_date_range_end" placeholder="mm/dd/yyy"/>
+							<input id="event_date_range_start" class="text_input half calendar" type="date" aria-label="event_date_range_start" placeholder="mm/dd/yyy" value = "<?php echo $start ?>"/>
+							<input id="event_date_range_end" class="text_input half calendar" type="date" aria-label="event_date_range_end" placeholder="mm/dd/yyy" value = "<?php echo $end ?>"/>
 						</li>
 						<li>
 							<label aria-label="Let your guest know by what date they need to respond by.">RSVP Deadline<br /></label>
-							<input id="rsvp_deadline" class="text_input threeQuarters calendar" type="date" aria-label="rsvp_deadline" placeholder="mm/dd/yyy"/>
+							<input id="rsvp_deadline" class="text_input threeQuarters calendar" type="date" aria-label="rsvp_deadline" placeholder="mm/dd/yyy" value = "<?php echo $deadLine ?>"/>
 						</li>
 						<li>
 							<label aria-label="Set the minimum amount of time you need for your event to take place.">Event Duration<br /></label>
 							<div class="text_input full">
-								<input type="number" class="durration_time" id="hr" min="0" max="12" value="0" aria-label="Hours" />HR
-								<input type="number" class="durration_time" id="min" min="0" max="59" step="15" value="0" aria-label="Minutes"/>MIN
+								<input type="number" class="durration_time" id="hr" min="0" max="12"  value = "<?php echo $durration[0] ?>"aria-label="Hours" />HR
+								<input type="number" class="durration_time" id="min" min="0" max="59" step="15"  value = "<?php echo $durration[1] ?>"aria-label="Minutes"/>MIN
 							</div>
 						</li>
 						<li>
 							<label aria-label="Enter your contact info.">
 								Organizer's Email<br />
-								<input class="text_input full" type="email" id="organizers_email" />
+								<input class="text_input full" type="email" id="organizers_email"  value = "<?php echo $email ?>"/>
 							</label>
 						</li>
 						<li>
@@ -76,28 +105,10 @@
 				<div>
 					<label> Select Event Windows</label>
 					<?php
-$dw = new  DateWindows();
 
-// // Create Event print empty calendar
-// $eventWindow = $dw->emptyBoolWeek();
-// $dw->printCalendarWeek($eventWindow);
-
-
-// Edit event: print calendar from db
-$eventWindow = array(
-	array('20201124', '000000000000000000000000000000000000000000000000111111111111111111111111111100000000000000000000'), 
-	array('20201125', '000000000000000000000000000000000111111111111111111111111111111111111111111111111111000000000000'),
-	array('20201126', '000000000000000000000000000000000000111111111111111111111111111111110000000000000000000000000000'),
-	array('20201127', '000000000000000000000000000000000000000000000000111111111111111111111111111100000000000000000000'), 
-	array('20201128', '000000000000000000000000000000000111111111111111111111111111111111111111111111111111000000000000'),
-	array('20201129', '000000000000000000000000000000000000111111111111111111111111111111110000000000000000000000000000'),
-	array('20201130', '000000000000000000000000000000000000111111111111111111111111111111000000000000000000000000000000')
-);
-$eventWindow = $dw->nonDistinctweek($eventWindow);
-$eventWindow = $dw->eventToBoolWeek($eventWindow);
-$dw->printCalendarWeek($eventWindow);
-
-
+$eventWindow = DateWindows::eventToNondistinctWeek($eventWindow);
+$eventWindow =  DateWindows::eventToBoolWeek($eventWindow);
+DateWindows::printCalendarWeek($eventWindow);
 ?>
 
 					<p class="note">

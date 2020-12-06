@@ -1,6 +1,5 @@
 <?php
-	session_start();
-	// var_dump($_SESSION);
+	if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 ?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/RSVP.php -->
 
@@ -21,50 +20,47 @@
 <?php 
 	include ("functions.php");
 	printNavigation();
-	?>
-  
-    <main id="main">
-        <h1>
-            RSVP to Event
-        </h1>
+
+	echo '<main id="main">';
+
+	if(isset($_SESSION["eventFound"]) && isset($_SESSION["event_code"]) && $_SESSION["eventFound"]){
+		$code = $_SESSION["event_code"];
+		$title = getTitle($code);
+		$deadLine = getDeadline($code);
+		$durration = getDurration($code);
+	echo	'<h1>
+				RSVP to Event <span class="h1EventCode"> '.$code.': '.$title.' </span> 
+			</h1>
         <form action="upload.php" method="post" enctype="multipart/form-data">
             <div class="grid_container">
 				<div>
 					<ul class = "inline_list">
 						<li>
 							<label aria-label="Deadline to RSVP">RSVP Deadline<br/></label>
-							<input id="rsvp_deadline" class="text_input" type="date" readonly="readonly"  aria-label="rsvp_deadline" />
+							<input id="rsvp_deadline" class="text_input" type="date" readonly="readonly"  aria-label="rsvp_deadline" value = "'.$deadLine.'" />
 						</li>
 						<li>
 							<label>Event Duration</label><br/>
 							<div class="text_input">
-								<input type="number" class="durration_time" id="hr" min="0" max="12" value="0" readonly="readonly" aria-label="Hours"/>HR
-								<input type="number" class="durration_time" id="min" min="0" max="60" step="15" value="0" readonly="readonly" aria-label="Minutes"/>MIN
+								<input type="text" class="durration_time" id="hr" value="'.$durration[0].'" readonly="readonly" aria-label="Hours"/>HR
+								<input type="text" class="durration_time" id="min" value="'.$durration[1].'" readonly="readonly" aria-label="Minutes"/>MIN
 								&nbsp;&nbsp;&nbsp;
 							</div>
 						</li>
 					</ul>
 					<label>Event Windows</label>
-					<?php 
-
-	
-$eventWindow = array(
-	array('20201124', '000000000000000000000000000000000000000000000000111111111111111111111111111000000000000000000000'), 
-	array('20201125', '000000000000000000000000000000000000000000000000111111111111111111111111111000000000000000000000'),
-	array('20201126', '000000000000000000000000000000000000000000000011111111111111111111110000000000000000000000000000'),
-	array('20201127', '000000000000000000000000000000000000000000000000111111111111111111111111111000000000000000000000'), 
-	array('20201128', '000000000000000000000000000000000000000000000000001111111111111111111111111000000000000000000000'),
-	array('20201129', '000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'),
-	array('20201130', '000000000000000000000000000000000000000000000000000111111111111111000000000000000000000000000000')
-);
-
-$dw = new  DateWindows();
-
-$eventWindow = $dw->eventToBoolWeek($eventWindow);
-
-$dw->printCalendarBlock($eventWindow);
-
-
+';
+$eventWindow = getEventWindow($code);
+$eventWindow = DateWindows::eventToBoolWeek($eventWindow);
+DateWindows::printCalendarBlock($eventWindow);
+}
+else{
+	echo	'
+		<h1> Schedule Event </h1>
+		<div class = "alert_message">Somthing went wrong.</div>
+	';
+	session_destroy();
+}
 ?>
 				</div>
 				<div>
@@ -110,7 +106,6 @@ $dw->printCalendarBlock($eventWindow);
 					?>
         </form>
   </main>
-
 	<script type="text/javascript" src="script/rsvp_to_event.js"></script>
 </body>
 </html>

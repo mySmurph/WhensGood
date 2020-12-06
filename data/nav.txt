@@ -4,7 +4,7 @@
 <ul class="list">
 	<li>
 		<div  class="button" >
-			<a class="button" href="CreateEvent.php">Create Event</a>
+			<a class="button" href="CreateEvent.php?new=TRUE">Create Event</a>
 		</div>
 	</li>
 	<li>

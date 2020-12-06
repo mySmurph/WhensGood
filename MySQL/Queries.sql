@@ -66,3 +66,4 @@ Select count(Distinct EventCode) as EventFound from Events Where EventCode = '1k
 -- Lookup Event (Schedule/Edit: Case Sensitive Password Required)
 Select count(Distinct EventCode) as EventFound from Events Where EventCode = '1kxeqfw3ce' AND  EventPassword like Binary 'myFakePassword' ; -- returns 0, password is incorrect
 Select count(Distinct EventCode) as EventFound from Events Where EventCode = '1kxEQfw3ce' AND  EventPassword like Binary 'MyFakePassword' ; -- returns 1
+SELECT Deadline FROM EventCode = '1kxeqfw3ce';

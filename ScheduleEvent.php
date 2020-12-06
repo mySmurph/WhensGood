@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 	// var_dump($_SESSION);
 ?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/ScheduleEvent.php -->
@@ -26,8 +26,11 @@
 
 	if(isset($_SESSION["eventFound"]) && isset($_SESSION["event_code"]) && $_SESSION["eventFound"]){
 		$code = $_SESSION["event_code"];
+		$title = getTitle($code);
 
-		echo	'<h1> Schedule Event <span class="h1EventCode"> '.$code.' </span> </h1>
+		echo	'<h1> 
+						RSVP to Event <span class="h1EventCode"> '.$code.': '.$title.' </span> 
+				</h1>
 				<form id = "Schedule_form">
 					<div class="grid_container">
 						<div>
@@ -95,8 +98,8 @@ echo '
 			<h1> Schedule Event </h1>
 			<div class = "alert_message">Somthing went wrong.</div>
 		';
+		session_destroy();
 	}
-	// session_destroy();
 ?>
 </main>
 </body>

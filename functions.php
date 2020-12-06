@@ -2,6 +2,7 @@
 const DATE_INDEX = 0; 
 const TIMES_INDEX = 1;
 const SEGMENTS_PER_HOUR = 4;
+const MIN_PER_HOUR = 60;
 const HOURS_PER_DAY = 24;
 const WEEKDAYS = array('SUN', 'MON', 'TUE', 'WED','THR', 'FRI','SAT');
 const DAY_CONST = 72000;
@@ -83,7 +84,7 @@ const DAY_CONST = 72000;
 							AND	UserType = 'p'
 							AND	RSVP = '$RSVP';";
 				
-				echo'<br/>';
+
 				$parList = runQuery($sql);
 				$names= array();
 				if($parList){
@@ -92,6 +93,42 @@ const DAY_CONST = 72000;
 					}
 				}			
 			return $names;
+		}catch(Exception $e){
+			return false;
+		}
+	};
+	function getDeadline($code){
+		try{
+			$sql = "SELECT Deadline FROM Events Where EventCode = '$code' LIMIT 0,1;";	
+			$date = date("Y-n-j", strtotime(runQuery($sql)? runQuery($sql)[0][0]:'2001-01-01'));			
+			return $date;
+		}catch(Exception $e){
+			return false;
+		}
+	};
+	function getDurration($code){
+		try{
+			$sql = "SELECT Durration FROM Events Where EventCode = '$code' LIMIT 0,1;";	
+			$segments = runQuery($sql)? runQuery($sql)[0][0]: 0;
+			$durr = array(intdiv($segments, SEGMENTS_PER_HOUR), ($segments%SEGMENTS_PER_HOUR)*(MIN_PER_HOUR/SEGMENTS_PER_HOUR));			
+			return $durr;
+		}catch(Exception $e){
+			return false;
+		}
+	};
+	function getTitle($code){
+		try{
+			$sql = "SELECT EventTitle FROM Events Where EventCode = '$code'LIMIT 0,1;";	
+			return runQuery($sql)? runQuery($sql)[0][0]: 'NA';
+		}catch(Exception $e){
+			return false;
+		}
+	};
+	function getEventEmail($code){
+		try{
+			$sql = "SELECT Email FROM Users u INNER JOIN Days d USING (UserID) WHERE d.EventCode = '$code' AND u.UserType = 'E' LIMIT 0,1";
+
+			return runQuery($sql)? runQuery($sql)[0][0]: '';
 		}catch(Exception $e){
 			return false;
 		}
@@ -206,10 +243,12 @@ const DAY_CONST = 72000;
 class DateWindows{
 
 	function emptyBoolWeek(){
+		$blackMask = '000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000';
 		$firstDay = strtotime("Sunday");
+		// echo 'sunday = ' . date('w', $firstDay).'<br/>';
 		$emptyWeek = array();
 		for($i = 0; $i < 7; $i++){
-			array_push($emptyWeek, array( strtotime("+".$i." day", $firstDay), $blackMask));
+			array_push($emptyWeek, array( date('Ymd', strtotime("+".$i." day", $firstDay)), $blackMask));
 		}
 		return $emptyWeek;
 	}
@@ -225,12 +264,13 @@ class DateWindows{
 		};
 
 		// get number of days before the first day to get to the beguining of the week
-		$before = date('w', $eventWindow[0][DATE_INDEX]);
 		$firstDay = $eventWindow[0][DATE_INDEX];
-		// get number of days after the last till the end of the week
-		$after = count(WEEKDAYS)-1 - date('w',$eventWindow[count($eventWindow)-1][DATE_INDEX]);
-		$lastDay = $eventWindow[count($eventWindow)-1][DATE_INDEX];
+		$before = intval(date('w', $firstDay));
 
+		
+		// get number of days after the last till the end of the week
+		$lastDay = $eventWindow[count($eventWindow)-1][DATE_INDEX];
+		$after = count(WEEKDAYS)-1 - intval(date('w',$lastDay));
 		// insert blackMask days at the beguining of the event
 		for($d = 1; $d <= $before; $d++){
 			array_unshift($eventWindow, array($firstDay-($d * DAY_CONST), $blackMask));
@@ -287,21 +327,14 @@ class DateWindows{
 
 	//------------------------------------------------------
 	//------------------------------------------------------			
-	function nonDistinctweek($eventWindow){
-		$week = array();
-		for($i = 0; $i <7;$i++){
-			array_push($week, array(FALSE, $blackMask));
-		}
+	function eventToNondistinctWeek($eventWindow){
+		$week = DateWindows::emptyBoolWeek();
 		foreach($eventWindow as &$day){
-			$iday = date('w',strtotime(preg_replace('/d{4}d{2}d{2}/','-',$day[DATE_INDEX])));
-			$week[$iday] = $day;
-		}
-		for($i = 0; $i <7;$i++){
-			if($week[$i][DATE_INDEX] == false){
-				$week[$i][DATE_INDEX] = $week[$i-1][DATE_INDEX]+1;
-			}
-		}
+			$iday = intval(date('w',strtotime(preg_replace('/d{4}d{2}d{2}/','-',$day[DATE_INDEX]))));
+			$week[$iday][TIMES_INDEX] = $day[TIMES_INDEX];
 
+		}
+	
 		return $week;
 	}
 	//------------------------------------------------------

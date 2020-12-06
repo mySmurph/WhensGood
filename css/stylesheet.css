@@ -222,6 +222,7 @@ main{
 .durration_time{
     height: 14px;
     padding-left: 15pt;
+    max-width: 30pt;
 
 }
 
@@ -242,7 +243,7 @@ form{
 	display: block;
 	margin-left: auto;
     margin-right: auto;
-    max-width: fit-content;
+    width: max-content;
 }
 .custom_file_upload {
     background-color: #91D9BF;

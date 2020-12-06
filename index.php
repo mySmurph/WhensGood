@@ -1,4 +1,7 @@
-
+<?php
+  if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+  session_destroy();
+?>
 <!--  http://cis444.cs.csusm.edu/group4/WhensGood/landing.html  -->
 <!-- T.V. PASS! -->
 <!DOCTYPE html>
