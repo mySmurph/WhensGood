@@ -37,7 +37,7 @@
 		session_destroy();
 
 	?>
-		<form  class="alert" id = "Enter_form">
+		<form class="alert" id = "Enter_form">
 			<ul>
 				<li>
 					<label>Enter Event Code<br />
@@ -57,7 +57,7 @@
 				<li>
 					<div class="password_container" id = "password_container">
 						<label>Enter Event Password<br/>
-						<input name = "password_input" id="password_input" type="text" class="text_input full"/></label>
+						<input name = "password_input" id="password_input" type="password" class="text_input full"/></label>
 					</div>
 				</li>
 			</ul>

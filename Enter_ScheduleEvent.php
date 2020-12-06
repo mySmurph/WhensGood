@@ -40,11 +40,11 @@
 			<ul>
 				<li>
 					<label>Enter Event Code<br />
-					<input type="text" class="text_input full" name="event_code" id="event_code" value = "1kxEQfw3ce" /></label>
+					<input type="text" class="text_input full" name="event_code" id="event_code" /></label>
 				</li>
 				<li>
 					<label>Enter Event Password<br/>
-					<input type="password" class="text_input full" name ="password_input" id="password_input" value = "MyFakePassword"/></label>
+					<input type="password" class="text_input full" name ="password_input" id="password_input"/></label>
 				</li>
 			</ul>
 			<div>

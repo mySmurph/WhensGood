@@ -9,6 +9,10 @@ if(switchbox !=null){
 domEventCode.setAttribute("placeholder", "2F088152DE");
 domInputPassword.setAttribute("placeholder", "password");
 
+// place working event code and password
+domEventCode.value = "1kxEQfw3ce" ;
+domInputPassword.value = "MyFakePassword";
+
 document.getElementById("Enter_Form_Button").addEventListener("click",validateCridentials);
 
 function validateCridentials() {
