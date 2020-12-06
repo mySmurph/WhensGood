@@ -86,6 +86,10 @@ input[type="file"] {
     text-decoration: none;
     width: 140pt;
 }
+.button:hover{
+    font-size: 105%;
+    transition-timing-function: ease-in-out;
+}
 
 .grid_container{
     column-gap: 25pt;
