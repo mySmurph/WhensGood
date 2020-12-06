@@ -27,8 +27,7 @@
 				<li>
 					<label>Please Enter a Database Query<br />
                     <textarea id = "db_query" name = "db_query" class="text_input_full">
-SELECT * FROM WhensGood_db.LOGS;
-
+SELECT * FROM Days Order BY EventDate;
                     </textarea>
                     </label>
 				</li>
@@ -42,14 +41,6 @@ SELECT * FROM WhensGood_db.LOGS;
 
         // access the When's Good database with mysql
         $db_query = htmlspecialchars($_POST["db_query"]);
-        print "<p>$db_query</p>";
-
-        // $db_connection = mysqli_connect("db", "user", "test", "myDb");                // use for the local database on group pcs via Docker
-        // // $db_connection = mysqli_connect("localhost", "group4", "IjChbKtynlNZ", "group4");  // use for the database on the school server
-        // if(!$db_connection){
-        //     print "<p>Connection to database failed!!</p>";
-        //     exit(); 
-        // }
 
         // delete leading and trailing whitespace and remove backslashes
         trim($db_query);
@@ -57,65 +48,56 @@ SELECT * FROM WhensGood_db.LOGS;
 
         if($db_query != ''){
             $db_connection = connectDB();
-            $query_result = mysqli_query($db_connection, $db_query);
+            $result = mysqli_query($db_connection, $db_query);
 
-
-            if(!$query_result){
+            $num_rows = mysqli_num_rows($result);
+            if(!$result){
                 print "<p>Error - the query could not be executed</p>";
                 // exit;
             }else{
-                $num_rows = mysqli_num_rows($query_result);
-                var_dump($query_result);
+                // $num_rows = mysqli_num_rows($result);
                 // // if there are rows in the result, put them into the table
                 if($num_rows > 0){
                     print "<table title='Whens Good Data' summary='This table contains information related to the user and organizer data.'><tr>";
         
-        
-                    // produce the column titles
-                    $keys = array_keys($row_data);
-                    while($row_data = mysql_fetch_assoc($query_result)){                   
-                        print "<th id = \"" . $row_data['Field'] . "\">";                                           // !!!! need to check to see if this works
-                        print $row_data['Field'] . "</th>";                                                         // !!!! need to check to see if this works
-                    }
-                    print "</tr>";
-        
-                // reset the pointer to the first row in the result from the database                                !!!!! need to check to see if this works
-                mysql_data_seek($query_result, 0);
-        
-                $row_data = mysqli_fetch_assoc($query_result);
-                $num_columns = mysqli_num_fields($query_result);
-        
-                    // output the data for the query
-                    // so for each row
-                    for($row_number = 0; $row_number < $num_rows; ++$row_number){
-                        print "<tr>";   // opening to table row
-                        
-                        // gets the data from each cell and places it inside the $row_values_array
-                        $row_values_array = array_values($row_data);
-        
-                        // iterate through the data cells in each row
-                        for($column_number = 0; $column_number < $num_columns; ++$column_number){
-                            $cell_data = htmlspecialchars($row_values_array[$column_number]);
-                            print "<td headers = \"" . row_data['Field'] . "\">";                                    // !!!! need to check to see if this works
-                            print $cell_data . "</td>";
+                    $a_row = mysqli_fetch_assoc($result);
+                    $num_rows = mysqli_num_rows($result);
+                    $col_headers = array_keys($a_row);
+
+                    echo "<table title='Whens Good Data' summary='This table contains information related to the user and organizer data.' aria-label = \"Table to display information for  ".$db_query."\" id = \"results_table\"> <caption> <div class=\"white query\"> <h1>Query</h1>".$db_query." </div> </caption>";
+                    echo "<tr>";
+                        foreach($col_headers as &$header){
+                            echo "<th id = \"".$header."\">".$header."</th>";
                         }
+                        unset($header);
+                    echo "</tr>";
         
-                        print "</tr>";  // closing to table row
-        
-                        // updates row data to the next row of the result
-                        $row_data = mysqli_fetch_assoc($query_result);  
+                    for($i = 0; $i<$num_rows; $i++){
+                        echo "<tr>";
+                        $values = array_values($a_row);
+                        $j = 0;
+                        foreach($values as &$val){
+                            $value = htmlSpecialchars($val);
+                            
+                            echo "<td headers = \"".$col_headers[$j++]."\">".$value."</td>";
+                        }
+                        unset($val);
+                        $a_row = mysqli_fetch_assoc($result);
+                        echo "</tr>";
                     }
-                    print"</table>";
+                    unset($row);
+
+			        echo"</table>";
                 } 
                 else { // if the result doesn't return any queries, then return the message below
                     print "There were no such rows in the table<br />";
                 }
             }
-    
-
+            $db_connection->close();
         }
 
     ?>
+    <script type="text/javascript" src="script/sort.js"></script>
     </main>
 </body>
 </html>
