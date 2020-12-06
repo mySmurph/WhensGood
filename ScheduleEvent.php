@@ -1,3 +1,7 @@
+<?php
+	session_start();
+	// var_dump($_SESSION);
+?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/ScheduleEvent.php -->
 
 <!DOCTYPE html>
@@ -17,43 +21,27 @@
 <?php 
 	include ("functions.php");
 	printNavigation();
-?>
-    <main id="main">
-	<h1>
-		Schedule Event
-	</h1>
 
-	<form>
+	echo '<main id="main">';
 
-		<div class="grid_container">
-				<div>
-					<label> Event Windows</label>
-					<a href="CreateEvent.php" class = "note">[Edit Event]</a>
-					<!-- <span class = "feedback" id = "StartDate">11-1-2020</span> -->
-		<?php 
-		$eventWindow = array(
-			array('20201124', '000000000000000000000000000000000000000000000000111111111111111111111111111100000000000000000000'), 
-			array('20201125', '000000000000000000000000000000000111111111111111111111111111111111111111111111111111000000000000'),
-			array('20201126', '000000000000000000000000000000000000111111111111111111111111111111110000000000000000000000000000'),
-			array('20201127', '000000000000000000000000000000000000000000000000111111111111111111111111111100000000000000000000'), 
-			array('20201128', '000000000000000000000000000000000111111111111111111111111111111111111111111111111111000000000000'),
-			array('20201129', '000000000000000000000000000000000000111111111111111111111111111111110000000000000000000000000000'),
-			array('20201130', '000000000000000000000000000000000000111111111111111111111111111111000000000000000000000000000000')
-		);
-		$eventMask = array(
-			array('20201124', '111111111111111111111111111111111111111111111111000000000000000000000000000000000000111111111111'), 
-			array('20201125', '111111111111111111111111111111111111111111111111111111111111100000000000000011111111111111111111'),
-			array('20201126', '111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'),
-			array('20201127', '111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'), 
-			array('20201128', '111111111111111111111111111111111111111111111111111111000000000000000111111111111111111111111111'),
-			array('20201129', '111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'),
-			array('20201130', '111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111')
-		);
-		$dw = new  DateWindows();
-		$eventWindow = $dw->eventToBoolWeek($eventWindow);
-		$eventMask = $dw->eventToBoolWeek($eventMask);
-		$dw->printCalendarMaskedBlock($eventWindow, $eventMask);
-		?>
+	if(isset($_SESSION["eventFound"]) && isset($_SESSION["event_code"]) && $_SESSION["eventFound"]){
+		$code = $_SESSION["event_code"];
+
+		echo	'<h1> Schedule Event <span class="h1EventCode"> '.$code.' </span> </h1>
+				<form id = "Schedule_form">
+					<div class="grid_container">
+						<div>
+							<label> Event Windows</label>
+							<a href="CreateEvent.php" class = "note">[Edit Event]</a>';
+							//<!-- <span class = "feedback" id = "StartDate">11-1-2020</span> -->
+
+		$eventWindow = getEventWindow($code);
+		$eventMask = getEventMask($code);
+
+		$eventWindow = DateWindows::eventToBoolWeek($eventWindow);
+		$eventMask = DateWindows::eventToBoolWeek($eventMask);
+		DateWindows::printCalendarMaskedBlock($eventWindow, $eventMask);
+echo '
 				</div>
 				<div>
 					<label>Event Participants</label><br/>
@@ -89,7 +77,17 @@
 		<button type="submit" class="button span red" id = "button">Schedule Event</button>
 	</form>
 	
+
+<script type="text/javascript" src="script/schedule_event.js"></script>';
+	}
+	else{
+		echo	'
+			<h1> Schedule Event </h1>
+			<div class = "alert_message">Somthing went wrong.</div>
+		';
+	}
+	// session_destroy();
+?>
 </main>
-<script type="text/javascript" src="script/schedule_event.js"></script>
 </body>
 </html>

@@ -49,7 +49,8 @@ from
 Inner Join
 	Users u using(UserID)
 WHERE
-	d.EventCode = '1kxeqfw3ce' AND u.UserType = 'E';
+	d.EventCode = '1kxeqfw3ce' AND u.UserType = 'E'
+ORDER BY Date ASC;
 
 -- get all calendars to an event
 SELECT 

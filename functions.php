@@ -1,4 +1,10 @@
 <?php
+const DATE_INDEX = 0; 
+const TIMES_INDEX = 1;
+const SEGMENTS_PER_HOUR = 4;
+const HOURS_PER_DAY = 24;
+const WEEKDAYS = array('SUN', 'MON', 'TUE', 'WED','THR', 'FRI','SAT');
+const DAY_CONST = 72000;
 
 
 	function printNavigation(){
@@ -36,7 +42,7 @@
 			if(!$conn){
 				return false;
 			}
-			$sql = "Select count(Distinct EventCode) as EventFound from Events Where EventCode = '".$code."';";
+			$sql = "SELECT count(Distinct EventCode) as EventFound from Events Where EventCode = '$code';";
 				$result = $conn->query($sql);
 				$conn->close();
 	
@@ -51,7 +57,7 @@
 			if(!$conn){
 				return false;
 			}
-			$sql = "Select count(Distinct EventCode) as EventFound from Events Where EventCode = '".$code."' AND  EventPassword like Binary '".$password."' ;";
+			$sql = "SELECT count(Distinct EventCode) as EventFound from Events Where EventCode = '".$code."' AND  EventPassword like Binary '".$password."' ;";
 				$result = $conn->query($sql);
 				$conn->close();
 	
@@ -61,15 +67,113 @@
 		}
 	};
 
+	// pass event code :: return array ( array(date, 0010))
+	function getEventWindow($code){
+		try{
+			$conn=connectDB();
+			if(!$conn){
+				return false;
+			}
+			$sql = "SELECT EventDate Date, TimeArray Time 
+			from Days d Inner Join Users u using(UserID) 
+			WHERE d.EventCode = '$code' AND u.UserType = 'E' 
+			ORDER BY Date ASC ;";
 
-	
+			$result = $conn->query($sql);
+			$conn->close();
+			$numresults = mysqli_num_rows($result);
+			if($numresults<1){
+				return false;
+			}
+			$ev = array();
+			for($i = 0; $i < $numresults; $i++){
+				array_push($ev, array_values(mysqli_fetch_assoc($result)));
+			}
+
+			return $ev;
+		}catch(Exception $e){
+			return false;
+		}
+	}
+	// pass event code :: return array ( array(date, 1101))
+	function getEventMask($code){
+		try{
+			$conn=connectDB();
+			if(!$conn){
+				return false;
+			}
+			$sql = 	"SELECT 
+						EventDate Date, TimeArray Time
+					FROM Days
+					Where
+							Days.EventCode = '$code'
+						AND Days.TimeArray IS NOT NULL
+					;";
+
+			$result = $conn->query($sql);
+			$conn->close();
+			$numresults = mysqli_num_rows($result);
+			if($numresults<1){
+				return false;
+			}
+			//get participants array and transfrom to YYYYMMDD : [1][1][0][1]
+			$participantCalendars = array();
+			for($i = 0; $i < $numresults; $i++){
+				array_push($participantCalendars, array_values(mysqli_fetch_assoc($result)));
+			}
+			foreach($participantCalendars as &$day){
+				//convert time string  to bool array
+				$intAr = str_split($day[TIMES_INDEX]);
+				foreach($intAr as &$seg){
+					$seg = intval($seg);
+				}
+				$day[TIMES_INDEX] = $intAr;
+				$dayofweek = date('w',$day[DATE_INDEX]);
+			};
+
+			// make white mask YYYYMMDD : [1][1][1][1]
+			$range = getDateRange($code);
+			$start = strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[0]));
+			$end = strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[1]));
+			$maskDays = array();
+			while($start<=$end){
+				array_push($maskDays, array(date("Ymd",$start), getWhite()));
+				$start = $start + DAY_CONST;
+			}
+
+			//merge participants with mask
+			foreach($participantCalendars as &$day){
+				foreach($maskDays as &$mask){
+					if($day[DATE_INDEX] == $mask[DATE_INDEX]){
+						for($i = 0; $i < SEGMENTS_PER_HOUR*HOURS_PER_DAY; $i++){
+							$mask[TIMES_INDEX][$i] *= $day[TIMES_INDEX][$i];
+						}
+					}
+				}
+				
+			}
+			foreach($maskDays as &$m){
+				$m[TIMES_INDEX] = implode("", $m[TIMES_INDEX]);
+			}
+
+			return $maskDays;
+		}catch(Exception $e){
+			return false;
+		}
+	}
+	function getDateRange($code){
+		$ev = getEventWindow($code);
+		return array($ev[0][0], $ev[count($ev)-1][0]);
+	}
+	function getWhite(){
+		$white = array();
+		for($i; $i < SEGMENTS_PER_HOUR*HOURS_PER_DAY; $i++){
+			array_push($white, 1);
+		}
+		return $white;
+	}
 		
 //functions
-const DATE_INDEX = 0; 
-const TIMES_INDEX = 1;
-const SEGMENTS = 4;
-const WEEKDAYS = array('SUN', 'MON', 'TUE', 'WED','THR', 'FRI','SAT');
-const DAY_CONST = 72000;
 
 class DateWindows{
 
@@ -120,7 +224,7 @@ class DateWindows{
 			$day[TIMES_INDEX] = $boolAr;
 
 			$dayofweek = date('w',$day[DATE_INDEX]);
-			echo $WEEKDAYS[$dayofweek].'&nbsp;';
+
 		};
 		return $eventWindow;
 	}
@@ -139,7 +243,7 @@ class DateWindows{
 	}
 	//------------------------------------------------------
 	function printCalendarWeek($eventWindow){
-		$block = array(0, SEGMENTS*24);
+		$block = array(0, SEGMENTS_PER_HOUR*HOURS_PER_DAY);
 		$whiteMask = array();
 		for($i = 0; $i < $block[1];$i++){
 			array_push($whiteMask, true);
@@ -200,8 +304,8 @@ class DateWindows{
 		}
 
 		// add buffers to time
-		$earlyest -= (($earlyest-1)%SEGMENTS) +1; 
-		$latest += 5-(($latest+1)%SEGMENTS);
+		$earlyest -= (($earlyest-1)%SEGMENTS_PER_HOUR) +1; 
+		$latest += 5-(($latest+1)%SEGMENTS_PER_HOUR);
 
 		// echo $earlyest.$latest;
 		return array($earlyest, $latest);
@@ -225,10 +329,10 @@ class DateWindows{
 				echo '<ol class="times"><li class = "'.$class.'"></li>';
 				for($time = $earlyest; $time < $latest; ++$time){
 					//math
-					$hour  = 1+((intdiv($time, SEGMENTS)-1) %12);
+					$hour  = 1+((intdiv($time, SEGMENTS_PER_HOUR)-1) %12);
 					//format
-					$hour = $hour.':00'.($time<12*SEGMENTS?' AM':' PM');
-					if(($time% SEGMENTS)==0){
+					$hour = $hour.':00'.($time<12*SEGMENTS_PER_HOUR?' AM':' PM');
+					if(($time% SEGMENTS_PER_HOUR)==0){
 						echo '<li class="time">'.$hour.'</li>';
 					}
 				}
@@ -249,8 +353,8 @@ class DateWindows{
 				$selectClass = $booEV? ($includeDate? ( $booEVA?'':'un').'availible window':'ui-selected'):'';
 				
 				//math
-				$hourM = intdiv($time, SEGMENTS);
-				$min = 15*($time% SEGMENTS);
+				$hourM = intdiv($time, SEGMENTS_PER_HOUR);
+				$min = 15*($time% SEGMENTS_PER_HOUR);
 
 				//format
 				$milHour = str_pad($hourM, 2, '0', STR_PAD_LEFT) .	$min = str_pad($min, 2, '0', STR_PAD_LEFT);

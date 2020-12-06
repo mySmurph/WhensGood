@@ -119,7 +119,13 @@ h1{
     text-align: left;
 	width: inherit;
 }
-
+.h1EventCode{
+    background-color: white;
+    border: none;
+    border-radius: 5pt;
+    padding: 4pt;
+    color: #378C7D;
+}
 
 .img{
 	display: inline-block;
