@@ -1,6 +1,10 @@
 var domEventCode = document.getElementById("event_code");
 var domInputPassword = document.getElementById("password_input");
 var switchbox = document.getElementById('switchbox');
+if(switchbox !=null){
+	switchbox.addEventListener("change", changeSize);
+}
+
 
 domEventCode.setAttribute("placeholder", "2F088152DE");
 domInputPassword.setAttribute("placeholder", "password");
@@ -20,4 +24,14 @@ function validateCridentials() {
 		return false;
 	}
 
+}
+
+function changeSize(){
+	var password = document.getElementById("password_container");
+    if(switchbox.checked){
+		password.style.display = "block";
+    }
+    else{
+		password.style.display = "none";
+    }
 }

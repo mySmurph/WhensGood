@@ -24,12 +24,12 @@
       </h1>
        <div class = "content"> 
             <ul class="list">
-                <li>
+                <li><div <a class="button big" >
                     <a class="button big" href="Enter_RSVP.php" >RSVP to an Event</a>
-                </li>
-                <li>
+                </div></li>
+                <li><div <a class="button big" >
                     <a class="button big" href="CreateEvent.php">Create an Event</a>
-                </li>
+                  </div></li>
             </ul>
         </div>
     </main>
