@@ -334,7 +334,7 @@ class DateWindows{
 		$eventMask = array();
 		$firstDay = $eventWindow[0][DATE_INDEX];
 		for($i = 0; $i <7;$i++){
-			array_push($eventMask, array($firstDay+($d*DAY_CONST), $whiteMask));
+			array_push($eventMask, array($firstDay+($i*DAY_CONST), $whiteMask));
 		};
 		DateWindows::echoHTMLCalendar($eventWindow, $eventMask, $block[0], $block[1], FALSE);
 	}
