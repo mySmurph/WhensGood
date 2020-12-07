@@ -100,7 +100,7 @@
 
 
             if(!$result){
-                print "<p>Error - the query could not be executed</p>";
+                echo '<div class = "alert_message">Error - the query could not be executed <br/>'.$db_query.'</div>';
                 // exit;
             }else{
                 // $num_rows = mysqli_num_rows($result);

@@ -34,8 +34,8 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
     border: hidden;
 }
 textarea{
-    height: 8em;
-    width: 50em;
+    height: 15em;
+    width: 30em;
 }
 
 textarea:focus, input:focus{
@@ -372,7 +372,7 @@ form{
     background-color:white;
     border-radius: 5pt;
     border: solid 5pt #F24B59;
-    margin: auto;
+    margin: 10pt auto ;
     max-height:fit-content;
     padding:10px; 
 	width:75%;
