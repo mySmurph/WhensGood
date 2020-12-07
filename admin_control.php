@@ -22,10 +22,13 @@
     <h1>Database Query Tool     <span class = 'button red small'>
       <a href = "admin_portal.php?access=0">&nbsp;&nbsp;&nbsp;Log Out&nbsp;&nbsp;&nbsp;</a>
 </span></h1>
-    <form class="alert" method = "post" action = "admin_control.php" id = "form">
+    <form class="alert" method = "post" action = "admin_control.php?GO=1" id = "form">
         <div class = " grid_container">
             <div>
                 <ul>
+                    <li>
+                        <h1>Constructed Query</h1>
+                    </li>
                     <li>
                         <label aria-label="When's Good DB Table">Table<br/></label>
                         <select aria-label="When's Good DB Table" class = "text_input full" name="db_table_options" id="db_table_options">
@@ -57,10 +60,11 @@
             <div>
             <ul>
                 <li>
+                        <h1>Freeform Query</h1>
+                </li>
+                <li>
 					<label>Please Enter a Database Query<br />
-                    <textarea id = "db_query" name = "db_query" class="text_input_full">
-SELECT * FROM Days Order BY EventDate;
-                    </textarea>
+                    <textarea id = "db_query" name = "db_query" class="text_input_full"></textarea>
                     </label>
 				</li>
 			</ul>
@@ -81,18 +85,27 @@ SELECT * FROM Days Order BY EventDate;
         // delete leading and trailing whitespace and remove backslashes
         trim($db_query);
         $db_query = stripslashes($db_query);
+        
+        $db_table = isset($_POST['db_table_options']) ? htmlentities($_POST['db_table_options']): FALSE;
+        $db_table_att = isset($_POST['db_attribute']) ? htmlentities($_POST['db_attribute']): FALSE;
+        $db_key_term = isset($_POST['db_attribute']) ? htmlentities($_POST['key_term']): FALSE;
 
-        if($db_query != ''){
+        $db_query = $db_query != ''?  $db_query : "SELECT * FROM $db_table ".(( $db_table_att !='' && $db_key_term != '')? " WHERE $db_table_att LIKE '%$db_key_term%' ":'').';';
+
+// echo        "<div class=\"white query\"> <h1>Query</h1>".$db_query." </div> ";
+        
+        if( $_GET['GO'] != NULL && boolval($_GET['GO']) ){
             $db_connection = connectDB();
             $result = mysqli_query($db_connection, $db_query);
 
-            $num_rows = mysqli_num_rows($result);
+
             if(!$result){
                 print "<p>Error - the query could not be executed</p>";
                 // exit;
             }else{
                 // $num_rows = mysqli_num_rows($result);
                 // // if there are rows in the result, put them into the table
+                $num_rows = mysqli_num_rows($result);
                 if($num_rows > 0){
                     print "<table title='Whens Good Data' summary='This table contains information related to the user and organizer data.'><tr>";
         

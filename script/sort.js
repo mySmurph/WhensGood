@@ -13,7 +13,7 @@ function setAttributeOptions(){
 	switch(dbTable.value){
 		case 'Users': attributes = ['', 'UserID', 'UserType', 'UserName', 'RSVP', 'Email', 'CalenderFile', 'Password'];
 			break;
-		case 'Events': attributes = ['', 'EventCode', 'EventTitle', 'Durration', 'Deadline', 'EventPassword'];
+		case 'Events': attributes = ['', 'EventCode', 'EventTitle', 'Duration', 'Deadline', 'EventPassword'];
 			break;
 		case 'Days': attributes = ['', 'EventCode', 'UserID', 'EventDate', 'TimeArray'];
 			break;

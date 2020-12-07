@@ -50,7 +50,7 @@
 				</div>
 				<div class = "POST_info" >
 				<input type = "text" aria-label="source" name = "source" value = "admin_portal.php" readonly />
-				<input type = "text" aria-label="destination" name = "destination" value = "admin_control.php" readonly />
+				<input type = "text" aria-label="destination" name = "destination" value = "admin_control.php?GO=0" readonly />
 			</div>
 		</form>
     </main>
