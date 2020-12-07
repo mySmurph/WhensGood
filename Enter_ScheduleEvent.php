@@ -1,6 +1,11 @@
 <?php
 	  if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 	$_SESSION['access'] = false;
+	if(intval($_GET['try']) == -1){
+		unset($_SESSION["event_code"]);
+		unset($_SESSION["eventFound"]);
+	}
+
 ?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/Enter_ScheduleEvent.php-->
 <!-- T.V. PASS! -->
@@ -25,7 +30,6 @@
             Lets put it on the schedule...
         </h1>
 <?php 
-
 	$eventFound = $_SESSION['eventFound'];
 	$code = $_SESSION['event_code'];
 	if(isset($eventFound) && !$eventFound){

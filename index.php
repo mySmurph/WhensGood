@@ -1,6 +1,8 @@
 <?php
   if(session_status() !== PHP_SESSION_ACTIVE) session_start();
   $_SESSION['access'] = false;
+  unset($_SESSION["event_code"]);
+  unset($_SESSION["eventFound"]);
   session_destroy();
 ?>
 <!--  http://cis444.cs.csusm.edu/group4/WhensGood/landing.html  -->

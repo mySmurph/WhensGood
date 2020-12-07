@@ -1,6 +1,11 @@
 <?php
 	if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 	$_SESSION['access'] = false;
+	if(intval($_GET['try']) == -1){
+		unset($_SESSION["event_code"]);
+		unset($_SESSION["eventFound"]);
+	}
+
 ?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/Enter_EditEvent.php-->
 <!-- T.V. PASS! -->
