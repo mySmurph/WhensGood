@@ -17,18 +17,14 @@
 		$user = $_POST['username'];
 		$pass = $_POST['password'];
 		$_SESSION['access'] = validateAdmin($user, $pass);
-		// $valid = validateAdmin($user, $pass);
 		$destination = $_SESSION['access'] ? $destination: $source;
-		// $destination = $valid? $destination: $source.'?access=0';
-		// $destination = $valid? $destination: $source;
-// var_dump($_SESSION['access']);
 
 	}else{
 		if(!isset($destination) || !isset($code)){
 			$destination = $defualtDestination;
 		}else{
 			$eventFound = $password =='' ? validateCode($code) :validateOrganizer($code, $password);
-			$destination = $eventFound? $destination:$source;
+			$destination = $eventFound? $destination : $source.'?found=0';
 		}
 		$_SESSION["event_code"] = $code;
 		$_SESSION["eventFound"] = $eventFound;

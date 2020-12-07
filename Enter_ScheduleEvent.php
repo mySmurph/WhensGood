@@ -1,10 +1,11 @@
 <?php
-	  if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+	if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 	$_SESSION['access'] = false;
-	if(intval($_GET['try']) == -1){
-		unset($_SESSION["event_code"]);
-		unset($_SESSION["eventFound"]);
-	}
+	// if(!isset($_GET['found']) || intval($_GET['found']) == 0){
+	// 	unset($_SESSION["event_code"]);
+	// 	unset($_SESSION["eventFound"]);
+	// }
+	$printAlert = (isset($_GET['found']) && intval($_GET['found']) == 0)? TRUE : FALSE;
 
 ?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/Enter_ScheduleEvent.php-->
@@ -23,16 +24,16 @@
 <?php 
 	include ("functions.php");
 	printNavigation();
-	?>
+?>
   
     <main id="main">
         <h1>
             Lets put it on the schedule...
         </h1>
 <?php 
-	$eventFound = $_SESSION['eventFound'];
-	$code = $_SESSION['event_code'];
-	if(isset($eventFound) && !$eventFound){
+
+	$code = isset($_SESSION['event_code']) ? $_SESSION['event_code'] : '';
+	if($printAlert){
 		echo "<div class = \"alert_message\">The event code '$code' not found. / The password you’ve entered is incorrect.</div>";
 	}
 	unset($_SESSION['eventFound']);

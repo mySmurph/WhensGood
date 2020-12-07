@@ -4,22 +4,22 @@
 <ul class="list">
 	<li>
 		<div  class="button" >
-			<a href="CreateEvent.php?new=TRUE">Create Event</a>
+			<a href="CreateEvent.php?">Create Event</a>
 		</div>
 	</li>
 	<li>
 		<div  class="button" >
-			<a href="Enter_EditEvent.php?try=-1">Edit Event</a>
+			<a href="Enter_EditEvent.php?">Edit Event</a>
 	</div>
 	</li>
 	<li>
 		<div  class="button" >
-			<a href="Enter_RSVP.php?try=0-1">RSVP to an Event</a>
+			<a href="Enter_RSVP.php?">RSVP to an Event</a>
 	</div>
 	</li>
 	<li>
 		<div  class="button" >
-			<a href="Enter_ScheduleEvent.php?try=-1">Schedule Event</a>
+			<a href="Enter_ScheduleEvent.php?">Schedule Event</a>
 		</div>
 	</li>
 </ul>

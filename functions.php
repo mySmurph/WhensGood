@@ -40,12 +40,7 @@ const DAY_CONST = 72000;
 		try{
 			$db =  mysqli_connect($host, $userid,  $password, $schema);
 			return $db;
-			// if ($db->connect_error){
-			// 	print "<p class = \"dbStatus\">Unable to Connect to MySQL</p>". $db -> connect_error;
-			// 	throw new Exception('Failed');
-			// }else{
-			// 	return $db;
-			// }
+
 		}catch(mysqli_sql_exception $e){
 			throw $e; 
 		}
@@ -394,7 +389,7 @@ class DateWindows{
 
 
 		$class = $includeDate? 'date' :'day';
-
+		$week = 0;
 		//Stat building the  the table
 		echo ' <div id = "hour_table_'.$week.'" class="hour_table white">';
 		for($iday = 0; $iday < count($eventWindow); $iday++){

@@ -1,12 +1,8 @@
 <?php
-	if($_GET['new'] == 'TRUE' ||  session_status() === PHP_SESSION_ACTIVE &&( !isset($_SESSION["eventFound"]) || !isset($_SESSION["event_code"]) ||!$_SESSION["eventFound"] )){
-		session_start();
-		session_destroy();
-	}
+
 	if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 	//if event found then edit event, else create event
-	$editEvent = isset($_SESSION["eventFound"])? $_SESSION["eventFound"]: false;
-	// echo $_GET['new'];
+	$editEvent = isset($_SESSION["eventFound"]) && isset($_SESSION["event_code"])? $_SESSION["eventFound"]: false;
 ?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/ScheduleEvent.php -->
 <!DOCTYPE html>
@@ -36,6 +32,8 @@
 			$end =   date("Y-n-j", strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[1])));
 		$email = getEventEmail($code);
 		$h1 = "Edit Event";
+		unset($_SESSION["eventFound"]);
+		unset($_SESSION["event_code"]);
 	}else{
 		$code = base_convert((strval(time()) . sprintf('%05d',rand (0, 99999))), 10, 36);
 		$eventWindow = array(

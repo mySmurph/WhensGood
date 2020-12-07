@@ -31,10 +31,10 @@
        <div class = "content"> 
             <ul class="list">
                 <li><div <a class="button big" >
-                    <a  href="Enter_RSVP.php" >RSVP to an Event</a>
+                    <a  href="Enter_RSVP.php?" >RSVP to an Event</a>
                 </div></li>
                 <li><div <a class="button big" >
-                    <a href="CreateEvent.php">Create an Event</a>
+                    <a href="CreateEvent.php?">Create an Event</a>
                   </div></li>
             </ul>
         </div>
