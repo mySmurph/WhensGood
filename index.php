@@ -1,5 +1,6 @@
 <?php
   if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+  $_SESSION['access'] = false;
   session_destroy();
 ?>
 <!--  http://cis444.cs.csusm.edu/group4/WhensGood/landing.html  -->
@@ -38,7 +39,7 @@
     </main>
   <footer>
     <div class = 'button small'>
-      <a href = "admin_portal.php?">Admin Portal</a>
+      <a href = "admin_portal.php?admin=1">Admin Portal</a>
     </div>
   </footer>
 </body>

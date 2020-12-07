@@ -347,7 +347,7 @@ form{
 	width: inherit;
 }
 .feedback{
-	/* display: none; */
+	display: none;
 }
 /* CSS SPECIFIC TO BOTH                                             CREATE EVENT HTML FILE AND RSVP TO EVENT FILE      END */
 

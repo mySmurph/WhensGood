@@ -1,5 +1,5 @@
 <?php 
-session_start();
+  if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 	include ("functions.php");
 
 	$source = $_POST['source'];
@@ -16,10 +16,11 @@ session_start();
 	if($source == "admin_portal.php"){
 		$user = $_POST['username'];
 		$pass = $_POST['password'];
-		// $_SESSION['access'] = validateAdmin($user, $pass);
-
-		// $destination = $_SESSION['access'] ? $destination: $source;
-		$destination = validateAdmin($user, $pass)? $destination: $source.'?access=0';
+		$_SESSION['access'] = validateAdmin($user, $pass);
+		// $valid = validateAdmin($user, $pass);
+		$destination = $_SESSION['access'] ? $destination: $source;
+		// $destination = $valid? $destination: $source.'?access=0';
+		// $destination = $valid? $destination: $source;
 // var_dump($_SESSION['access']);
 
 	}else{

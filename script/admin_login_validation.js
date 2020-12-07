@@ -2,8 +2,8 @@ let domForm = document.getElementById("form");
 let domAdminUserName = document.getElementById("username");
 let domAdminPassword = document.getElementById("password");
 
-domAdminUserName.setAttribute("placeholder", "professor enter: \"admin\"");
-domAdminPassword.setAttribute("placeholder", "professor enter: \"password\"");
+domAdminUserName.setAttribute("placeholder", "\"admin\"");
+domAdminPassword.setAttribute("placeholder", "\"password\"");
 
 domForm.addEventListener("submit", validateUserNameAndPassword, false);
 

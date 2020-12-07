@@ -1,7 +1,7 @@
 <?php
-	session_start();
-	$access = $_GET['access'] != NULL? boolval($_GET['access']): true;
-	if(!$access){
+	if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+	// $access = $_GET['access'] != NULL? boolval($_GET['access']): true;
+	if(!$_SESSION['access']){
 		session_destroy();
 	}
 
@@ -30,7 +30,7 @@
         Admin Portal
 	  </h1>
 	  <?php
-	  if(!$access){
+	  if(!$_SESSION['access']&& intval($_GET['admin'])!=1){
 			echo "<div class = \"alert_message\">Invalid Credentials </div>";
 		}
 	?>

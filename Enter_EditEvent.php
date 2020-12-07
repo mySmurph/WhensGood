@@ -1,5 +1,6 @@
 <?php
-	session_start();
+	if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+	$_SESSION['access'] = false;
 ?>
 <!--  https://cis444.cs.csusm.edu/group4/WhensGood/Enter_EditEvent.php-->
 <!-- T.V. PASS! -->
