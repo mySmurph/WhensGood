@@ -27,7 +27,7 @@
 		$code = $_SESSION["event_code"];
 		$title = getTitle($code);
 		$deadLine = getDeadline($code);
-		$durration = getDurration($code);
+		$Duration = getDuration($code);
 	echo	'<h1>
 				RSVP to Event <span class="h1EventCode"> '.$code.': '.$title.' </span> 
 			</h1>
@@ -42,8 +42,8 @@
 						<li>
 							<label>Event Duration</label><br/>
 							<div class="text_input">
-								<input type="text" class="durration_time" id="hr" value="'.$durration[0].'" readonly="readonly" aria-label="Hours"/>HR
-								<input type="text" class="durration_time" id="min" value="'.$durration[1].'" readonly="readonly" aria-label="Minutes"/>MIN
+								<input type="text" class="Duration_time" id="hr" value="'.$Duration[0].'" readonly="readonly" aria-label="Hours"/>HR
+								<input type="text" class="Duration_time" id="min" value="'.$Duration[1].'" readonly="readonly" aria-label="Minutes"/>MIN
 								&nbsp;&nbsp;&nbsp;
 							</div>
 						</li>

@@ -30,7 +30,7 @@
 		$eventWindow = getEventWindow($code);
 		$title = getTitle($code);
 		$deadLine = getDeadline($code);
-		$durration = getDurration($code); //array( 0=>[hour], 1=>[min])
+		$Duration = getDuration($code); //array( 0=>[hour], 1=>[min])
 		$range = getDateRange($code);
 			$start = date("Y-n-j", strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[0])));
 			$end =   date("Y-n-j", strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[1])));
@@ -42,7 +42,7 @@
 			array('20200105', '000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000')
 		);
 		$h1 = "Create New Event!!";
-		$durration = array(0,0);
+		$Duration = array(0,0);
 	}
 	?>
 
@@ -74,8 +74,8 @@
 						<li>
 							<label aria-label="Set the minimum amount of time you need for your event to take place.">Event Duration<br /></label>
 							<div class="text_input full">
-								<input type="number" class="durration_time" id="hr" min="0" max="12"  value = "<?php echo $durration[0] ?>"aria-label="Hours" />HR
-								<input type="number" class="durration_time" id="min" min="0" max="59" step="15"  value = "<?php echo $durration[1] ?>"aria-label="Minutes"/>MIN
+								<input type="number" class="Duration_time" id="hr" min="0" max="12"  value = "<?php echo $Duration[0] ?>"aria-label="Hours" />HR
+								<input type="number" class="Duration_time" id="min" min="0" max="59" step="15"  value = "<?php echo $Duration[1] ?>"aria-label="Minutes"/>MIN
 							</div>
 						</li>
 						<li>

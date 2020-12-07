@@ -14,7 +14,7 @@ use group4;
 CREATE TABLE Events(
 	EventCode VARCHAR(16) PRIMARY KEY,
     EventTitle VARCHAR(55),
-	Durration DECIMAL(3,0),
+	Duration DECIMAL(3,0),
 	Deadline DATE,
 	EventPassword VARCHAR (16)
 );

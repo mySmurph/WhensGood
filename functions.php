@@ -120,9 +120,9 @@ const DAY_CONST = 72000;
 			return false;
 		}
 	};
-	function getDurration($code){
+	function getDuration($code){
 		try{
-			$sql = "SELECT Durration FROM Events Where EventCode = '$code' LIMIT 0,1;";	
+			$sql = "SELECT Duration FROM Events Where EventCode = '$code' LIMIT 0,1;";	
 			$segments = runQuery($sql)? runQuery($sql)[0][0]: 0;
 			$durr = array(intdiv($segments, SEGMENTS_PER_HOUR), ($segments%SEGMENTS_PER_HOUR)*(MIN_PER_HOUR/SEGMENTS_PER_HOUR));			
 			return $durr;

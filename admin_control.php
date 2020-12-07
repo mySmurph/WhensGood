@@ -23,8 +23,40 @@
       <a href = "admin_portal.php?access=0">&nbsp;&nbsp;&nbsp;Log Out&nbsp;&nbsp;&nbsp;</a>
 </span></h1>
     <form class="alert" method = "post" action = "admin_control.php" id = "form">
-			<ul>
-				<li>
+        <div class = " grid_container">
+            <div>
+                <ul>
+                    <li>
+                        <label aria-label="When's Good DB Table">Table<br/></label>
+                        <select aria-label="When's Good DB Table" class = "text_input full" name="db_table_options" id="db_table_options">
+                            <option value="" selected></option>
+                            <option value="Users">Users</option>
+                            <option value="Events">Events</option>
+                            <option value="Days">Days</option>
+                            <option value="LOGS">LOGS</option>
+                        </select>
+                    </li>
+                    
+                    <li>
+                        <label aria-label="When's Good DB Table">Attribute<br/></label>
+                        <span id = "db_attribute_options">
+                            <select aria-label="When's Good DB Table" class = "text_input full" name="db_attribute" id="db_attribute">
+                                <option value="" selected></option>
+                            </select>
+                            </span>
+                    </li>
+
+                    <li>
+                        <label aria-label="key_term">Key Term<br/></label>
+                        <input type = "text" class = "text_input full" name = "key_term" id = "key_term" />
+                    </li>
+                </ul>
+
+            </div>
+
+            <div>
+            <ul>
+                <li>
 					<label>Please Enter a Database Query<br />
                     <textarea id = "db_query" name = "db_query" class="text_input_full">
 SELECT * FROM Days Order BY EventDate;
@@ -32,6 +64,10 @@ SELECT * FROM Days Order BY EventDate;
                     </label>
 				</li>
 			</ul>
+            </div>
+        </div>
+        
+
 				<div>
 					<button type = "submit" class="button red span" id = "admin_password_submit">Submit</button><br />
 				</div>

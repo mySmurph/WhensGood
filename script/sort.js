@@ -1,7 +1,33 @@
 var headers = document.getElementsByTagName('th');
+var dbTable = document.getElementById('db_table_options'); 
+
 for(var i=0; i<headers.length; i++) {
     headers[i].addEventListener('click', function(){sortTable(this);});
 }
+dbTable.addEventListener('change', setAttributeOptions);
+
+function setAttributeOptions(){
+	var attOps = document.getElementById('db_attribute_options'); 
+	attOps.innerHTML = '';
+	var attributes = [];
+	switch(dbTable.value){
+		case 'Users': attributes = ['', 'UserID', 'UserType', 'UserName', 'RSVP', 'Email', 'CalenderFile', 'Password'];
+			break;
+		case 'Events': attributes = ['', 'EventCode', 'EventTitle', 'Durration', 'Deadline', 'EventPassword'];
+			break;
+		case 'Days': attributes = ['', 'EventCode', 'UserID', 'EventDate', 'TimeArray'];
+			break;
+		case 'LOGS': attributes = ['', 'LogEntry', 'AssociatedUserID', 'DateTime', 'Description'];
+			break;
+	}
+	var options = '<select aria-label="Whens Good DB Table" class = "text_input full" name="db_attribute" id="db_attribute">';
+	for(var i = 0; i < attributes.length ; i++){
+		options += "<option value=\""+attributes[i]+"\">"+attributes[i]+"</option>";
+	}
+	options += '</select>';
+	attOps.innerHTML = options;
+}
+
 var ascending = false;
 function sortTable(columnHeader) {
 	ascending = !ascending;

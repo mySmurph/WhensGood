@@ -5,7 +5,7 @@ SET @InsertedDays = NULL;
 insert into Events(
 	EventCode,
     EventTitle,
-	Durration,
+	Duration,
 	Deadline,
 	EventPassword
 )

@@ -66,7 +66,7 @@ Select count(Distinct EventCode) as EventFound from Events Where EventCode = '1k
 -- Lookup Event (Schedule/Edit: Case Sensitive Password Required)
 Select count(Distinct EventCode) as EventFound from Events Where EventCode = '1kxeqfw3ce' AND  EventPassword like Binary 'myFakePassword' ; -- returns 0, password is incorrect
 Select count(Distinct EventCode) as EventFound from Events Where EventCode = '1kxEQfw3ce' AND  EventPassword like Binary 'MyFakePassword' ; -- returns 1
-SELECT Durration FROM Events Where EventCode = '1kxeqfw3ce';
+SELECT Duration FROM Events Where EventCode = '1kxeqfw3ce';
 SELECT EventTitle FROM Events Where EventCode = '1kxeqfw3ce' LIMIT 0,1;
 SELECT Email FROM Users u INNER JOIN Days d USING (UserID) WHERE d.EventCode = '1kxeqfw3ce' AND u.UserType = 'E' LIMIT 0,1;
 Select count(UserID) as Admin from EventsUsers Where UserID = 'Admin_SM' AND  Password = MD5('Admin_SM') ; -- returns 1
