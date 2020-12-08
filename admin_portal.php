@@ -1,9 +1,13 @@
 <?php
-	if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+	// if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 	// $access = $_GET['access'] != NULL? boolval($_GET['access']): true;
-	if(!$_SESSION['access']){
+	$access = true;
+	if(isset($_SESSION['access'])){
+		$access = false;
+		unset($_SESSION['access']);
 		session_destroy();
 	}
+	if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 
 ?>
 <!--  http://cis444.cs.csusm.edu/group4/WhensGood/admin_portal.html  -->
@@ -30,7 +34,7 @@
         Admin Portal
 	  </h1>
 	  <?php
-	  if(!$_SESSION['access']&& intval($_GET['admin'])!=1){
+	  if(!$access){
 			echo "<div class = \"alert_message\">Invalid Credentials </div>";
 		}
 	?>

@@ -24,7 +24,7 @@
   
     <main id="main">
     <h1>Database Query Tool     <span class = 'button red small'>
-      <a href = "admin_portal.php?access=0">&nbsp;&nbsp;&nbsp;Log Out&nbsp;&nbsp;&nbsp;</a>
+      <a href = "admin_portal.php">&nbsp;&nbsp;&nbsp;Log Out&nbsp;&nbsp;&nbsp;</a>
 </span></h1>
     <form class="alert" method = "post" action = "admin_control.php?GO=1" id = "form">
         <div class = " grid_container">
@@ -77,7 +77,7 @@
         
 
 				<div>
-					<button type = "submit" class="button red span" id = "admin_password_submit">Submit</button><br />
+					<button type = "submit" class="button red span" id = "admin_password_submit">Execute Query</button><br />
 				</div>
 	</form>
 
