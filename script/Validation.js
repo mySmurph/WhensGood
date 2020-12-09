@@ -24,7 +24,7 @@ function ValidateForm() {
     //if(!togglePwd()) {return false;}
     
     myForm = document.getElementById("CreateEvent");
-    myForm.action = "querys.php";
+    myForm.action = "queries.php";
 	myForm.method = "POST";
     return true;
 }

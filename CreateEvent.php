@@ -54,7 +54,7 @@
 		<?php echo $h1?> <span class="h1EventCode"> <?php echo $code?> </span>
 		</h1>
 
-		<form name = "CreateEvent" id = "CreateEvent">
+		<form name = "CreateEvent" id = "CreateEvent" enctype="multipart/form-data" onsubmit = "return ValidateForm()">
 
 			<div class="grid_container">
 				<div>
@@ -98,7 +98,7 @@
 								<span class="file_upload_button_text">Browse</span>
 							</label>
 							<input type="text" class="text_input full" readonly="readonly" id="choose_file" name = "choose_file" aria-label="Browse" />
-							<input id="cal_upload" class="create" type="file" aria-label="Browse" />
+							<input id="cal_upload" name = "cal_upload" class="create" type="file" aria-label="Browse" />
 						</li>
 					</ul>
 
