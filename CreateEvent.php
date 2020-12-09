@@ -32,7 +32,7 @@
 			$end =   date("Y-n-j", strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[1])));
 		$email = getEventEmail($code);
 		$h1 = "Edit Event";
-		unset($_SESSION["eventFound"]);
+		// unset($_SESSION["eventFound"]);
 		unset($_SESSION["event_code"]);
 	}else{
 		$code = base_convert((strval(time()) . sprintf('%05d',rand (0, 99999))), 10, 36);

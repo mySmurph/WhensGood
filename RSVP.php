@@ -69,18 +69,18 @@ else{
 					<ul>
 						<li>
 							<label>Participant's Name<br/>
-							<input class="text_input full" type="text" id="name"/></label>
+							<input class="text_input full" type="text" name="name" id="name"/></label>
 						</li>
 						<li>
 							<label>Participant's Email<br />
-							<input class="text_input full" type="email" id="email"/></label>
+							<input class="text_input full" type="email" name="email" id="email"/></label>
 						</li>
 						<li>
 							<label>Accept Event Participation<br/>
 							</label>
 							<div class="switchbox">
 										<div class = "label">Decline</div>
-										<input type="checkbox" id="switchbox" data-check-switch aria-label="rsvp"/>
+										<input type="checkbox" name="switchbox" id="switchbox" data-check-switch aria-label="rsvp"/>
 										<div class = "label">Accept</div>
 							</div>
 							

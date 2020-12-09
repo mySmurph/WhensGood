@@ -1,8 +1,10 @@
 <?php
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     include ("functions.php");      
     $db = connectDB();            // pulled from functions.php 
     //$db = @mysqli_connect("db", "group4", "IjChbKtynlNZ", "group4");
 
+if(!isset($_SESSION["eventFound"])){
     // Table insert for Events
     $TableName = "Events";
     $SQLstring = "SELECT * FROM $TableName;";
@@ -217,9 +219,10 @@
     $SQLstring = "SET @InsertedDays = NULL;";
     $query = @mysqli_query($db, $SQLstring)
         Or die("<p> Unable to Execute. </p>" . "<p> Error code " . mysqli_errno($db) .": " . mysqli_error($db)) . "</p>";
-    mysqli_close($db);
+    }
+mysqli_close($db);
 
-    $_SESSION["event_code"] = $EventCode;
-    $_SESSION["eventFound"] = TRUE;
-    header('location: ScheduleEvent.php');
+$_SESSION["event_code"] = $EventCode;
+$_SESSION["eventFound"] = TRUE;
+header('location: ScheduleEvent.php');
     ?>

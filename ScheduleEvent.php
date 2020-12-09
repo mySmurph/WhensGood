@@ -18,7 +18,6 @@
 </head>
 
 <body>
-	
 <?php 
 	include ("functions.php");
 	printNavigation();
@@ -43,7 +42,7 @@
 		$eventMask = getEventMask($code);
 
 		$eventWindow = DateWindows::eventToBoolWeek($eventWindow);
-		$eventMask = DateWindows::eventToBoolWeek($eventMask);
+		$eventMask = $eventMask==null? null: DateWindows::eventToBoolWeek($eventMask);
 		DateWindows::printCalendarMaskedBlock($eventWindow, $eventMask);
 echo '
 				</div>

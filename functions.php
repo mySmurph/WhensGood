@@ -31,8 +31,8 @@ const DAY_CONST = 72000;
 	};
 	function connectDB(){
 	
-		// $host =  'localhost';	//cis444 server
-		$host =  'db';	// Local Server
+		$host =  'localhost';	//cis444 server
+		// $host =  'db';	// Local Server
 		$userid =  'group4';
 		$password = 'IjChbKtynlNZ';
 		// $password = 'bad password';
@@ -148,20 +148,19 @@ const DAY_CONST = 72000;
 			if(!$conn){
 				return false;
 			}
-				$responce = $conn->query($q);
+			$responce = $conn->query($q);
 
 
-				if(!$responce ||  mysqli_num_rows($responce) < 1){
-					return false;
-				}
-				$numresults = mysqli_num_rows($responce);
-				$results = array();
-				for($i = 0; $i < $numresults; $i++){
-					array_push($results, array_values(mysqli_fetch_assoc($responce)));
-				}
-				$conn->close();
-				return $results;
-			return ;
+			if(!$responce ||  mysqli_num_rows($responce) < 1){
+				return false;
+			}
+			$numresults = mysqli_num_rows($responce);
+			$results = array();
+			for($i = 0; $i < $numresults; $i++){
+				array_push($results, array_values(mysqli_fetch_assoc($responce)));
+			}
+			$conn->close();
+			return $results;
 		}catch(Exception $e){
 			return false;
 		}
@@ -187,50 +186,59 @@ const DAY_CONST = 72000;
 			$sql = 	"SELECT 
 						EventDate Date, TimeArray Time
 					FROM Days
+					Inner Join
+						Users using(UserID)
 					Where
 							Days.EventCode = '$code'
 						AND Days.TimeArray IS NOT NULL
+						AND Users.UserType = 'p'
 					;";
 
 			//get participants array and transfrom to YYYYMMDD : [1][1][0][1]
 			$participantCalendars = runQuery($sql);
 
-			foreach($participantCalendars as &$day){
-				//convert time string  to bool array
-				$intAr = str_split($day[TIMES_INDEX]);
-				foreach($intAr as &$seg){
-					$seg = intval($seg);
+			if(!$participantCalendars){
+				return null;
+			}else{
+				//get participants array and transfrom to YYYYMMDD : [1][1][0][1]
+				foreach($participantCalendars as &$day){
+					//convert time string  to bool array
+					$intAr = str_split($day[TIMES_INDEX]);
+					foreach($intAr as &$seg){
+						$seg = intval($seg);
+					}
+					$day[TIMES_INDEX] = $intAr;
+					$dayofweek = date('w',$day[DATE_INDEX]);
+				};
+
+				// make white mask YYYYMMDD : [1][1][1][1]
+				$range = getDateRange($code);
+				$start = strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[0]));
+				$end = strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[1]));
+				$maskDays = array();
+				while($start<=$end){
+					array_push($maskDays, array(date("Ymd",$start), getWhite()));
+					$start = $start + DAY_CONST;
 				}
-				$day[TIMES_INDEX] = $intAr;
-				$dayofweek = date('w',$day[DATE_INDEX]);
-			};
 
-			// make white mask YYYYMMDD : [1][1][1][1]
-			$range = getDateRange($code);
-			$start = strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[0]));
-			$end = strtotime(preg_replace('/d{4}d{2}d{2}/','-',$range[1]));
-			$maskDays = array();
-			while($start<=$end){
-				array_push($maskDays, array(date("Ymd",$start), getWhite()));
-				$start = $start + DAY_CONST;
-			}
-
-			//merge participants with mask
-			foreach($participantCalendars as &$day){
-				foreach($maskDays as &$mask){
-					if($day[DATE_INDEX] == $mask[DATE_INDEX]){
-						for($i = 0; $i < SEGMENTS_PER_HOUR*HOURS_PER_DAY; $i++){
-							$mask[TIMES_INDEX][$i] *= $day[TIMES_INDEX][$i];
+				//merge participants with mask
+				foreach($participantCalendars as &$day){
+					foreach($maskDays as &$mask){
+						if($day[DATE_INDEX] == $mask[DATE_INDEX]){
+							for($i = 0; $i < SEGMENTS_PER_HOUR*HOURS_PER_DAY; $i++){
+								$mask[TIMES_INDEX][$i] *= $day[TIMES_INDEX][$i];
+							}
 						}
 					}
+					
 				}
-				
-			}
-			foreach($maskDays as &$m){
-				$m[TIMES_INDEX] = implode("", $m[TIMES_INDEX]);
+				foreach($maskDays as &$m){
+					$m[TIMES_INDEX] = implode("", $m[TIMES_INDEX]);
+				}
+
+				return $maskDays;
 			}
 
-			return $maskDays;
 		}catch(Exception $e){
 			return false;
 		}
