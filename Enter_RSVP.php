@@ -15,9 +15,9 @@
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 </head>
 
-<body>
+<body class = "grid_container_set_auto">
 	<?php 
-	include ("functions.php");
+	include ("../PHP_Functions/functions.php");
 	printNavigation();
 	?>
 	
@@ -25,8 +25,7 @@
         <h1>
             I'll check my schedule...
         </h1>
-        
-    <!--actual container centers within container-->
+
 	<?php 
 
 $code = isset($_SESSION['event_code']) ? $_SESSION['event_code'] : '';
@@ -44,10 +43,10 @@ session_destroy();
 				<li>
 					<label>Enter Event Code<br />
 
-					<input type="text" class="text_input full" name = "event_code" id="event_code"/></label>
+					<input type="text" class="input_type_text full" name = "event_code" id="event_code"/></label>
 					
 					<!-- Valid Value -->
-					<!-- <input type="text" class="text_input full" name = "event_code" id="event_code" value = "1kxeqfw3ce"/></label> -->
+					<!-- <input type="text" class="input_type_text full" name = "event_code" id="event_code" value = "1kxeqfw3ce"/></label> -->
 				</li>
 				<li>
 					<div class="switchbox">
@@ -59,7 +58,7 @@ session_destroy();
 				<li>
 					<div class="password_container" id = "password_container">
 						<label>Enter Event Password<br/>
-						<input name = "password_input" id="password_input" type="password" class="text_input full"/></label>
+						<input name = "password_input" id="password_input" type="password" class="input_type_text full"/></label>
 					</div>
 				</li>
 			</ul>
@@ -72,7 +71,7 @@ session_destroy();
 				</div>
 		</form>
     </main>
-	<!-- <script type="text/javascript" src="script/enter_rsvp.js"></script> -->
-	<script type="text/javascript" src="script/hub.js"></script>
+	<!-- <script type="text/javascript" src="../script/enter_rsvp.js"></script> -->
+	<script type="text/javascript" src="../script/hub.js"></script>
 </body>
 </html>

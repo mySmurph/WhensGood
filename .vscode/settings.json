@@ -1,4 +1,4 @@
 {
-	"editor.wordWrap": "on",
-	"editor.detectIndentation": false
+	"editor.detectIndentation": false,
+	"diffEditor.wordWrap": "off"
 }

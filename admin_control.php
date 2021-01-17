@@ -1,9 +1,12 @@
 <?php
-    if(session_status() !== PHP_SESSION_ACTIVE) session_start();
-    if(!$_SESSION['access']){
-        session_destroy();
-        header('Location: index.php');
-    }
+	if(session_status() !== PHP_SESSION_ACTIVE) {
+		session_start();
+		if(!$_SESSION['access']){
+			session_destroy();
+			// header('Location: index.php');
+		}
+	}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -15,9 +18,9 @@
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />  
 </head>
 
-<body>
+<body class = "grid_container_set_auto">
 <?php 
-	include ("functions.php");
+	include ("../PHP_Functions/functions.php");
 	printNavigation();
 
 ?>
@@ -27,15 +30,15 @@
       <a href = "admin_portal.php">&nbsp;&nbsp;&nbsp;Log Out&nbsp;&nbsp;&nbsp;</a>
 </span></h1>
     <form class="alert" method = "post" action = "admin_control.php?GO=1" id = "form">
-        <div class = " grid_container">
+        <div class = " grid_container_flexable">
             <div>
                 <ul>
                     <li>
                         <h1>Constructed Query</h1>
                     </li>
                     <li>
-                        <label aria-label="When's Good DB Table">Table<br/></label>
-                        <select aria-label="When's Good DB Table" class = "text_input full" name="db_table_options" id="db_table_options">
+                        <label aria-label="When's Good DB Table">Table</label>
+                        <select aria-label="When's Good DB Table" class = "input_type_text full" name="db_table_options" id="db_table_options">
                             <option value="" selected></option>
                             <option value="Users">Users</option>
                             <option value="Events">Events</option>
@@ -45,17 +48,17 @@
                     </li>
                     
                     <li>
-                        <label aria-label="When's Good DB Table">Attribute<br/></label>
+                        <label aria-label="When's Good DB Table">Attribute</label>
                         <span id = "db_attribute_options">
-                            <select aria-label="When's Good DB Table" class = "text_input full" name="db_attribute" id="db_attribute">
+                            <select aria-label="When's Good DB Table" class = "input_type_text full" name="db_attribute" id="db_attribute">
                                 <option value="" selected></option>
                             </select>
                             </span>
                     </li>
 
                     <li>
-                        <label aria-label="key_term">Key Term<br/></label>
-                        <input type = "text" class = "text_input full" name = "key_term" id = "key_term" />
+                        <label aria-label="key_term">Key Term</label>
+                        <input type = "text" class = "input_type_text full" name = "key_term" id = "key_term" />
                     </li>
                 </ul>
 
@@ -68,7 +71,7 @@
                 </li>
                 <li>
 					<label>Please Enter a Database Query<br />
-                    <textarea id = "db_query" name = "db_query" class="text_input_full"></textarea>
+                    <textarea id = "db_query" name = "db_query" class="input_type_text_full"></textarea>
                     </label>
 				</li>
 			</ul>
@@ -150,7 +153,7 @@
         }
 
     ?>
-    <script type="text/javascript" src="script/sort.js"></script>
+    <script type="text/javascript" src="../script/sort.js"></script>
     </main>
 </body>
 </html>

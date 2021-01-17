@@ -20,7 +20,7 @@ function setAttributeOptions(){
 		case 'LOGS': attributes = ['', 'LogEntry', 'AssociatedUserID', 'DateTime', 'Description'];
 			break;
 	}
-	var options = '<select aria-label="Whens Good DB Table" class = "text_input full" name="db_attribute" id="db_attribute">';
+	var options = '<select aria-label="Whens Good DB Table" class = "input_type_text full" name="db_attribute" id="db_attribute">';
 	for(var i = 0; i < attributes.length ; i++){
 		options += "<option value=\""+attributes[i]+"\">"+attributes[i]+"</option>";
 	}

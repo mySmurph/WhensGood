@@ -1,0 +1,10 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta charset = "UTF-8"/>
+	<title>$pageTitle</title> 
+	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+	<link rel="shortcut icon" href="../css/favicon.png" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>

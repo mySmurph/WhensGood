@@ -22,9 +22,9 @@
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 </head>
 
-<body>
+<body class = "grid_container_set_auto">
 <?php 
-	include ("functions.php");
+	include ("../PHP_Functions/functions.php");
 	printNavigation();
 
 ?>
@@ -42,11 +42,11 @@
 			<ul>
 				<li>
 					<label>Admin Username<br />
-					<input id = "username" type="text" class="text_input full" name = "username"/></label>
+					<input id = "username" type="text" class="input_type_text full" name = "username"/></label>
 				</li>
 				<li>
 					<label>Admin Password<br/>
-					<input id = "password" type="password" class="text_input full" name = "password"/></label>
+					<input id = "password" type="password" class="input_type_text full" name = "password"/></label>
 				</li>
 			</ul>
 				<div>
@@ -58,6 +58,6 @@
 			</div>
 		</form>
     </main>
-  <script type="text/javascript" src="script/admin_login_validation.js"></script>
+  <script type="text/javascript" src="../script/admin_login_validation.js"></script>
 </body>
 </html>

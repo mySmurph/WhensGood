@@ -35,7 +35,7 @@ function setFile(){
 function hasFile(){
 	return document.getElementById("cal_upload").value.length>0;
 }
-$(".hour_table").ready(function() {
+$(".selectable_calendar_object").ready(function() {
 	$(".selectable_list" ).selectable(
 	{
 		

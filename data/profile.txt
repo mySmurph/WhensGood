@@ -1,0 +1,6 @@
+<div class = "dropdown">
+	$DisplayName<a href = "User_Profile.php" ><img src = "../css/emoji_in.svg" alt= "login emoji"></a>
+	<div class = "dropdown-content">
+		<a href = "User_Login.php" ><button>Log Out</button></a>
+	</div>
+</div>

@@ -17,10 +17,10 @@
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
 </head>
 
-<body>
+<body class = "grid_container_set_auto">
 
 	<?php 
-	include ("functions.php");
+	include ("../PHP_Functions/functions.php");
 	printNavigation();
 	?>
 	
@@ -42,16 +42,16 @@
 
 
 ?>
-    <!--actual container centers within container-->
+
 	<form  class="alert" id = "Enter_form">
 			<ul>
 				<li>
 					<label>Enter Event Code<br />
-					<input type="text" class="text_input full" name="event_code" id="event_code"/></label>
+					<input type="text" class="input_type_text full" name="event_code" id="event_code"/></label>
 				</li>
 				<li>
 					<label>Enter Event Password<br/>
-					<input name="password_input" id="password_input" type="password" class="text_input full"/></label>
+					<input name="password_input" id="password_input" type="password" class="input_type_text full"/></label>
 				</li>
 			</ul>
 			<div>
@@ -63,8 +63,8 @@
 			</div>
 		</form>
 	</main>
-	<!-- <script type="text/javascript" src="script/enter_edit_event.js"></script> -->
-	<script type="text/javascript" src="script/hub.js"></script>
+	<!-- <script type="text/javascript" src="../script/enter_edit_event.js"></script> -->
+	<script type="text/javascript" src="../script/hub.js"></script>
 </body>
 </body>
 </html>

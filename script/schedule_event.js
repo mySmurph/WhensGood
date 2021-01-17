@@ -17,7 +17,7 @@ $(document).ready(function() {
 		$( ".ui-selected").each(
 			function() {
 				if(!selection_includes_unavailible){
-					if(jQuery(this).hasClass('availible')){
+					if(jQuery(this).hasClass('window')){
 						result.append( " #" + ( jQuery(this).attr('id')));
 						selection.push(jQuery(this).attr('id'));
 						$(this).addClass('selected_window');

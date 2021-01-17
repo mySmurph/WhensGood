@@ -1,26 +1,26 @@
 <nav>
 <a href="#main" aria-label="Skip to main"></a>
-<a href="index.php"><img src="LogoWhensGoodLogo.svg" class="img" alt="comment pic" /></a>
-<ul class="list">
-	<li>
-		<div  class="button" >
-			<a href="CreateEvent.php?">Create Event</a>
-		</div>
-	</li>
-	<li>
-		<div  class="button" >
-			<a href="Enter_EditEvent.php?">Edit Event</a>
-	</div>
-	</li>
-	<li>
-		<div  class="button" >
-			<a href="Enter_RSVP.php?">RSVP to an Event</a>
-	</div>
-	</li>
-	<li>
-		<div  class="button" >
-			<a href="Enter_ScheduleEvent.php?">Schedule Event</a>
-		</div>
-	</li>
-</ul>
+<a href="../WhensDay/index.php"><img src="../css/WhensDayLogo.svg" alt="comment pic" /></a>
+		
+		<form id = "CreateEvent" method = "POST" action = "../WhensDay/hub.php">
+			<div class = "POST_info" >
+					<input type = "text" aria-label="source" name = "source" value = "index.php" readonly />
+					<input type = "text" aria-label="destination" name = "destination" value = "CreateEvent.php" readonly />
+			</div>
+			<button type = "submit" class = "span" >Create Event</button>
+		</form>
+		<form id = "Enter_RSVP" method = "POST" action = "../WhensDay/hub.php">
+			<div class = "POST_info" >
+					<input type = "text" aria-label="source" name = "source" value = "index.php" readonly />
+					<input type = "text" aria-label="destination" name = "destination" value = "RSVP.php" readonly />
+			</div>
+			<button type = "submit" class = "span" >RSVP to Event</button>
+		</form>
+		<form id = "Enter_ScheduleEvent" method = "POST" action = "../WhensDay/hub.php">
+			<div class = "POST_info" >
+					<input type = "text" aria-label="source" name = "source" value = "index.php" readonly />
+					<input type = "text" aria-label="destination" name = "destination" value = "ScheduleEvent.php" readonly />
+			</div>
+			<button type = "submit" class = "span" >Schedule Event</button>
+		</form>
 </nav>

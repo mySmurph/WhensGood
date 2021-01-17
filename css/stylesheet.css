@@ -1,300 +1,316 @@
 /* latest additions for the admin portion */
 
 
-/* CSS SPECIFIC TO                                              EVERY HTML FILE START */
+/* CSS SPECIFIC TO											  EVERY HTML FILE START */
 
 ul{
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
-
 ul li{
-    margin: 0;
-	padding-bottom: 10pt;
-    padding-left: 0;
-    padding-top: 10pt;
+	margin: 0;
+	padding-bottom: 5pt;
+	padding-left: 0;
 }
 
 label, .label{
-	font-size: 14pt;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-    background: url(calender.png) no-repeat;
-    border-width: thin;
-    color: black;
-    display: block;
-    height: 17px;
-    opacity: 1;
-    width: 18px;
-}
-
-input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="number"], textarea, select { 
-    border: hidden;
-}
-textarea{
-    height: 15em;
-    width: 30em;
-}
-
-textarea:focus, input:focus{
-    outline: none;
+	font-size: .9em;
+	display: block;
+	color: #000033;
+	margin: 2pt 0 1pt 0;
+	font-weight: lighter;
 }
 
 table{
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
 }
 
 th{
-    background-color: #378C7D;
-    color: white;
-    border: 1px solid #378C7D;
-    border-spacing: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
+	background-color: #378C7D;
+	color: white;
+	border: 1px solid #378C7D;
+	border-spacing: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
 
 }
 .query, td{
-    border: 1px solid #F2F1DF;
-    border-spacing: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: left;
+	border: 1px solid #F2F1DF;
+	border-spacing: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: left;
 }
 tr:hover{
-    background-color: #F2F1DF50;
+	background-color: #F2F1DF50;
+}
+button, .button,  [type = "button"]{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	background-color:#91D9BF;
+	border: none;
+	border-radius: 5pt;
+	color: #000033;
+	margin: 2pt auto;
+	min-height: 20pt;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	transition: 0.2s;
+	display: block;
+	outline: none;
 }
 
-input:focus{
-    outline-style: none;
-}
 
-input[type="file"] {
-	display: none;
-}
-
-.button{
-    /* appearance: button;
-    -webkit-appearance: button;
-    -moz-appearance: button;
-   */
-    background-color:#91D9BF;
-    border: none;
-    border-radius: 17px;
-    color: black;
-    margin: auto;
-    padding-bottom: 10pt;
-    padding-top: 10pt;
-    text-align: center;
-    text-decoration: none;
-    width: 140pt;
-}
 a{
-    text-decoration: none;
-    color: black;
+	text-decoration: none;
+	color:  #000033;
 }
-.button:hover{
-    font-size: 105%;
-    transition-timing-function: ease-in-out;
+.button:hover, button:hover{
+	transition-timing-function: ease-in-out;
+	box-shadow: inset #00003333 0pt 0pt 50pt;
+	cursor: pointer;
 }
 .small{
-    padding-bottom: 3pt;
-    padding-top: 3pt;
-    font-size: small;
+	height: 20pt;
+	padding: 5pt;
+	font-size: small;
 }
-.grid_container{
-    column-gap: 25pt;
-    display: grid;
-    grid-template-columns: max-content max-content;
-    margin-bottom: 5pt;
-    margin-left: auto;
-    margin-right: auto; 
-	width:inherit;
-}
-body{
+.grid_container_flexable{
+	column-gap: 25pt;
 	display: grid;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-	grid-template-columns: min-content auto;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+	grid-template-columns: max-content max-content;
+	margin-bottom: 5pt;
+	margin: 0 auto;
+	padding: 0pt 25pt;
+	width:max-content;
+}
+.grid_container_setWidth{
+	column-gap: 10pt;
+	display: grid;
+	grid-template-columns: calc(50% - 5pt) calc(50% - 5pt);
+	margin-bottom: 5pt;
+	margin: 0 auto;
 	width: 100%;
 }
+body{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #000033;
+	font-size: 10pt;
+	color:  #000033;
+}
+.grid_container_set_auto{
+	display: grid;
+	grid-template-columns: min-content auto;
+	margin: 10pt;
+	grid-gap: 10pt;
+}
 
-nav{
-    padding:10pt;
+
+/* nav{
+	padding:10pt;
+} */
+img{
+	display: inline-block;
+	height: 25pt;
+}
+img:hover{
+	cursor: pointer;
 }
 
 h1{
-    background-color:#378C7D;
-    border-radius: 10px;
-    color: white;
-    font-size: 16px;
-	margin-bottom: 25pt;
+	align-items: center;
+	background-color:#378C7D;
+	border-radius: 5pt 5pt 0 0;
+	color: white;
+	font-size: 1.25em;
+	margin-bottom: 5pt;
 	margin-top: 0;
-    padding: 5pt;
-    text-align: left;
+	min-height: 25pt;
+	max-height: fit-content;
+	/* line-height: 25pt; */
+	/* text-align: left; */
 	width: inherit;
+	padding-inline-start: 15pt;
+	padding-inline-end: 15pt;
+	position: sticky;
+	display: flex;
+	justify-content: space-between;
+}
+/* #h1{
+	display: inline-flex;
+	align-items: inherit;
+} */
+
+h2{
+	background-color:#378C7D;
+	border-radius: 5pt 5pt 0 0;
+	color: white;
+	font-size: 1em;
+	margin-bottom: 5pt;
+	margin-top: 0;
+	padding: 5pt;
+	text-align: left;
+	width: calc(100%-10pt);
+	/* position: sticky; */
 }
 .h1EventCode{
-    background-color: white;
-    border: none;
-    border-radius: 5pt;
-    padding: 4pt;
-    color: #378C7D;
+	background-color: white;
+	border: none;
+	border-radius: 5pt;
+	padding: 3pt 10pt;
+	color: #378C7D;
+	margin: 0 10pt;
 }
 
-.img{
-	display: inline-block;
-	width: 200px;
-}
 
 main{
-    background-color: #F2F1DF;
-    border-radius: 10px;
-    margin-right: 10pt;
-	margin-top: 10pt;
-    padding-bottom: 25pt;
+
+	background-color: #F2F1DF;
+	border-radius: 5pt;
+	/* margin-right: 10pt;
+	margin-top: 10pt; */
+	padding-bottom: 25pt;
+	height: calc(100vh - 50pt);
 }
 
-/*  CSS SPECIFIC TO                                                        EVERY HTML FILE END */
+/*  CSS SPECIFIC TO														EVERY HTML FILE END */
 
 /* ------------------------------------------------------------------------------------------------------- */
 
-/* CSS SPECIFIC TO                                                LANDING PAGE HTML FILE START */
+/* CSS SPECIFIC TO												LANDING PAGE HTML FILE START */
 
 .content{
-    display: grid;
-    grid-template-rows: max-content;
-    justify-content: center;
-    margin:0 auto;
-    width:inherit;
+	display: grid;
+	grid-template-rows: max-content;
+	justify-content: center;
+	margin:0 auto;
+	width:inherit;
 }
 
 .big{
-    padding-bottom: 25pt;
-    padding-top: 25pt;
-    width: 170pt;
+	padding-bottom: 25pt;
+	padding-top: 25pt;
+	width: 170pt;
 }
 
-/* CSS SPECIFIC TO                                                   LANDING PAGE HTML FILE END */
+/* CSS SPECIFIC TO												   LANDING PAGE HTML FILE END */
 
 /* ------------------------------------------------------------------------------------------------------- */
 
-/* CSS SPECIFIC TO                                              CREATE EVENT HTML FILE START */
+/* CSS SPECIFIC TO											  CREATE EVENT HTML FILE START */
 
 .span{
-    display: block;
-	margin-left: auto;
-	margin-right: auto;
-    top: 30px;
-	width: inherit;
 	width: calc(95%);
+	white-space: nowrap;
+	min-width: 100pt;
 }
 .red{
 	background-color:#F24B59;
-    color: white;
-    font-weight: bold;
-	size: 24pt;
+	color: white;
+	font-weight: bold;
+	margin-top: 5pt;
+	height: 25pt;
 }
 
-.calendar{
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    /* appearance: button; */
-    background-color:#91D9BF;
-    border: none;
-    border-radius: 10px;
-    color: black;
-    padding-bottom: 20px;
-	padding-right: 10pt;
-	padding-top: 20px;
-    text-decoration: none;
+[type = "text"], .input_type_text{
+	border: none;
+	border-radius: 5pt;
+	background-color: white;
+	border: #378C7D solid 2pt;
+	padding: 5pt 10pt;
+	overflow: visible;
+	display: inline-flex;
 }
 
-.text_input{
-    background-color: white;
-    border: none;
-    border-radius: 5pt;
-    font-size: 14px;
-    padding-bottom: 4pt;
-	padding-left: 10pt;
-	padding-top: 4pt;
+.selectable_calendar_object_container, .RSVP_list, .RSVP_details, .profileSection{
+	border: none;
+	border-radius: 5pt;
+	background-color: white;
+	display: block;
+	margin-bottom: 5pt;
+	width: inherit;
+	padding-bottom: 10pt;
 }
+.RSVP_details{
+	padding-bottom: 0;
+}
+.selectable_calendar_object_container{
+	margin: auto;
+	width: max-content;
+}
+.RSVP_list_ul, .RSVP_details div{
+	padding: 0 10pt 5pt 10pt;
+}
+::placeholder, ::-webkit-input-placeholder{
+	color: #00003399;
+	font-size: .8em;
+}
+
 .full{
-	width:245pt;
+	width:200pt;
 }
+.fill{
+	width: 118pt;
+}
+.threeQuarter{
+	width: 100pt;
+}
+
 .half{
-	width:105pt;
-}
-.threeQuarters{
-	width:235pt;
-}
-.Duration_time{
-    height: 14px;
-    padding-left: 15pt;
-    max-width: 30pt;
-
+	width: calc(50% - 5pt)
 }
 
-
-.create_e_file_input_button{
-    height: 23px;
-    left: 240px;
-    top:490px;
-    width: 231px;
+[type="number"]{
+	border: none;
+	text-align: right;
+	color: #000033;
+	border-collapse: collapse;
+	min-width: 10pt;
+	max-width: 25pt;
 }
 
-/* CSS SPECIFIC TO                                                  CREATE EVENT HTML FILE         END */
+textarea{
+	height: 15em;
+	width: 30em;
+}
+
+
+/* CSS SPECIFIC TO												  CREATE EVENT HTML FILE		 END */
 
 /* ------------------------------------------------------------------------------------------------------- */
 
-/* CSS SPECIFIC TO BOTH                                             CREATE EVENT HTML FILE AND RSVP TO EVENT FILE     END */
+/* CSS SPECIFIC TO BOTH											 CREATE EVENT HTML FILE AND RSVP TO EVENT FILE	 END */
 form{
 	display: block;
-	margin-left: auto;
-    margin-right: auto;
-    width: max-content;
+	margin: 0 auto;
 }
-.custom_file_upload {
-    background-color: #91D9BF;
-    border-bottom-right-radius: 5pt;
-    border-top-right-radius: 5pt;
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 173pt;
-    padding-bottom: 20px;
-    padding-top: 6px;
-    position: absolute;
-    width: 83pt;
-    /* float: right; */
+.scrollable{
+	display: block;
+	margin: 0 auto;
+	width: inherit;
+	padding: 10pt 25pt;
+	height: calc(100% - 35pt);
+	overflow: auto;
 }
 
-.file_upload_button_text{
-    font-size: 16px;
-    left:23px;
-    position: absolute;
-    top: 4px;
-}
-.hour_table{
-
+.selectable_calendar_object{
+	padding: 5pt 10pt;
 	display: grid;
-	grid-template-columns: 100pt  55pt 55pt 55pt 55pt 55pt 55pt 55pt;
-    width: fit-content;
+	grid-template-columns: 40pt  35pt 35pt 35pt 35pt 35pt 35pt 35pt;
+	width: fit-content;
 }
-.white{
-    background-color: white;
-	border-radius: 5pt;
-    padding: 10pt;
-    margin: 10pt 0pt;
+.xm{
+	font-size: .65em;
 }
 .selectable_list  .ui-selecting{
-	background: #F2F1DF;
+	background: #378C7D;
 }
 
 .selectable_list  .ui-selected, .window{
@@ -307,10 +323,10 @@ form{
 	padding: 0;
 }
 .selectable_list li:nth-child(4n+1),.times li{
-	border-bottom: #F2F1DF 2pt solid;
+	border-bottom: #F2F1DF 1pt solid;
 }
 .selectable_list li:hover{
-	outline: #91D9BF dotted; 
+	outline: #000033 dotted thin; 
 }
 .selectable_list:hover{
 	background-color: #F2F1DF50;
@@ -319,21 +335,30 @@ form{
 	height: 16pt;
 	text-align: center;
 }
-.date{
-	height: 24pt;
+.time{
+	padding: 0pt  5pt;
+	text-align: right;
+}
+
+.include_date{
+	height: 32pt;
 	text-align: center;
 }
-.date > span{
-    display: block;
-	font-size: 50%;
+.date{
+	display: inline-block;
+	font-size: .85em;
+	background-color: #378C7D;
+	color:#fafafa;
+	border-radius: 5pt;
+	width: 15pt;
+	padding: 3pt;
+	margin: auto;
+
 }
 .segment{
 	color: transparent;
 	font-size: 1pt;
 	height: 4pt;
-}
-.availible{
-	background-color: #91D9BF80;
 }
 .unavailible{
 	background-color: #F24B59;
@@ -341,6 +366,8 @@ form{
 .selected_window{
 	background-color: #378C7D;
 }
+
+
 .note{
 	font-size: 65%;
 	font-style: italic;
@@ -348,85 +375,73 @@ form{
 }
 .feedback{
 	display: none;
+	overflow: hidden;
 }
-/* CSS SPECIFIC TO BOTH                                             CREATE EVENT HTML FILE AND RSVP TO EVENT FILE      END */
+/* CSS SPECIFIC TO BOTH											 CREATE EVENT HTML FILE AND RSVP TO EVENT FILE	  END */
 
 /* ------------------------------------------------------------------------------------------------------- */
 
-/* CSS SPECIFIC TO                                                  RSVP VIEW EVENT HTML FILE         START */
+/* CSS SPECIFIC TO												  RSVP VIEW EVENT HTML FILE		 START */
 
-.center{
-    display: grid;
-    grid-template-rows: max-content;
-    justify-content: center;
+
+.lookup_box{
+	background-color: #91D9BF;
+	border-radius: 5pt;
+	border: .25pt solid #00003325;
+	padding:10pt; 
+	width: min-content;
+	box-shadow:#00003325 2pt 3pt 1pt;
+	margin: 15pt auto;
+	transition: 1ms;
 }
 
-.alert{
-    background-color: #91D9BF;
-    border-radius: 5pt;
-    padding:10pt; 
-    width: min-content;
+.alert {
+	padding: 15pt;
+	border-radius: 5pt;
+	color: white;
+	box-shadow:#00000025 2pt 3pt 1pt;
+	margin: 10pt;
+}
+.bad{
+	background-color: #F24B59;
+}
+.good{
+	background-color: #378C7D;
 }
 
-.alert_message{
-    background-color:white;
-    border-radius: 5pt;
-    border: solid 5pt #F24B59;
-    margin: 10pt auto ;
-    max-height:fit-content;
-    padding:10px; 
-	width:75%;
+.closebtn {
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
 }
+
+.closebtn:hover {
+	color: #F2F1DF;
+}
+
+
 .POST_info{
-    display: none;
+	display: none;
 }
 
-.inner_layout > div{
-    justify-content: center;
-}
-
-.switch_container{
-    display: inline-block;
-    height: 20pt;
-    position: relative;
-	width: 40pt;
-}
-  
 .password_container{
 	display: none;
 }
 
-.input_code{
-    border: none;
-    border-radius: 10px;
-    height: 25px;
-    width: 290px;
+.participant_List{
+	background-color: #F2F1DF;
+	border-radius: 5pt;
+	margin: 10pt;
+	padding: 10pt;
 }
 
-.input{
-    border: none;
-    border-radius: 10px;
-    height: 25px;
-    visibility: hidden;
-    width: 290px;
-}
 
-/* CSS SPECIFIC TO                                                  RSVP VIEW EVENT HTML FILE         END */
-
-/* ------------------------------------------------------------------------------------------------------- */
-
-
-/* CSS SPECIFIC TO                                                  RSVP TO EVENT HTML FILE         START */
-
-.inline_list{
-    column-gap: 10pt;
-	display: grid;
-	grid-template-columns: max-content max-content;
-}
-
-/* CSS SPECIFIC TO                                                  RSVP TO EVENT HTML FILE         END */
-
-/* alternate switch box to get TV errors to go away */
+/* special formated buttons */
 .switchbox{
 	display: flex;
 }
@@ -449,9 +464,156 @@ form{
 	box-shadow: inset 1.50em 0 0 1pt #378C7D;
 }
 
-.participant_List{
-    background-color: #F2F1DF;
-    border-radius: 5pt;
-	margin: 10pt;
-	padding: 10pt;
+
+
+[type="file"] {
+	width: 1pt;
+	appearance: button;
+	background-color: #91D9BF;
+	height: 1pt;
+	border-collapse: collapse;
+	opacity: 10%;
+	overflow: hidden;
+	display: inline-block;
+	position: absolute;
+	left: -50pt;
+	top: -50pt;
+}
+.file{
+	color: white;
+	padding: 5pt ;
+}
+.butt_right{
+	border-radius: 0pt 5pt 5pt 0pt;
+	display: block;
+	background-color: #378C7D;
+	border: 2pt solid #378C7D;
+    width: 42pt;
+	padding: 5pt 10pt;
+	color: white;
+}
+.butt_left{
+	border-radius: 5pt 0pt 0pt 5pt;
+	border-right:  none; 
+	padding: 5pt 10pt;
+	width: 135pt;
+}
+.upload_bar li{
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+
+[type="date"], .event_date {
+	background-image: url(CAL.svg);
+	background-repeat: no-repeat;
+	background-position: right 3pt center ;
+	background-size: 15pt;
+	border: none;
+	font-size: 1em;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color:#000033;
+	overflow:visible;
+	width: calc(50% - 8pt);
+	/* margin-right: 15pt; */
+	/* background-color: aqua; */
+}
+.event_date{
+	background-position: right 3pt top ;
+	/* margin: auto; */
+	min-height: 15pt;
+	width: 75%;
+}
+
+[type="date"]::-webkit-inner-spin-button, [type="date"]::-webkit-calendar-picker-indicator {
+	opacity: 0;
+	margin: 0;
+	padding: 0;
+	width: 20pt;
+}
+.input_invalid{
+	background-image: url(X.svg);
+	background-repeat: no-repeat;
+	background-size: 7pt;
+	background-position: right 5pt center;
+	box-shadow: inset #F24B59 0pt 0pt 2pt;
+	/* border: 1pt #F24B59 solid; */
+
+}
+
+/* Style the tab */
+#h1, .user{
+	display: inline-flex;
+	align-items: inherit;
+}
+/* Style the buttons that are used to open the tab content */
+h1 button {
+	width: 85pt;
+	/* position: relative; */
+}
+.user{
+	display: inline-flex;
+	width: fit-content;
+	font-weight: lighter;
+	font-size: .75em;
+	z-index: 5;
+}
+.user img{
+	/* height: 22pt; */
+	vertical-align: middle;
+	margin-left: 5pt;
+}
+
+/* Create an active/current tablink class */
+#h1 button.active {
+	border: 0;
+	color:inherit;
+	font-size: inherit;
+	background-color: inherit;
+	/* position: right; */
+	text-align: left;
+	order: -1;
+
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+}
+
+.dropdown-content {
+	display: none;
+	z-index: 5;
+	width:100%;
+	/* margin-left: auto; */
+	background-color: #378C7D;
+	padding: 5pt;
+	border-radius: 0 0 5pt 5pt;
+	position: absolute;
+}
+
+.dropdown-content button {
+	display: block;
+	width: 100%;
+}
+.dropdown:hover .dropdown-content {display: block;}
+
+#my_events button {
+    width: calc(100% - 20pt);
+    /* margin-bottom: 5pt; */
+    /* margin-block-end: 10PT; */
+    /* border: solid 2pt #378C7D; */
+    background-color: transparent;
+    min-height: 35pt;
+    text-align: left;
+    /* scroll-padding-left: 10pt; */
+    display: block;
+    padding: 15pt;
+    /* text-indent: 10pt; */
+}
+#my_events button:hover{
+	box-shadow: inset #F2F1DF 0pt 0pt 50pt;
 }
